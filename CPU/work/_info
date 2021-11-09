@@ -1,0 +1,83 @@
+m255
+K4
+z2
+!s11f vlog 2020.1 2020.02, Feb 28 2020
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+d/home/ctxo/Documents/College/InfraHard
+vCPU
+!s110 1636418131
+!i10b 1
+!s100 SMIi>FCU4JZnK08>i@EP02
+Z0 !s11b Dg1SIo80bB@j0V0VzS_@n1
+ImOnN[;Eo;o2ccaGh9XoEK2
+Z1 VDg1SIo80bB@j0V0VzS_@n1
+Z2 d/home/ctxo/Documents/College/InfraHard/CPU
+w1636418115
+8/home/ctxo/Documents/College/InfraHard/CPU/CPU.v
+F/home/ctxo/Documents/College/InfraHard/CPU/CPU.v
+!i122 9
+L0 1 200
+Z3 OV;L;2020.1;71
+r1
+!s85 0
+31
+!s108 1636418131.000000
+!s107 /home/ctxo/Documents/College/InfraHard/CPU/CPU.v|
+!s90 -reportprogress|300|-work|work|-stats=none|/home/ctxo/Documents/College/InfraHard/CPU/CPU.v|
+!i113 1
+Z4 o-work work
+Z5 tCvgOpt 0
+n@c@p@u
+vmux_alu_src_A
+!s110 1636418087
+!i10b 1
+!s100 <DU`8:D?6OZg;HfN27=DG2
+R0
+IWY]9HU4HH9;m<]29NZ4[W0
+R1
+R2
+w1636413565
+8/home/ctxo/Documents/College/InfraHard/CPU/mux_alu_src_A.v
+F/home/ctxo/Documents/College/InfraHard/CPU/mux_alu_src_A.v
+!i122 6
+L0 1 10
+R3
+r1
+!s85 0
+31
+!s108 1636418087.000000
+!s107 /home/ctxo/Documents/College/InfraHard/CPU/mux_alu_src_A.v|
+!s90 -reportprogress|300|-work|work|-stats=none|/home/ctxo/Documents/College/InfraHard/CPU/mux_alu_src_A.v|
+!i113 1
+R4
+R5
+nmux_alu_src_@a
+vmux_alu_src_B
+!s110 1636411716
+!i10b 1
+!s100 9hUUZ4TEoSbAkBC6<CfKV2
+R0
+IiQgl0N7NG8DJc:;1cO=:X1
+R1
+R2
+w1636410889
+8/home/ctxo/Documents/College/InfraHard/CPU/mux_alu_src_B.v
+F/home/ctxo/Documents/College/InfraHard/CPU/mux_alu_src_B.v
+!i122 4
+L0 1 14
+R3
+r1
+!s85 0
+31
+!s108 1636411716.000000
+!s107 /home/ctxo/Documents/College/InfraHard/CPU/mux_alu_src_B.v|
+!s90 -reportprogress|300|-work|work|-stats=none|/home/ctxo/Documents/College/InfraHard/CPU/mux_alu_src_B.v|
+!i113 1
+R4
+R5
+nmux_alu_src_@b

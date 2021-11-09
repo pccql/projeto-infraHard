@@ -1,0 +1,6 @@
+/home/ctxo/Documents/College/InfraHard/CPU/CPU.v {0 {vlog -work work -stats=none /home/ctxo/Documents/College/InfraHard/CPU/CPU.v
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module CPU
+** Error: (vlog-13069) /home/ctxo/Documents/College/InfraHard/CPU/CPU.v(195): near "alu_src_a": syntax error, unexpected IDENTIFIER, expecting ')'.
+
+} {4.0 5.0} {}}

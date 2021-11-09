@@ -1,0 +1,78 @@
+# Loading project CPU
+vsim work.mux_alu_src_A
+# vsim work.mux_alu_src_A 
+# Start time: 19:10:22 on Nov 08,2021
+# Loading work.mux_alu_src_A
+add wave -position end  sim:/mux_alu_src_A/pc_in_0
+add wave -position end  sim:/mux_alu_src_A/reg_a_in_1
+add wave -position end  sim:/mux_alu_src_A/a_out
+add wave -position insertpoint  \
+sim:/mux_alu_src_A/selector \
+sim:/mux_alu_src_A/pc_in_0 \
+sim:/mux_alu_src_A/reg_a_in_1 \
+sim:/mux_alu_src_A/a_out
+force -freeze sim:/mux_alu_src_A/selector 0 0
+force -freeze sim:/mux_alu_src_A/selector 0 0
+force -freeze sim:/mux_alu_src_A/pc_in_0 00000000000000000000000000000000 0
+force -freeze sim:/mux_alu_src_A/reg_a_in_1 00000000000000000000000000000001 0
+run
+force -freeze sim:/mux_alu_src_A/selector 1 0
+run
+# Load canceled
+# Load canceled
+# Compile of mux_alu_src_B.v was successful.
+vsim work.mux_alu_src_B
+# End time: 19:22:24 on Nov 08,2021, Elapsed time: 0:12:02
+# Errors: 0, Warnings: 3
+# vsim work.mux_alu_src_B 
+# Start time: 19:22:24 on Nov 08,2021
+# Loading work.mux_alu_src_B
+add wave -position insertpoint  \
+sim:/mux_alu_src_B/AluSrcB \
+sim:/mux_alu_src_B/B \
+sim:/mux_alu_src_B/four \
+sim:/mux_alu_src_B/sign_extend \
+sim:/mux_alu_src_B/shift_left_2 \
+sim:/mux_alu_src_B/b_out
+force -freeze sim:/mux_alu_src_B/AluSrcB 11 0
+force -freeze sim:/mux_alu_src_B/four 00000000000000000000000000000001 0
+force -freeze sim:/mux_alu_src_B/sign_extend zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz00000000000000000000000000000010 0
+force -freeze sim:/mux_alu_src_B/shift_left_2 000000000000000000000000000000011 0
+force -freeze sim:/mux_alu_src_B/b_out 000000000000000000000000000000001 0
+run
+force -freeze sim:/mux_alu_src_B/B 00000000000000000000000000000001 0
+run
+force -freeze sim:/mux_alu_src_B/AluSrcB 11 0
+noforce sim:/mux_alu_src_B/b_out
+run
+run
+noforce sim:/mux_alu_src_B/b_out
+force -freeze sim:/mux_alu_src_B/AluSrcB 11 0
+force -freeze sim:/mux_alu_src_B/B 0000000000000000000000000000000100000000000000000000000000000000 0
+run
+noforce sim:/mux_alu_src_B/b_out
+force -freeze sim:/mux_alu_src_B/b_out {} 0
+run
+force -freeze sim:/mux_alu_src_B/AluSrcB St1 0
+force -freeze sim:/mux_alu_src_B/AluSrcB 11 0
+run
+run
+force -freeze sim:/mux_alu_src_B/B 00000000000000000000000000000000 0
+# Compile of mux_alu_src_B.v was successful.
+run
+run
+# Compile of CPU.v failed with 1 errors.
+# Compile of CPU.v failed with 1 errors.
+run
+run
+run
+run
+# Compile of mux_alu_src_A.v was successful.
+# Compile of mux_alu_src_A.v was successful.
+# Compile of mux_alu_src_A.v failed with 2 errors.
+# Compile of mux_alu_src_A.v failed with 2 errors.
+# Compile of CPU.v failed with 1 errors.
+# Compile of CPU.v failed with 1 errors.
+# Compile of CPU.v was successful.
+# Compile of CPU.v was successful.
+# Compile of CPU.v was successful.
