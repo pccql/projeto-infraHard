@@ -1,3 +1,11 @@
+// `include "./Componentes do Projeto/Banco_reg.vhd";
+// `include "./Componentes do Projeto/Instr_Reg.vhd";
+// `include "./Componentes do Projeto/instruções.vhd";
+// `include "./Componentes do Projeto/Memoria.vhd";
+// `include "./Componentes do Projeto/RegDesloc.vhd";
+// `include "./Componentes do Projeto/Registrador.vhd";
+
+
 module CPU (
     input clk, reset    
 );
@@ -9,6 +17,8 @@ module CPU (
     wire reg_w;
     wire alu_src_a;
     wire reg_ab_w;
+    wire hi_w;
+    wire lo_w;
     wire [2:0] alu_op;
     wire [2:0] shift_ctrl;
     wire [1:0] shift_in_w;
@@ -21,6 +31,7 @@ module CPU (
     wire [31:0] aluOut_out;
     wire [31:0] mem_in;
     wire [31:0] mem_out;
+
 
     //wire [4:0] read_reg_1;
     //wire [4:0] read_reg_2;
@@ -47,6 +58,17 @@ module CPU (
     wire [31:0] reg_b_out;
     
     
+    // Sign extend  
+    wire [31:0] extended_out;
+
+    // Shift 2 sem conc
+    wire [31:0] shift_2_out;
+
+    wire [31:0] four;
+    assign four = 32'd4;
+    
+    wire [31:0] mux_b_out;
+
     // flags alu
     wire LT;
     wire GT;
@@ -127,7 +149,7 @@ module CPU (
         reset, 
         reg_ab_w,
         regs_out_2, // reg_b_in
-        reg_b_out,
+        reg_b_out
     );
 
     ula32 ALU(
@@ -142,42 +164,11 @@ module CPU (
         GT,
         LT
     );
-    
-
-    
 
 
-
-
-
-    mux_shift_in mux_shift(
-        shift_in_w,
-        reg_a_out,
-        reg_b_out,
-        //fio que sai do sign_extend
-        shift_in
-    );
-
-    mux_shift_n mux_shiftn(
-        shift_n_w,
-        //fio com rt[4..0]
-        //fio com inst[16..10]
-        // fio com valor 16
-        //fio com mdr
-        shift_n
-    );
-    RegDesloc reg_desloc(
+    ctrl_unit unidade_de_controle(
         clk,
-        rst,
-        shift_ctrl,
-        shift_n,
-        shift_in,
-        shift_out     
-    );
-
-    ctrl_unit ctrl_unit(
-        clk,
-        reset,
+        reset,  
         Overflow,
         Negativo,
         Zero,
@@ -190,11 +181,67 @@ module CPU (
         ir_w,
         reg_w,
         reg_ab_w,
-        alu_op,
         aluOut_w,
         alu_src_a,
-        reset 
+        reg_dst,
+        hi_w,
+        lo_w,
+        a_w,
+        b_w,
+        mdr_w,
+        epc_w,
+        alu_op,
+        data_src,
+        rst_out
     );
+
+    sign_extend_16 sign_extend_16(
+        offset,
+        extended_out
+    );
+
+    shift_left_2 shift_left_2(
+        extended_out,
+        shift_2_out
+    );
+
+    mux_alu_src_B mux_b(
+        reg_b_out,
+        four,
+        extended_out,
+        shift_2_out,
+        mux_b_out
+    );
+
+    
+
+    // // Reg desloc
+    // mux_shift_in mux_shift(
+    //     shift_in_w,
+    //     reg_a_out,
+    //     reg_b_out,
+    //     extended_out
+    //     shift_in
+    // );
+
+    // mux_shift_n mux_shiftn(
+    //     shift_n_w,
+    //     //fio com rt[4..0]
+    //     //fio com inst[16..10]
+    //     // fio com valor 16
+    //     //fio com mdr
+    //     shift_n
+    // );
+    // RegDesloc reg_desloc(
+    //     clk,
+    //     rst,
+    //     shift_ctrl,
+    //     shift_n,
+    //     shift_in,
+    //     shift_out     
+    // );
+
+
   
     
 endmodule //CPU
