@@ -21,110 +21,320 @@ module ctrl_unit (
         output reg reg_ab_w,
         output reg aluOut_w,
         output reg alu_src_a,
-        output reg reg_dst,
         output reg hi_w,
         output reg lo_w,
-        output reg a_w,
-        output reg b_w,
         output reg mdr_w,
         output reg epc_w,
         
         // Sinais de controle 2 bits
-        output reg [1:0] alu_op,
+        output reg [1:0]alu_src_b,
+				output reg [1:0]reg_dst,
 
         // Sinais de controle 3 bits
         output reg [2:0] data_src,
+        output reg [2:0] alu_op,
 
-        // Sinal assíncrono
+        // Sinal síncrono
         output reg rst_out
 );
 
 
-// reg [1:0] state;
-// reg [2:0] counter;
+reg [2:0] state;
+reg [5:0] funct;
+reg [2:0] counter;
 
-// //Parametros
-//         //Estados Principais
-//         parameter estado_comum  = 2'b00;
-//         parameter estado_ADD    = 2'b01;
-//         parameter estado_reset  = 2'b10;
-//         parameter close_all_writes = 2'b11;
+//Parametros
+        //Estados Principais
+        parameter fetch  = 3'b000;
+        parameter decode = 3'b001;
+        parameter estado_reset = 3'b010;
+        parameter close_all_writes = 3'b011;
+        parameter add_state = 3'b100;
 
-//         // Opcodes      
-//         parameter ADD = 6'b000000;
+        // Opcodes      
+        parameter R = 6'b000000;
 
-// initial 
-//         begin
-//         //Sinal assincrono de reset faz o reset na CPU
-//                 rst_out = 1'b1;
-                
-//         end
+        // Funct
+        parameter add_funct = 6'b100000;
+
+initial begin
+        //Sinal assincrono de reset faz o reset na CPU
+                rst_out = 1'b1;
+        end
 
 
-// always @(posedge clk) begin
-//   if ( rst_out == 1'b1 ) begin
-//     if ( state != estado_reset) begin
-//       //Fazendo procedimento do reset
+always @(posedge clk) begin
+  if ( reset == 1'b1 ) begin
+    if ( state != estado_reset) begin
+      //Fazendo procedimento do reset
       
-//       state = estado_reset;
+      state = estado_reset;
 //       reg_dst = 2'b11;
 //       data_src = 3'b110;
 //       reg_w = 1'b1;
 
-//       // Zerando Sinais de Escrita
+      // Zerando Sinais de Escrita
 
-//       pc_w = 1'b0;
-//       mem_w = 1'b0;
-//       ir_w = 1'b0;
-//       reg_ab_w = 1'b0;
-//       aluOut_w = 1'b0;
-//       alu_src_a = 1'b0;
-//       reg_dst = 1'b0;
-//       hi_w = 1'b0;
-//       lo_w = 1'b0;
-//       a_w = 1'b0;
-//       b_w = 1'b0;
-//       mdr_w = 1'b0;
-//       epc_w = 1'b0;
-//       rst_out = 1'b1; // Mantendo reset apertado
+      pc_w = 1'b0;
+      mem_w = 1'b0;
+      ir_w = 1'b0;
+      reg_ab_w = 1'b0;
+      aluOut_w = 1'b0;
+      alu_src_a = 1'b0;
+      alu_src_b = 2'b00;
+      reg_dst = 2'b00;
+      hi_w = 1'b0;
+      lo_w = 1'b0;
+      mdr_w = 1'b0;
+      epc_w = 1'b0;
+      
+      rst_out = 1'b1; // Mantendo reset apertado
 
-//       // Atualizando Counter
-//       counter = 3'b000;
-//     end
-//       else begin
+      // Atualizando Counter
+      counter = 3'b000;
+    end
+    else begin
 
-//         //Fazendo procedimento do reset
+        //Fazendo procedimento do reset
         
-//         state = estado_comum;
+        state = fetch;
 
-//         // Zerando Sinais de Escrita
+        // Zerando Sinais de Escrita
 
-//         pc_w = 1'b0;
-//         mem_w = 1'b0;
-//         ir_w = 1'b0;
-//         reg_ab_w = 1'b0;
-//         aluOut_w = 1'b0;
-//         alu_src_a = 1'b0;
-//         reg_dst = 1'b0;
-//         hi_w = 1'b0;
-//         lo_w = 1'b0;
-//         a_w = 1'b0;
-//         b_w = 1'b0;
-//         mdr_w = 1'b0;
-//         epc_w = 1'b0;
-//         rst_out = 1'b0; // Desapertando reset
+        pc_w = 1'b0;
+        mem_w = 1'b0;
+        ir_w = 1'b0;
+        reg_ab_w = 1'b0;
+        aluOut_w = 1'b0;
+        alu_src_a = 1'b0;
+        alu_src_b = 2'b00;
+        reg_dst = 2'b00;
+        hi_w = 1'b0;
+        lo_w = 1'b0;
+        mdr_w = 1'b0;
+        epc_w = 1'b0;
+        rst_out = 1'b0; // Desapertando reset
 
-//         // Atualizando Counter
-//         counter = 3'b000;
+        // Atualizando Counter
+        counter = 3'b000;
             
-//       end
+      end
 
-                  
+  end
+  else begin
+        case (state)
+          fetch: begin
+              if (counter == 3'b000 || counter == 3'b001 || counter == 3'b010) begin
+                  state = fetch;
 
-//   end
-// begin
+                  pc_w = 1'b0;
+                  mem_w = 1'b0; // 
+                  ir_w = 1'b0; 
+                  reg_ab_w = 1'b0;
+                  aluOut_w = 1'b0;
+                  alu_src_a = 1'b0;  // 
+                  alu_src_b = 2'b01; //
+                  alu_op = 3'b001;//
+                  reg_dst = 1'b0;
+                  hi_w = 1'b0;
+                  lo_w = 1'b0;
+                  mdr_w = 1'b0;
+                  epc_w = 1'b0;
+                  rst_out = 1'b0;
+									reg_w = 1'b0;
+									
+
+                  // Atualizando Counter
+                  counter = counter + 1;
+							end
+							
+              else if (counter == 3'b011) begin
+                    state = decode;
+
+                    pc_w = 1'b1; //
+                    mem_w = 1'b0; 
+                    ir_w = 1'b1;  //
+                    reg_ab_w = 1'b0;
+                    aluOut_w = 1'b0;
+                    alu_src_a = 1'b0;  
+                    alu_src_b = 2'b01; 
+                    alu_op = 3'b001; 
+                    reg_dst = 1'b0;
+                    hi_w = 1'b0;
+                    lo_w = 1'b0;
+                    mdr_w = 1'b0;
+                    epc_w = 1'b0;
+                    rst_out = 1'b0;
+										reg_w = 1'b0;
+
+                    counter = 3'b000;
+              end
+          end
+          decode: begin
+                if (counter == 3'b000) begin
+                  state = decode;
+
+                  pc_w = 1'b1; 
+                  mem_w = 1'b0; 
+                  ir_w = 1'b1;  
+                  reg_ab_w = 1'b1; //
+                  aluOut_w = 1'b1; //
+                  alu_src_a = 1'b0; //
+                  alu_src_b = 2'b11; //
+                  alu_op = 3'b001; //
+                  reg_dst = 1'b0;
+                  hi_w = 1'b0;
+                  lo_w = 1'b0;
+                  mdr_w = 1'b0;
+                  epc_w = 1'b0;
+                  rst_out = 1'b0;
+									reg_w = 1'b0;
+
+                  counter = counter + 1;
+                end
+
+				        else if (counter == 3'b001) begin
+                  state = decode;
+                  pc_w = 1'b1; 
+                  mem_w = 1'b0; 
+                  ir_w = 1'b1;  
+                  reg_ab_w = 1'b0; // 
+                  aluOut_w = 1'b0; //
+                  alu_src_a = 1'b0; 
+                  alu_src_b = 2'b11; 
+                  alu_op = 3'b001;
+                  reg_dst = 1'b0;
+                  hi_w = 1'b0;
+                  lo_w = 1'b0;
+                  mdr_w = 1'b0;
+                  epc_w = 1'b0;
+                  rst_out = 1'b0;
+									reg_w = 1'b0;
+
+                  counter = counter + 1;
+                end
+
+                else if (counter == 3'b010) begin
+                  case (funct)
+                    add_funct: begin
+                      state = add_state;
+                    end 
+                  endcase
+                  pc_w = 1'b1; 
+                  mem_w = 1'b0; 
+                  ir_w = 1'b1;  
+                  reg_ab_w = 1'b0; 
+                  aluOut_w = 1'b0; 
+                  alu_src_a = 1'b0; 
+                  alu_src_b = 2'b11; 
+                  alu_op = 3'b001; 
+                  reg_dst = 1'b0;
+                  hi_w = 1'b0;
+                  lo_w = 1'b0;
+                  mdr_w = 1'b0;
+                  epc_w = 1'b0;
+                  rst_out = 1'b0;
+									reg_w = 1'b0;
+
+                  counter = 3'b000;
+                end
+          end
+          
+          add_state: begin
+            if (counter == 3'b000) begin
+              state = add_state;
+              pc_w = 1'b1; 
+              mem_w = 1'b0; 
+              ir_w = 1'b1;  
+              reg_ab_w = 1'b0; 
+              aluOut_w = 1'b1; // 
+              alu_src_a = 1'b1; //
+              alu_src_b = 2'b00; //
+              alu_op = 3'b001; //
+              reg_dst = 2'b01; //
+              hi_w = 1'b0;
+              lo_w = 1'b0;
+              mdr_w = 1'b0;
+              epc_w = 1'b0;
+              rst_out = 1'b0;
+							reg_w = 1'b0;
+
+              counter = counter + 1;
+            end
+
+            if (counter == 3'b001) begin
+              state = add_state;
+              pc_w = 1'b1; 
+              mem_w = 1'b0; 
+              ir_w = 1'b1;  
+              reg_ab_w = 1'b0; 
+              aluOut_w = 1'b0; // 
+              alu_src_a = 1'b1; 
+              alu_src_b = 2'b00; 
+              alu_op = 3'b001; 
+              reg_dst = 2'b00; 
+              hi_w = 1'b0;
+              lo_w = 1'b0;
+              mdr_w = 1'b0;
+              epc_w = 1'b0;
+              rst_out = 1'b0;
+							reg_w = 1'b0;
+
+              counter = counter + 1;
+            end
+
+            if (counter == 3'b010) begin
+              state = close_all_writes;
+              pc_w = 1'b1; 
+              mem_w = 1'b0; 
+              ir_w = 1'b1;  
+              reg_ab_w = 1'b0; 
+              aluOut_w = 1'b0;
+              reg_w = 1'b1; //
+              data_src = 3'b001; //
+              alu_src_a = 1'b1; 
+              alu_src_b = 2'b00; 
+              alu_op = 3'b001; alu_op = 3'b001; 
+              reg_dst = 2'b00; 
+              hi_w = 1'b0;
+              lo_w = 1'b0;
+              mdr_w = 1'b0;
+              epc_w = 1'b0;
+              rst_out = 1'b0;
+							
+              counter = 3'b000;
+            end
+          
+          end
+          close_all_writes: begin
+  
+             state = fetch;
+
+              // Zerando Sinais de Escrita
+
+              pc_w = 1'b0; //
+              mem_w = 1'b0; 
+              ir_w = 1'b0;
+              reg_ab_w = 1'b0;
+              aluOut_w = 1'b0;
+              alu_src_a = 1'b0;
+              alu_src_b = 2'b00;
+              reg_dst = 2'b00;
+              hi_w = 1'b0;
+              lo_w = 1'b0;
+              mdr_w = 1'b0;
+              epc_w = 1'b0;
+              rst_out = 1'b0; // Desapertando reset
+
+              // Atualizando Counter
+              counter = 3'b000;
+          end
+             
+    endcase
+  end
+
         
     
-// end
+end
 
 endmodule //ctrl_unit

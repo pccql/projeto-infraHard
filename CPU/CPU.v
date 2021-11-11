@@ -16,13 +16,25 @@ module CPU (
     wire ir_w;
     wire reg_w;
     wire alu_src_a;
+    wire [1:0] alu_src_b;
     wire reg_ab_w;
     wire hi_w;
     wire lo_w;
-    wire [2:0] alu_op;
-    wire [2:0] shift_ctrl;
+    wire [1:0]reg_dst;
+    wire mdr_w;
+    wire epc_w;
+    
+
+    
+    //control wires 2 bits
     wire [1:0] shift_in_w;
     wire [1:0] shift_n_w;
+    
+
+    //contol wires 3 bits
+    wire [2:0] shift_ctrl;
+    wire [2:0] data_src;
+    wire [2:0] alu_op;
     
     //data wires
     // wire [31:0] pc_in;
@@ -65,7 +77,6 @@ module CPU (
     wire [31:0] shift_2_out;
 
     wire [31:0] four;
-    assign four = 32'd4;
     
     wire [31:0] mux_b_out;
 
@@ -183,15 +194,14 @@ module CPU (
         reg_ab_w,
         aluOut_w,
         alu_src_a,
-        reg_dst,
         hi_w,
         lo_w,
-        a_w,
-        b_w,
         mdr_w,
         epc_w,
-        alu_op,
+        alu_src_b,
+        reg_dst,
         data_src,
+        alu_op,
         rst_out
     );
 

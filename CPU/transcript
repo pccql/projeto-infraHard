@@ -1,785 +1,99 @@
 # Loading project CPU
-# Compile of CPU.v was successful.
-# Compile of mux_alu_src_A.v was successful.
-# Compile of mux_alu_src_A.v was successful.
-# Compile of mux_alu_src_A.v was successful.
-# Compile of shift_left_2.v failed with 1 errors.
-# Compile of sign_extend_16.v failed with 1 errors.
-# 2 compiles, 2 failed with 2 errors.
-# Compile of shift_left_2.v was successful.
-# Compile of sign_extend_16.v was successful.
-# 2 compiles, 0 failed with no errors.
-# Compile of shift_left_2.v was successful.
-# Compile of sign_extend_16.v failed with 1 errors.
-# 2 compiles, 1 failed with 1 error.
-# Compile of shift_left_2.v was successful.
-# Compile of sign_extend_16.v failed with 1 errors.
-# 2 compiles, 1 failed with 1 error.
-# Compile of shift_left_2.v was successful.
-# Compile of sign_extend_16.v was successful.
-# 2 compiles, 0 failed with no errors.
-# Compile of shift_left_2.v was successful.
-# Compile of sign_extend_16.v was successful.
-# 2 compiles, 0 failed with no errors.
-vsim work.sign_extend_16
-# vsim work.sign_extend_16 
-# Start time: 20:47:39 on Nov 09,2021
-# Loading work.sign_extend_16
-add wave -position insertpoint  \
-sim:/sign_extend_16/entrada \
-sim:/sign_extend_16/saida
-force -freeze sim:/sign_extend_16/entrada 12 0
-# Invalid binary digit: 2.
-# ** UI-Msg: (vsim-4011) Invalid force value: 12 0.
-# 
-force -freeze sim:/sign_extend_16/entrada 0000000000000100 0
-run
-force -freeze sim:/sign_extend_16/entrada 0000001000000100 0
-run
-force -freeze sim:/sign_extend_16/entrada 0000001000000100 0
-run
-run
-run
-run
-run
-run
-add wave -position insertpoint  \
-sim:/sign_extend_16/entrada \
-sim:/sign_extend_16/saida
-add wave -position insertpoint  \
-sim:/sign_extend_16/entrada \
-sim:/sign_extend_16/saida
-force -freeze sim:/sign_extend_16/entrada 1100001000000100 0
-run
-run
-run
-run
-run
-vsim work.shift_left_2
-# End time: 20:54:06 on Nov 09,2021, Elapsed time: 0:06:27
-# Errors: 0, Warnings: 15
-# vsim work.shift_left_2 
-# Start time: 20:54:06 on Nov 09,2021
-# Loading work.shift_left_2
-add wave -position insertpoint  \
-sim:/shift_left_2/entrada \
-sim:/shift_left_2/saida
-force -freeze sim:/shift_left_2/entrada 000000000000000000000000000000111 0
-run
-run
-run
-run
-run
-run
-force -freeze sim:/shift_left_2/entrada 0000000000000000000000000000011111111111111111111111111111111000 0
-restart
-run
-run
-run
-run
-run
-# Compile of CPU.v was successful.
-vsim work.CPU
-# End time: 21:16:14 on Nov 09,2021, Elapsed time: 0:22:08
-# Errors: 0, Warnings: 2
-# vsim work.CPU 
-# Start time: 21:16:14 on Nov 09,2021
-# Loading work.CPU
-# ** Error: (vsim-3033) Instantiation of 'Registrador' failed. The design unit was not found.
-#    Time: 0 ps  Iteration: 0  Instance: /CPU File: /home/ctxo/Documents/College/InfraHard/CPU/CPU.v Line: 58
-#         Searched libraries:
-#             /home/ctxo/Documents/College/InfraHard/CPU/work
-# ** Error: (vsim-3033) Instantiation of 'Memoria' failed. The design unit was not found.
-#    Time: 0 ps  Iteration: 0  Instance: /CPU File: /home/ctxo/Documents/College/InfraHard/CPU/CPU.v Line: 66
-#         Searched libraries:
-#             /home/ctxo/Documents/College/InfraHard/CPU/work
-# ** Error: (vsim-3033) Instantiation of 'Registrador' failed. The design unit was not found.
-#    Time: 0 ps  Iteration: 0  Instance: /CPU File: /home/ctxo/Documents/College/InfraHard/CPU/CPU.v Line: 75
-#         Searched libraries:
-#             /home/ctxo/Documents/College/InfraHard/CPU/work
-# ** Error: (vsim-3033) Instantiation of 'Instr_Reg' failed. The design unit was not found.
-#    Time: 0 ps  Iteration: 0  Instance: /CPU File: /home/ctxo/Documents/College/InfraHard/CPU/CPU.v Line: 83
-#         Searched libraries:
-#             /home/ctxo/Documents/College/InfraHard/CPU/work
-# ** Error: (vsim-3033) Instantiation of 'Banco_reg' failed. The design unit was not found.
-#    Time: 0 ps  Iteration: 0  Instance: /CPU File: /home/ctxo/Documents/College/InfraHard/CPU/CPU.v Line: 94
-#         Searched libraries:
-#             /home/ctxo/Documents/College/InfraHard/CPU/work
-# ** Error: (vsim-3033) Instantiation of 'Registrador' failed. The design unit was not found.
-#    Time: 0 ps  Iteration: 0  Instance: /CPU File: /home/ctxo/Documents/College/InfraHard/CPU/CPU.v Line: 109
-#         Searched libraries:
-#             /home/ctxo/Documents/College/InfraHard/CPU/work
-# Loading work.mux_alu_src_A
-# ** Error: (vsim-3033) Instantiation of 'Registrador' failed. The design unit was not found.
-#    Time: 0 ps  Iteration: 0  Instance: /CPU File: /home/ctxo/Documents/College/InfraHard/CPU/CPU.v Line: 125
-#         Searched libraries:
-#             /home/ctxo/Documents/College/InfraHard/CPU/work
-# ** Error: (vsim-3033) Instantiation of 'ula32' failed. The design unit was not found.
-#    Time: 0 ps  Iteration: 0  Instance: /CPU File: /home/ctxo/Documents/College/InfraHard/CPU/CPU.v Line: 133
-#         Searched libraries:
-#             /home/ctxo/Documents/College/InfraHard/CPU/work
-# ** Error: (vsim-3033) Instantiation of 'mux_shift_in' failed. The design unit was not found.
-#    Time: 0 ps  Iteration: 0  Instance: /CPU File: /home/ctxo/Documents/College/InfraHard/CPU/CPU.v Line: 153
-#         Searched libraries:
-#             /home/ctxo/Documents/College/InfraHard/CPU/work
-# ** Error: (vsim-3033) Instantiation of 'mux_shift_n' failed. The design unit was not found.
-#    Time: 0 ps  Iteration: 0  Instance: /CPU File: /home/ctxo/Documents/College/InfraHard/CPU/CPU.v Line: 161
-#         Searched libraries:
-#             /home/ctxo/Documents/College/InfraHard/CPU/work
-# ** Error: (vsim-3033) Instantiation of 'RegDesloc' failed. The design unit was not found.
-#    Time: 0 ps  Iteration: 0  Instance: /CPU File: /home/ctxo/Documents/College/InfraHard/CPU/CPU.v Line: 169
-#         Searched libraries:
-#             /home/ctxo/Documents/College/InfraHard/CPU/work
-# ** Error: (vsim-3033) Instantiation of 'ctrl_unit' failed. The design unit was not found.
-#    Time: 0 ps  Iteration: 0  Instance: /CPU File: /home/ctxo/Documents/College/InfraHard/CPU/CPU.v Line: 178
-#         Searched libraries:
-#             /home/ctxo/Documents/College/InfraHard/CPU/work
-# Error loading design
-# End time: 21:16:14 on Nov 09,2021, Elapsed time: 0:00:00
-# Errors: 12, Warnings: 1
-vsim work.CPU
-# vsim work.CPU 
-# Start time: 21:16:23 on Nov 09,2021
-# Loading work.CPU
-# ** Error: (vsim-3033) Instantiation of 'Registrador' failed. The design unit was not found.
-#    Time: 0 ps  Iteration: 0  Instance: /CPU File: /home/ctxo/Documents/College/InfraHard/CPU/CPU.v Line: 58
-#         Searched libraries:
-#             /home/ctxo/Documents/College/InfraHard/CPU/work
-# ** Error: (vsim-3033) Instantiation of 'Memoria' failed. The design unit was not found.
-#    Time: 0 ps  Iteration: 0  Instance: /CPU File: /home/ctxo/Documents/College/InfraHard/CPU/CPU.v Line: 66
-#         Searched libraries:
-#             /home/ctxo/Documents/College/InfraHard/CPU/work
-# ** Error: (vsim-3033) Instantiation of 'Registrador' failed. The design unit was not found.
-#    Time: 0 ps  Iteration: 0  Instance: /CPU File: /home/ctxo/Documents/College/InfraHard/CPU/CPU.v Line: 75
-#         Searched libraries:
-#             /home/ctxo/Documents/College/InfraHard/CPU/work
-# ** Error: (vsim-3033) Instantiation of 'Instr_Reg' failed. The design unit was not found.
-#    Time: 0 ps  Iteration: 0  Instance: /CPU File: /home/ctxo/Documents/College/InfraHard/CPU/CPU.v Line: 83
-#         Searched libraries:
-#             /home/ctxo/Documents/College/InfraHard/CPU/work
-# ** Error: (vsim-3033) Instantiation of 'Banco_reg' failed. The design unit was not found.
-#    Time: 0 ps  Iteration: 0  Instance: /CPU File: /home/ctxo/Documents/College/InfraHard/CPU/CPU.v Line: 94
-#         Searched libraries:
-#             /home/ctxo/Documents/College/InfraHard/CPU/work
-# ** Error: (vsim-3033) Instantiation of 'Registrador' failed. The design unit was not found.
-#    Time: 0 ps  Iteration: 0  Instance: /CPU File: /home/ctxo/Documents/College/InfraHard/CPU/CPU.v Line: 109
-#         Searched libraries:
-#             /home/ctxo/Documents/College/InfraHard/CPU/work
-# Loading work.mux_alu_src_A
-# ** Error: (vsim-3033) Instantiation of 'Registrador' failed. The design unit was not found.
-#    Time: 0 ps  Iteration: 0  Instance: /CPU File: /home/ctxo/Documents/College/InfraHard/CPU/CPU.v Line: 125
-#         Searched libraries:
-#             /home/ctxo/Documents/College/InfraHard/CPU/work
-# ** Error: (vsim-3033) Instantiation of 'ula32' failed. The design unit was not found.
-#    Time: 0 ps  Iteration: 0  Instance: /CPU File: /home/ctxo/Documents/College/InfraHard/CPU/CPU.v Line: 133
-#         Searched libraries:
-#             /home/ctxo/Documents/College/InfraHard/CPU/work
-# ** Error: (vsim-3033) Instantiation of 'mux_shift_in' failed. The design unit was not found.
-#    Time: 0 ps  Iteration: 0  Instance: /CPU File: /home/ctxo/Documents/College/InfraHard/CPU/CPU.v Line: 153
-#         Searched libraries:
-#             /home/ctxo/Documents/College/InfraHard/CPU/work
-# ** Error: (vsim-3033) Instantiation of 'mux_shift_n' failed. The design unit was not found.
-#    Time: 0 ps  Iteration: 0  Instance: /CPU File: /home/ctxo/Documents/College/InfraHard/CPU/CPU.v Line: 161
-#         Searched libraries:
-#             /home/ctxo/Documents/College/InfraHard/CPU/work
-# ** Error: (vsim-3033) Instantiation of 'RegDesloc' failed. The design unit was not found.
-#    Time: 0 ps  Iteration: 0  Instance: /CPU File: /home/ctxo/Documents/College/InfraHard/CPU/CPU.v Line: 169
-#         Searched libraries:
-#             /home/ctxo/Documents/College/InfraHard/CPU/work
-# ** Error: (vsim-3033) Instantiation of 'ctrl_unit' failed. The design unit was not found.
-#    Time: 0 ps  Iteration: 0  Instance: /CPU File: /home/ctxo/Documents/College/InfraHard/CPU/CPU.v Line: 178
-#         Searched libraries:
-#             /home/ctxo/Documents/College/InfraHard/CPU/work
-# Error loading design
-# End time: 21:16:23 on Nov 09,2021, Elapsed time: 0:00:00
-# Errors: 12, Warnings: 1
-# Compile of CPU.v was successful.
-vsim work.CPU
-# vsim work.CPU 
-# Start time: 21:16:47 on Nov 09,2021
-# Loading work.CPU
-# ** Error: (vsim-3033) Instantiation of 'Registrador' failed. The design unit was not found.
-#    Time: 0 ps  Iteration: 0  Instance: /CPU File: /home/ctxo/Documents/College/InfraHard/CPU/CPU.v Line: 58
-#         Searched libraries:
-#             /home/ctxo/Documents/College/InfraHard/CPU/work
-# ** Error: (vsim-3033) Instantiation of 'Memoria' failed. The design unit was not found.
-#    Time: 0 ps  Iteration: 0  Instance: /CPU File: /home/ctxo/Documents/College/InfraHard/CPU/CPU.v Line: 66
-#         Searched libraries:
-#             /home/ctxo/Documents/College/InfraHard/CPU/work
-# ** Error: (vsim-3033) Instantiation of 'Registrador' failed. The design unit was not found.
-#    Time: 0 ps  Iteration: 0  Instance: /CPU File: /home/ctxo/Documents/College/InfraHard/CPU/CPU.v Line: 75
-#         Searched libraries:
-#             /home/ctxo/Documents/College/InfraHard/CPU/work
-# ** Error: (vsim-3033) Instantiation of 'Instr_Reg' failed. The design unit was not found.
-#    Time: 0 ps  Iteration: 0  Instance: /CPU File: /home/ctxo/Documents/College/InfraHard/CPU/CPU.v Line: 83
-#         Searched libraries:
-#             /home/ctxo/Documents/College/InfraHard/CPU/work
-# ** Error: (vsim-3033) Instantiation of 'Banco_reg' failed. The design unit was not found.
-#    Time: 0 ps  Iteration: 0  Instance: /CPU File: /home/ctxo/Documents/College/InfraHard/CPU/CPU.v Line: 94
-#         Searched libraries:
-#             /home/ctxo/Documents/College/InfraHard/CPU/work
-# ** Error: (vsim-3033) Instantiation of 'Registrador' failed. The design unit was not found.
-#    Time: 0 ps  Iteration: 0  Instance: /CPU File: /home/ctxo/Documents/College/InfraHard/CPU/CPU.v Line: 109
-#         Searched libraries:
-#             /home/ctxo/Documents/College/InfraHard/CPU/work
-# Loading work.mux_alu_src_A
-# ** Error: (vsim-3033) Instantiation of 'Registrador' failed. The design unit was not found.
-#    Time: 0 ps  Iteration: 0  Instance: /CPU File: /home/ctxo/Documents/College/InfraHard/CPU/CPU.v Line: 125
-#         Searched libraries:
-#             /home/ctxo/Documents/College/InfraHard/CPU/work
-# ** Error: (vsim-3033) Instantiation of 'ula32' failed. The design unit was not found.
-#    Time: 0 ps  Iteration: 0  Instance: /CPU File: /home/ctxo/Documents/College/InfraHard/CPU/CPU.v Line: 133
-#         Searched libraries:
-#             /home/ctxo/Documents/College/InfraHard/CPU/work
-# ** Error: (vsim-3033) Instantiation of 'mux_shift_in' failed. The design unit was not found.
-#    Time: 0 ps  Iteration: 0  Instance: /CPU File: /home/ctxo/Documents/College/InfraHard/CPU/CPU.v Line: 153
-#         Searched libraries:
-#             /home/ctxo/Documents/College/InfraHard/CPU/work
-# ** Error: (vsim-3033) Instantiation of 'mux_shift_n' failed. The design unit was not found.
-#    Time: 0 ps  Iteration: 0  Instance: /CPU File: /home/ctxo/Documents/College/InfraHard/CPU/CPU.v Line: 161
-#         Searched libraries:
-#             /home/ctxo/Documents/College/InfraHard/CPU/work
-# ** Error: (vsim-3033) Instantiation of 'RegDesloc' failed. The design unit was not found.
-#    Time: 0 ps  Iteration: 0  Instance: /CPU File: /home/ctxo/Documents/College/InfraHard/CPU/CPU.v Line: 169
-#         Searched libraries:
-#             /home/ctxo/Documents/College/InfraHard/CPU/work
-# ** Error: (vsim-3033) Instantiation of 'ctrl_unit' failed. The design unit was not found.
-#    Time: 0 ps  Iteration: 0  Instance: /CPU File: /home/ctxo/Documents/College/InfraHard/CPU/CPU.v Line: 178
-#         Searched libraries:
-#             /home/ctxo/Documents/College/InfraHard/CPU/work
-# Error loading design
-# End time: 21:16:47 on Nov 09,2021, Elapsed time: 0:00:00
-# Errors: 12, Warnings: 2
-# Compile of CPU.v was successful.
-vsim work.CPU
-# vsim work.CPU 
-# Start time: 21:19:19 on Nov 09,2021
-# Loading work.CPU
-# ** Error: (vsim-3033) Instantiation of 'Registrador' failed. The design unit was not found.
-#    Time: 0 ps  Iteration: 0  Instance: /CPU File: /home/ctxo/Documents/College/InfraHard/CPU/CPU.v Line: 58
-#         Searched libraries:
-#             /home/ctxo/Documents/College/InfraHard/CPU/work
-# ** Error: (vsim-3033) Instantiation of 'Memoria' failed. The design unit was not found.
-#    Time: 0 ps  Iteration: 0  Instance: /CPU File: /home/ctxo/Documents/College/InfraHard/CPU/CPU.v Line: 66
-#         Searched libraries:
-#             /home/ctxo/Documents/College/InfraHard/CPU/work
-# ** Error: (vsim-3033) Instantiation of 'Registrador' failed. The design unit was not found.
-#    Time: 0 ps  Iteration: 0  Instance: /CPU File: /home/ctxo/Documents/College/InfraHard/CPU/CPU.v Line: 75
-#         Searched libraries:
-#             /home/ctxo/Documents/College/InfraHard/CPU/work
-# ** Error: (vsim-3033) Instantiation of 'Instr_Reg' failed. The design unit was not found.
-#    Time: 0 ps  Iteration: 0  Instance: /CPU File: /home/ctxo/Documents/College/InfraHard/CPU/CPU.v Line: 83
-#         Searched libraries:
-#             /home/ctxo/Documents/College/InfraHard/CPU/work
-# ** Error: (vsim-3033) Instantiation of 'Banco_reg' failed. The design unit was not found.
-#    Time: 0 ps  Iteration: 0  Instance: /CPU File: /home/ctxo/Documents/College/InfraHard/CPU/CPU.v Line: 94
-#         Searched libraries:
-#             /home/ctxo/Documents/College/InfraHard/CPU/work
-# ** Error: (vsim-3033) Instantiation of 'Registrador' failed. The design unit was not found.
-#    Time: 0 ps  Iteration: 0  Instance: /CPU File: /home/ctxo/Documents/College/InfraHard/CPU/CPU.v Line: 109
-#         Searched libraries:
-#             /home/ctxo/Documents/College/InfraHard/CPU/work
-# Loading work.mux_alu_src_A
-# ** Error: (vsim-3033) Instantiation of 'Registrador' failed. The design unit was not found.
-#    Time: 0 ps  Iteration: 0  Instance: /CPU File: /home/ctxo/Documents/College/InfraHard/CPU/CPU.v Line: 125
-#         Searched libraries:
-#             /home/ctxo/Documents/College/InfraHard/CPU/work
-# ** Error: (vsim-3033) Instantiation of 'ula32' failed. The design unit was not found.
-#    Time: 0 ps  Iteration: 0  Instance: /CPU File: /home/ctxo/Documents/College/InfraHard/CPU/CPU.v Line: 133
-#         Searched libraries:
-#             /home/ctxo/Documents/College/InfraHard/CPU/work
-# ** Error: (vsim-3033) Instantiation of 'mux_shift_in' failed. The design unit was not found.
-#    Time: 0 ps  Iteration: 0  Instance: /CPU File: /home/ctxo/Documents/College/InfraHard/CPU/CPU.v Line: 153
-#         Searched libraries:
-#             /home/ctxo/Documents/College/InfraHard/CPU/work
-# ** Error: (vsim-3033) Instantiation of 'mux_shift_n' failed. The design unit was not found.
-#    Time: 0 ps  Iteration: 0  Instance: /CPU File: /home/ctxo/Documents/College/InfraHard/CPU/CPU.v Line: 161
-#         Searched libraries:
-#             /home/ctxo/Documents/College/InfraHard/CPU/work
-# ** Error: (vsim-3033) Instantiation of 'RegDesloc' failed. The design unit was not found.
-#    Time: 0 ps  Iteration: 0  Instance: /CPU File: /home/ctxo/Documents/College/InfraHard/CPU/CPU.v Line: 169
-#         Searched libraries:
-#             /home/ctxo/Documents/College/InfraHard/CPU/work
-# ** Error: (vsim-3033) Instantiation of 'ctrl_unit' failed. The design unit was not found.
-#    Time: 0 ps  Iteration: 0  Instance: /CPU File: /home/ctxo/Documents/College/InfraHard/CPU/CPU.v Line: 178
-#         Searched libraries:
-#             /home/ctxo/Documents/College/InfraHard/CPU/work
-# Error loading design
-# End time: 21:19:19 on Nov 09,2021, Elapsed time: 0:00:00
-# Errors: 12, Warnings: 2
-# Compile of CPU.v was successful.
-# Compile of mux_alu_src_A.v was successful.
-# Compile of shift_left_2.v was successful.
-# Compile of sign_extend_16.v was successful.
-# Compile of Banco_reg.vhd failed with 3 errors.
-# Compile of Instr_Reg.vhd was successful.
-# Compile of Memoria.vhd was successful.
-# Compile of RegDesloc.vhd failed with 5 errors.
-# Compile of Registrador.vhd was successful.
-# Compile of ula32.vhd was successful.
-# 10 compiles, 2 failed with 8 errors.
-# Compile of RegDesloc.vhd failed with 5 errors.
-# Compile of Banco_reg.vhd failed with 3 errors.
-# Compile of Banco_reg.vhd failed with 3 errors.
-# Compile of Banco_reg.vhd failed with 3 errors.
-# Compile of Banco_reg.vhd failed with 3 errors.
-# Compile of Banco_reg.vhd failed with 3 errors.
-# Compile of Banco_reg.vhd failed with 3 errors.
-vsim work.CPU
-# vsim work.CPU 
-# Start time: 21:23:20 on Nov 09,2021
-# Loading work.CPU
-# ** Error: (vsim-3033) Instantiation of 'Banco_reg' failed. The design unit was not found.
-#    Time: 0 ps  Iteration: 0  Instance: /CPU File: /home/ctxo/Documents/College/InfraHard/CPU/CPU.v Line: 94
-#         Searched libraries:
-#             /home/ctxo/Documents/College/InfraHard/CPU/work
-# Loading work.mux_alu_src_A
-# ** Error: (vsim-3033) Instantiation of 'mux_shift_in' failed. The design unit was not found.
-#    Time: 0 ps  Iteration: 0  Instance: /CPU File: /home/ctxo/Documents/College/InfraHard/CPU/CPU.v Line: 153
-#         Searched libraries:
-#             /home/ctxo/Documents/College/InfraHard/CPU/work
-# ** Error: (vsim-3033) Instantiation of 'mux_shift_n' failed. The design unit was not found.
-#    Time: 0 ps  Iteration: 0  Instance: /CPU File: /home/ctxo/Documents/College/InfraHard/CPU/CPU.v Line: 161
-#         Searched libraries:
-#             /home/ctxo/Documents/College/InfraHard/CPU/work
-# ** Error: (vsim-3033) Instantiation of 'RegDesloc' failed. The design unit was not found.
-#    Time: 0 ps  Iteration: 0  Instance: /CPU File: /home/ctxo/Documents/College/InfraHard/CPU/CPU.v Line: 169
-#         Searched libraries:
-#             /home/ctxo/Documents/College/InfraHard/CPU/work
-# ** Error: (vsim-3033) Instantiation of 'ctrl_unit' failed. The design unit was not found.
-#    Time: 0 ps  Iteration: 0  Instance: /CPU File: /home/ctxo/Documents/College/InfraHard/CPU/CPU.v Line: 178
-#         Searched libraries:
-#             /home/ctxo/Documents/College/InfraHard/CPU/work
-# Error loading design
-# End time: 21:23:20 on Nov 09,2021, Elapsed time: 0:00:00
-# Errors: 5, Warnings: 10
-# Compile of mux_alu_src_B.v was successful.
-# Compile of CPU.v failed with 2 errors.
-# Compile of CPU.v failed with 2 errors.
-# Compile of CPU.v failed with 2 errors.
-# Compile of CPU.v failed with 2 errors.
-# Compile of CPU.v failed with 2 errors.
-# Compile of CPU.v failed with 2 errors.
-# Compile of CPU.v failed with 4 errors.
-# Compile of CPU.v failed with 4 errors.
-# Compile of CPU.v failed with 4 errors.
-# Compile of CPU.v failed with 4 errors.
-# Compile of CPU.v failed with 2 errors.
-# Compile of CPU.v failed with 2 errors.
-# Compile of CPU.v failed with 1 errors.
-# Compile of CPU.v failed with 1 errors.
-# Compile of CPU.v was successful.
-vsim work.CPU
-# vsim work.CPU 
-# Start time: 21:29:19 on Nov 09,2021
-# Loading work.CPU
-# ** Error: (vsim-3033) Instantiation of 'Banco_reg' failed. The design unit was not found.
-#    Time: 0 ps  Iteration: 0  Instance: /CPU File: /home/ctxo/Documents/College/InfraHard/CPU/CPU.v Line: 117
-#         Searched libraries:
-#             /home/ctxo/Documents/College/InfraHard/CPU/work
-# Loading work.mux_alu_src_A
-# ** Error: (vsim-3033) Instantiation of 'ctrl_unit' failed. The design unit was not found.
-#    Time: 0 ps  Iteration: 0  Instance: /CPU File: /home/ctxo/Documents/College/InfraHard/CPU/CPU.v Line: 170
-#         Searched libraries:
-#             /home/ctxo/Documents/College/InfraHard/CPU/work
-# Loading work.sign_extend_16
-# Loading work.shift_left_2
-# Loading work.mux_alu_src_B
-# Error loading design
-# End time: 21:29:19 on Nov 09,2021, Elapsed time: 0:00:00
-# Errors: 2, Warnings: 18
-# Compile of ctrl_unit.v was successful.
-vsim work.CPU
-# vsim work.CPU 
-# Start time: 21:30:24 on Nov 09,2021
-# Loading work.CPU
-# ** Error: (vsim-3033) Instantiation of 'Banco_reg' failed. The design unit was not found.
-#    Time: 0 ps  Iteration: 0  Instance: /CPU File: /home/ctxo/Documents/College/InfraHard/CPU/CPU.v Line: 117
-#         Searched libraries:
-#             /home/ctxo/Documents/College/InfraHard/CPU/work
-# Loading work.mux_alu_src_A
+vsim work.ctrl_unit
+# vsim work.ctrl_unit 
+# Start time: 22:38:42 on Nov 10,2021
 # Loading work.ctrl_unit
-# Loading work.sign_extend_16
-# Loading work.shift_left_2
-# Loading work.mux_alu_src_B
-# Error loading design
-# End time: 21:30:24 on Nov 09,2021, Elapsed time: 0:00:00
-# Errors: 1, Warnings: 3
-# Compile of Banco_reg.vhd failed with 3 errors.
-# Compile of Banco_reg.vhd failed with 3 errors.
-# Compile of Banco_reg.vhd failed with 3 errors.
-# Compile of Banco_reg.vhd failed with 3 errors.
-# Compile of Banco_reg.vhd failed with 3 errors.
-# Compile of Banco_reg.vhd was successful.
-# Compile of CPU.v was successful.
-vsim work.CPU
-# vsim work.CPU 
-# Start time: 21:41:14 on Nov 09,2021
-# Loading work.CPU
-# Loading work.mux_alu_src_A
-# Loading work.ctrl_unit
-# Loading work.sign_extend_16
-# Loading work.shift_left_2
-# Loading work.mux_alu_src_B
-# Loading std.standard
-# Loading std.textio(body)
-# Loading ieee.std_logic_1164(body)
-# Loading work.registrador(behavioral_arch)
-# Loading ieee.std_logic_arith(body)
-# Loading lpm.lpm_components
-# Loading work.ram_constants
-# Loading work.memoria(behavioral_arch)
-# Loading ieee.std_logic_unsigned(body)
-# Loading lpm.lpm_common_conversion(body)
-# Loading lpm.lpm_device_families(body)
-# Loading lpm.lpm_ram_dq(lpm_syn)
-# Loading work.instr_reg(behavioral_arch)
-# Loading ieee.numeric_std(body)
-# Loading work.banco_reg(behavioral_arch)
-# ** Error: (vsim-3061) Too many Verilog port connections.
-#    Time: 0 ps  Iteration: 0  Instance: /CPU/B File: /home/ctxo/Documents/College/InfraHard/CPU/CPU.v Line: 147
-# Loading work.ula32(behavioral)
-# Error loading design
-# End time: 21:41:14 on Nov 09,2021, Elapsed time: 0:00:00
-# Errors: 1, Warnings: 8
-# Compile of CPU.v was successful.
-vsim work.CPU
-# vsim work.CPU 
-# Start time: 21:42:43 on Nov 09,2021
-# Loading work.CPU
-# Loading work.mux_alu_src_A
-# Loading work.ctrl_unit
-# Loading work.sign_extend_16
-# Loading work.shift_left_2
-# Loading work.mux_alu_src_B
-# Loading std.standard
-# Loading std.textio(body)
-# Loading ieee.std_logic_1164(body)
-# Loading work.registrador(behavioral_arch)
-# Loading ieee.std_logic_arith(body)
-# Loading lpm.lpm_components
-# Loading work.ram_constants
-# Loading work.memoria(behavioral_arch)
-# Loading ieee.std_logic_unsigned(body)
-# Loading lpm.lpm_common_conversion(body)
-# Loading lpm.lpm_device_families(body)
-# Loading lpm.lpm_ram_dq(lpm_syn)
-# Loading work.instr_reg(behavioral_arch)
-# Loading ieee.numeric_std(body)
-# Loading work.banco_reg(behavioral_arch)
-# Loading work.ula32(behavioral)
-# ** Fatal: (vsim-3365) Too many port connections. Expected 18, found 20.
-#    Time: 0 ps  Iteration: 0  Instance: /CPU/ctrl_unit File: /home/ctxo/Documents/College/InfraHard/CPU/CPU.v Line: 169
-# FATAL ERROR while loading design
-# Error loading design
-# End time: 21:42:43 on Nov 09,2021, Elapsed time: 0:00:00
-# Errors: 1, Warnings: 2
-# Compile of CPU.v was successful.
-vsim work.CPU
-# vsim work.CPU 
-# Start time: 21:45:51 on Nov 09,2021
-# Loading work.CPU
-# Loading work.mux_alu_src_A
-# Loading work.ctrl_unit
-# Loading work.sign_extend_16
-# Loading work.shift_left_2
-# Loading work.mux_alu_src_B
-# Loading std.standard
-# Loading std.textio(body)
-# Loading ieee.std_logic_1164(body)
-# Loading work.registrador(behavioral_arch)
-# Loading ieee.std_logic_arith(body)
-# Loading lpm.lpm_components
-# Loading work.ram_constants
-# Loading work.memoria(behavioral_arch)
-# Loading ieee.std_logic_unsigned(body)
-# Loading lpm.lpm_common_conversion(body)
-# Loading lpm.lpm_device_families(body)
-# Loading lpm.lpm_ram_dq(lpm_syn)
-# Loading work.instr_reg(behavioral_arch)
-# Loading ieee.numeric_std(body)
-# Loading work.banco_reg(behavioral_arch)
-# Loading work.ula32(behavioral)
-# ** Fatal: (vsim-3365) Too many port connections. Expected 18, found 26.
-#    Time: 0 ps  Iteration: 0  Instance: /CPU/ctrl_unit File: /home/ctxo/Documents/College/InfraHard/CPU/CPU.v Line: 169
-# FATAL ERROR while loading design
-# Error loading design
-# End time: 21:45:51 on Nov 09,2021, Elapsed time: 0:00:00
-# Errors: 1, Warnings: 2
-# Compile of CPU.v was successful.
-vsim work.CPU
-# vsim work.CPU 
-# Start time: 21:47:05 on Nov 09,2021
-# Loading work.CPU
-# Loading work.mux_alu_src_A
-# Loading work.ctrl_unit
-# Loading work.sign_extend_16
-# Loading work.shift_left_2
-# Loading work.mux_alu_src_B
-# Loading std.standard
-# Loading std.textio(body)
-# Loading ieee.std_logic_1164(body)
-# Loading work.registrador(behavioral_arch)
-# Loading ieee.std_logic_arith(body)
-# Loading lpm.lpm_components
-# Loading work.ram_constants
-# Loading work.memoria(behavioral_arch)
-# Loading ieee.std_logic_unsigned(body)
-# Loading lpm.lpm_common_conversion(body)
-# Loading lpm.lpm_device_families(body)
-# Loading lpm.lpm_ram_dq(lpm_syn)
-# Loading work.instr_reg(behavioral_arch)
-# Loading ieee.numeric_std(body)
-# Loading work.banco_reg(behavioral_arch)
-# Loading work.ula32(behavioral)
-# ** Fatal: (vsim-3365) Too many port connections. Expected 18, found 26.
-#    Time: 0 ps  Iteration: 0  Instance: /CPU/ctrl_unit File: /home/ctxo/Documents/College/InfraHard/CPU/CPU.v Line: 169
-# FATAL ERROR while loading design
-# Error loading design
-# End time: 21:47:05 on Nov 09,2021, Elapsed time: 0:00:00
-# Errors: 1, Warnings: 2
-# Compile of CPU.v was successful.
-# Compile of ctrl_unit.v failed with 4 errors.
-# Compile of ctrl_unit.v was successful.
-# Compile of CPU.v was successful.
-vsim work.CPU
-# vsim work.CPU 
-# Start time: 21:50:10 on Nov 09,2021
-# Loading work.CPU
-# Loading work.mux_alu_src_A
-# Loading work.ctrl_unit
-# Loading work.sign_extend_16
-# Loading work.shift_left_2
-# Loading work.mux_alu_src_B
-# Loading std.standard
-# Loading std.textio(body)
-# Loading ieee.std_logic_1164(body)
-# Loading work.registrador(behavioral_arch)
-# Loading ieee.std_logic_arith(body)
-# Loading lpm.lpm_components
-# Loading work.ram_constants
-# Loading work.memoria(behavioral_arch)
-# Loading ieee.std_logic_unsigned(body)
-# Loading lpm.lpm_common_conversion(body)
-# Loading lpm.lpm_device_families(body)
-# Loading lpm.lpm_ram_dq(lpm_syn)
-# Loading work.instr_reg(behavioral_arch)
-# Loading ieee.numeric_std(body)
-# Loading work.banco_reg(behavioral_arch)
-# Loading work.ula32(behavioral)
-# ** Warning: (vsim-3015) [PCDPC] - Port size (2) does not match connection size (3) for port 'alu_op'. The port definition is at: /home/ctxo/Documents/College/InfraHard/CPU/ctrl_unit.v(33).
-#    Time: 0 ps  Iteration: 0  Instance: /CPU/unidade_de_controle File: /home/ctxo/Documents/College/InfraHard/CPU/CPU.v Line: 169
-# ** Warning: (vsim-3015) [PCDPC] - Port size (3) does not match connection size (1) for port 'data_src'. The port definition is at: /home/ctxo/Documents/College/InfraHard/CPU/ctrl_unit.v(36).
-#    Time: 0 ps  Iteration: 0  Instance: /CPU/unidade_de_controle File: /home/ctxo/Documents/College/InfraHard/CPU/CPU.v Line: 169
-# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'mux_b'.  Expected 6, found 5.
-#    Time: 0 ps  Iteration: 0  Instance: /CPU/mux_b File: /home/ctxo/Documents/College/InfraHard/CPU/CPU.v Line: 208
-# ** Warning: (vsim-3015) [PCDPC] - Port size (2) does not match connection size (32) for port 'AluSrcB'. The port definition is at: /home/ctxo/Documents/College/InfraHard/CPU/ComponentesCPU/mux_alu_src_B.v(2).
-#    Time: 0 ps  Iteration: 0  Instance: /CPU/mux_b File: /home/ctxo/Documents/College/InfraHard/CPU/CPU.v Line: 208
-# ** Warning: (vsim-3722) /home/ctxo/Documents/College/InfraHard/CPU/CPU.v(208): [TFMPC] - Missing connection for port 'b_out'.
 add wave -position insertpoint  \
-sim:/CPU/a_w \
-sim:/CPU/alu_op \
-sim:/CPU/alu_result \
-sim:/CPU/alu_src_a \
-sim:/CPU/aluOut_out \
-sim:/CPU/aluOut_w \
-sim:/CPU/b_w \
-sim:/CPU/clk \
-sim:/CPU/data_src \
-sim:/CPU/epc_w \
-sim:/CPU/EQ \
-sim:/CPU/extended_out \
-sim:/CPU/four \
-sim:/CPU/GT \
-sim:/CPU/hi_w \
-sim:/CPU/ir_w \
-sim:/CPU/lo_w \
-sim:/CPU/LT \
-sim:/CPU/mdr_w \
-sim:/CPU/mem_in \
-sim:/CPU/mem_out \
-sim:/CPU/mem_w \
-sim:/CPU/mux_a_out \
-sim:/CPU/mux_b_out \
-sim:/CPU/Negativo \
-sim:/CPU/offset \
-sim:/CPU/opcode \
-sim:/CPU/Overflow \
-sim:/CPU/pc_out \
-sim:/CPU/pc_w \
-sim:/CPU/reg_a_out \
-sim:/CPU/reg_ab_w \
-sim:/CPU/reg_b_out \
-sim:/CPU/reg_dst \
-sim:/CPU/reg_w \
-sim:/CPU/regs_out_1 \
-sim:/CPU/regs_out_2 \
-sim:/CPU/reset \
-sim:/CPU/rs \
-sim:/CPU/rst_out \
-sim:/CPU/rt \
-sim:/CPU/shift_2_out \
-sim:/CPU/shift_ctrl \
-sim:/CPU/shift_in \
-sim:/CPU/shift_in_w \
-sim:/CPU/shift_n \
-sim:/CPU/shift_n_w \
-sim:/CPU/shift_out \
-sim:/CPU/Zero
-# Compile of CPU.v failed with 1 errors.
-# Compile of CPU.v failed with 1 errors.
-# Compile of CPU.v was successful.
-vsim work.CPU
-# End time: 21:53:21 on Nov 09,2021, Elapsed time: 0:03:11
-# Errors: 0, Warnings: 13
-# vsim work.CPU 
-# Start time: 21:53:21 on Nov 09,2021
-# Loading work.CPU
-# Loading work.mux_alu_src_A
-# Loading work.ctrl_unit
-# Loading work.sign_extend_16
-# Loading work.shift_left_2
-# Loading work.mux_alu_src_B
-# Loading std.standard
-# Loading std.textio(body)
-# Loading ieee.std_logic_1164(body)
-# Loading work.registrador(behavioral_arch)
-# Loading ieee.std_logic_arith(body)
-# Loading lpm.lpm_components
-# Loading work.ram_constants
-# Loading work.memoria(behavioral_arch)
-# Loading ieee.std_logic_unsigned(body)
-# Loading lpm.lpm_common_conversion(body)
-# Loading lpm.lpm_device_families(body)
-# Loading lpm.lpm_ram_dq(lpm_syn)
-# Loading work.instr_reg(behavioral_arch)
-# Loading ieee.numeric_std(body)
-# Loading work.banco_reg(behavioral_arch)
-# Loading work.ula32(behavioral)
-# ** Warning: (vsim-3015) [PCDPC] - Port size (2) does not match connection size (3) for port 'alu_op'. The port definition is at: /home/ctxo/Documents/College/InfraHard/CPU/ctrl_unit.v(33).
-#    Time: 0 ps  Iteration: 0  Instance: /CPU/unidade_de_controle File: /home/ctxo/Documents/College/InfraHard/CPU/CPU.v Line: 169
-# ** Warning: (vsim-3015) [PCDPC] - Port size (3) does not match connection size (1) for port 'data_src'. The port definition is at: /home/ctxo/Documents/College/InfraHard/CPU/ctrl_unit.v(36).
-#    Time: 0 ps  Iteration: 0  Instance: /CPU/unidade_de_controle File: /home/ctxo/Documents/College/InfraHard/CPU/CPU.v Line: 169
-# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'mux_b'.  Expected 6, found 5.
-#    Time: 0 ps  Iteration: 0  Instance: /CPU/mux_b File: /home/ctxo/Documents/College/InfraHard/CPU/CPU.v Line: 208
-# ** Warning: (vsim-3015) [PCDPC] - Port size (2) does not match connection size (32) for port 'AluSrcB'. The port definition is at: /home/ctxo/Documents/College/InfraHard/CPU/ComponentesCPU/mux_alu_src_B.v(2).
-#    Time: 0 ps  Iteration: 0  Instance: /CPU/mux_b File: /home/ctxo/Documents/College/InfraHard/CPU/CPU.v Line: 208
-# ** Warning: (vsim-3722) /home/ctxo/Documents/College/InfraHard/CPU/CPU.v(208): [TFMPC] - Missing connection for port 'b_out'.
-add wave -position insertpoint  \
-sim:/CPU/four
-# Compile of CPU.v was successful.
-vsim work.CPU
-# End time: 21:55:42 on Nov 09,2021, Elapsed time: 0:02:21
-# Errors: 0, Warnings: 7
-# vsim work.CPU 
-# Start time: 21:55:42 on Nov 09,2021
-# Loading work.CPU
-# Loading work.mux_alu_src_A
-# Loading work.ctrl_unit
-# Loading work.sign_extend_16
-# Loading work.shift_left_2
-# Loading work.mux_alu_src_B
-# Loading std.standard
-# Loading std.textio(body)
-# Loading ieee.std_logic_1164(body)
-# Loading work.registrador(behavioral_arch)
-# Loading ieee.std_logic_arith(body)
-# Loading lpm.lpm_components
-# Loading work.ram_constants
-# Loading work.memoria(behavioral_arch)
-# Loading ieee.std_logic_unsigned(body)
-# Loading lpm.lpm_common_conversion(body)
-# Loading lpm.lpm_device_families(body)
-# Loading lpm.lpm_ram_dq(lpm_syn)
-# Loading work.instr_reg(behavioral_arch)
-# Loading ieee.numeric_std(body)
-# Loading work.banco_reg(behavioral_arch)
-# Loading work.ula32(behavioral)
-# ** Warning: (vsim-3015) [PCDPC] - Port size (2) does not match connection size (3) for port 'alu_op'. The port definition is at: /home/ctxo/Documents/College/InfraHard/CPU/ctrl_unit.v(33).
-#    Time: 0 ps  Iteration: 0  Instance: /CPU/unidade_de_controle File: /home/ctxo/Documents/College/InfraHard/CPU/CPU.v Line: 169
-# ** Warning: (vsim-3015) [PCDPC] - Port size (3) does not match connection size (1) for port 'data_src'. The port definition is at: /home/ctxo/Documents/College/InfraHard/CPU/ctrl_unit.v(36).
-#    Time: 0 ps  Iteration: 0  Instance: /CPU/unidade_de_controle File: /home/ctxo/Documents/College/InfraHard/CPU/CPU.v Line: 169
-# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'mux_b'.  Expected 6, found 5.
-#    Time: 0 ps  Iteration: 0  Instance: /CPU/mux_b File: /home/ctxo/Documents/College/InfraHard/CPU/CPU.v Line: 208
-# ** Warning: (vsim-3015) [PCDPC] - Port size (2) does not match connection size (32) for port 'AluSrcB'. The port definition is at: /home/ctxo/Documents/College/InfraHard/CPU/ComponentesCPU/mux_alu_src_B.v(2).
-#    Time: 0 ps  Iteration: 0  Instance: /CPU/mux_b File: /home/ctxo/Documents/College/InfraHard/CPU/CPU.v Line: 208
-# ** Warning: (vsim-3722) /home/ctxo/Documents/College/InfraHard/CPU/CPU.v(208): [TFMPC] - Missing connection for port 'b_out'.
-add wave -position insertpoint  \
-sim:/CPU/four
+sim:/ctrl_unit/add_funct \
+sim:/ctrl_unit/add_state \
+sim:/ctrl_unit/alu_op \
+sim:/ctrl_unit/alu_src_a \
+sim:/ctrl_unit/alu_src_b \
+sim:/ctrl_unit/aluOut_w \
+sim:/ctrl_unit/clk \
+sim:/ctrl_unit/close_all_writes \
+sim:/ctrl_unit/counter \
+sim:/ctrl_unit/data_src \
+sim:/ctrl_unit/decode \
+sim:/ctrl_unit/epc_w \
+sim:/ctrl_unit/EQ \
+sim:/ctrl_unit/estado_reset \
+sim:/ctrl_unit/fetch \
+sim:/ctrl_unit/funct \
+sim:/ctrl_unit/GT \
+sim:/ctrl_unit/hi_w \
+sim:/ctrl_unit/ir_w \
+sim:/ctrl_unit/lo_w \
+sim:/ctrl_unit/LT \
+sim:/ctrl_unit/mdr_w \
+sim:/ctrl_unit/mem_w \
+sim:/ctrl_unit/Negativo \
+sim:/ctrl_unit/opcode \
+sim:/ctrl_unit/Overflow \
+sim:/ctrl_unit/pc_w \
+sim:/ctrl_unit/R \
+sim:/ctrl_unit/reg_ab_w \
+sim:/ctrl_unit/reg_dst \
+sim:/ctrl_unit/reg_w \
+sim:/ctrl_unit/reset \
+sim:/ctrl_unit/rst_out \
+sim:/ctrl_unit/state \
+sim:/ctrl_unit/Zero
+force -freeze sim:/ctrl_unit/clk 1 0, 0 {50 ps} -r 100
 run
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ps  Iteration: 0  Instance: /CPU/Regs
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ps  Iteration: 0  Instance: /CPU/Regs
-# ** Warning: (vsim-7) Failed to open VHDL file "instrucoes.mif" in r mode.
-# No such file or directory. (errno = ENOENT)
-#    Time: 0 ps  Iteration: 0  Instance: /CPU/Mem/MEM_plus_Three
-# ** Fatal: (vsim-7) Failed to open VHDL file "instrucoes.mif" in r mode.
-# No such file or directory. (errno = ENOENT)
-#    Time: 0 ps  Iteration: 0  Process: /CPU/Mem/MEM_plus_Three/MEMORY File: /home/ctxo/intelFPGA/20.1/modelsim_ase/linuxaloem/../altera/vhdl/src/220model/220model.vhd
-# Fatal error in Process MEMORY at /home/ctxo/intelFPGA/20.1/modelsim_ase/linuxaloem/../altera/vhdl/src/220model/220model.vhd line 4360
-# 
-# HDL call sequence:
-# Stopped at /home/ctxo/intelFPGA/20.1/modelsim_ase/linuxaloem/../altera/vhdl/src/220model/220model.vhd 4360 Process MEMORY
-# 
 run
-# Cannot continue because of fatal error.
-# HDL call sequence:
-# Stopped at /home/ctxo/intelFPGA/20.1/modelsim_ase/linuxaloem/../altera/vhdl/src/220model/220model.vhd 4360 Process MEMORY
-# 
 run
-# Cannot continue because of fatal error.
-# HDL call sequence:
-# Stopped at /home/ctxo/intelFPGA/20.1/modelsim_ase/linuxaloem/../altera/vhdl/src/220model/220model.vhd 4360 Process MEMORY
-# 
 run
-# Cannot continue because of fatal error.
-# HDL call sequence:
-# Stopped at /home/ctxo/intelFPGA/20.1/modelsim_ase/linuxaloem/../altera/vhdl/src/220model/220model.vhd 4360 Process MEMORY
-# 
-add wave -position insertpoint  \
-sim:/CPU/Mem/MEM_plus_Three/address \
-sim:/CPU/Mem/MEM_plus_Three/address_reg \
-sim:/CPU/Mem/MEM_plus_Three/address_tmp \
-sim:/CPU/Mem/MEM_plus_Three/data \
-sim:/CPU/Mem/MEM_plus_Three/data_reg \
-sim:/CPU/Mem/MEM_plus_Three/data_tmp \
-sim:/CPU/Mem/MEM_plus_Three/inclock \
-sim:/CPU/Mem/MEM_plus_Three/intended_device_family \
-sim:/CPU/Mem/MEM_plus_Three/lpm_address_control \
-sim:/CPU/Mem/MEM_plus_Three/lpm_file \
-sim:/CPU/Mem/MEM_plus_Three/lpm_hint \
-sim:/CPU/Mem/MEM_plus_Three/lpm_indata \
-sim:/CPU/Mem/MEM_plus_Three/lpm_numwords \
-sim:/CPU/Mem/MEM_plus_Three/lpm_outdata \
-sim:/CPU/Mem/MEM_plus_Three/lpm_type \
-sim:/CPU/Mem/MEM_plus_Three/lpm_width \
-sim:/CPU/Mem/MEM_plus_Three/lpm_widthad \
-sim:/CPU/Mem/MEM_plus_Three/outclock \
-sim:/CPU/Mem/MEM_plus_Three/q \
-sim:/CPU/Mem/MEM_plus_Three/q_reg \
-sim:/CPU/Mem/MEM_plus_Three/q_tmp \
-sim:/CPU/Mem/MEM_plus_Three/use_eab \
-sim:/CPU/Mem/MEM_plus_Three/we \
-sim:/CPU/Mem/MEM_plus_Three/we_reg \
-sim:/CPU/Mem/MEM_plus_Three/we_tmp
 run
-# Cannot continue because of fatal error.
-# HDL call sequence:
-# Stopped at /home/ctxo/intelFPGA/20.1/modelsim_ase/linuxaloem/../altera/vhdl/src/220model/220model.vhd 4360 Process MEMORY
-# 
 run
-# Cannot continue because of fatal error.
-# HDL call sequence:
-# Stopped at /home/ctxo/intelFPGA/20.1/modelsim_ase/linuxaloem/../altera/vhdl/src/220model/220model.vhd 4360 Process MEMORY
-# 
 run
-# Cannot continue because of fatal error.
-# HDL call sequence:
-# Stopped at /home/ctxo/intelFPGA/20.1/modelsim_ase/linuxaloem/../altera/vhdl/src/220model/220model.vhd 4360 Process MEMORY
-# 
 run
-# Cannot continue because of fatal error.
-# HDL call sequence:
-# Stopped at /home/ctxo/intelFPGA/20.1/modelsim_ase/linuxaloem/../altera/vhdl/src/220model/220model.vhd 4360 Process MEMORY
-# 
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+force -freeze sim:/ctrl_unit/state 000 0
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+force -freeze sim:/ctrl_unit/reset 0 0
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
