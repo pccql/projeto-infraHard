@@ -1,84 +1,321 @@
 # Loading project CPU
 vsim work.ctrl_unit
 # vsim work.ctrl_unit 
-# Start time: 22:38:42 on Nov 10,2021
+# Start time: 22:58:30 on Nov 11,2021
 # Loading work.ctrl_unit
 add wave -position insertpoint  \
-sim:/ctrl_unit/add_funct \
-sim:/ctrl_unit/add_state \
-sim:/ctrl_unit/alu_op \
-sim:/ctrl_unit/alu_src_a \
-sim:/ctrl_unit/alu_src_b \
-sim:/ctrl_unit/aluOut_w \
 sim:/ctrl_unit/clk \
-sim:/ctrl_unit/close_all_writes \
 sim:/ctrl_unit/counter \
-sim:/ctrl_unit/data_src \
-sim:/ctrl_unit/decode \
-sim:/ctrl_unit/epc_w \
-sim:/ctrl_unit/EQ \
-sim:/ctrl_unit/estado_reset \
-sim:/ctrl_unit/fetch \
 sim:/ctrl_unit/funct \
-sim:/ctrl_unit/GT \
-sim:/ctrl_unit/hi_w \
-sim:/ctrl_unit/ir_w \
-sim:/ctrl_unit/lo_w \
-sim:/ctrl_unit/LT \
-sim:/ctrl_unit/mdr_w \
-sim:/ctrl_unit/mem_w \
-sim:/ctrl_unit/Negativo \
-sim:/ctrl_unit/opcode \
-sim:/ctrl_unit/Overflow \
-sim:/ctrl_unit/pc_w \
-sim:/ctrl_unit/R \
-sim:/ctrl_unit/reg_ab_w \
-sim:/ctrl_unit/reg_dst \
-sim:/ctrl_unit/reg_w \
 sim:/ctrl_unit/reset \
-sim:/ctrl_unit/rst_out \
-sim:/ctrl_unit/state \
-sim:/ctrl_unit/Zero
+sim:/ctrl_unit/state
 force -freeze sim:/ctrl_unit/clk 1 0, 0 {50 ps} -r 100
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-force -freeze sim:/ctrl_unit/state 000 0
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
+force -freeze sim:/ctrl_unit/reset 1 0
+force -freeze sim:/ctrl_unit/funct 100000 0
 run
 force -freeze sim:/ctrl_unit/reset 0 0
+step
+# Next activity is in 50 ps.
+step
+step
+step
+step
+step
+# Next activity is in 50 ps.
+step
+# Next activity is in 50 ps.
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+# Next activity is in 50 ps.
+# 
+# Next activity is in 50 ps.
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+# Next activity is in 50 ps.
+step
+# Next activity is in 50 ps.
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+# Next activity is in 50 ps.
+step
+# Next activity is in 50 ps.
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+# Next activity is in 50 ps.
+# 
+# Next activity is in 50 ps.
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+# Next activity is in 50 ps.
+# 
+# Next activity is in 50 ps.
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+# Next activity is in 50 ps.
+# 
+# Next activity is in 50 ps.
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+# Next activity is in 50 ps.
+step
+# Next activity is in 50 ps.
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+# Compile of ctrl_unit.v was successful.
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.ctrl_unit
+force -freeze sim:/ctrl_unit/clk 1 0, 0 {50 ps} -r 100
+force -freeze sim:/ctrl_unit/reset 1 0
+force -freeze sim:/ctrl_unit/funct 100000 0
+run
+force -freeze sim:/ctrl_unit/reset 0 0
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+# Compile of ctrl_unit.v was successful.
+vsim work.ctrl_unit
+# End time: 23:05:53 on Nov 11,2021, Elapsed time: 0:07:23
+# Errors: 0, Warnings: 2
+# vsim work.ctrl_unit 
+# Start time: 23:05:53 on Nov 11,2021
+# Loading work.ctrl_unit
+add wave -position insertpoint  \
+sim:/ctrl_unit/clk \
+sim:/ctrl_unit/counter \
+sim:/ctrl_unit/funct \
+sim:/ctrl_unit/reset \
+sim:/ctrl_unit/state
+force -freeze sim:/ctrl_unit/clk 1 0, 0 {50 ps} -r 100
+force -freeze sim:/ctrl_unit/reset 1 0
+force -freeze sim:/ctrl_unit/funct 100000 0
+run
+force -freeze sim:/ctrl_unit/reset 0 0
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+# Compile of ctrl_unit.v was successful.
+vsim work.ctrl_unit
+# End time: 23:08:33 on Nov 11,2021, Elapsed time: 0:02:40
+# Errors: 0, Warnings: 2
+# vsim work.ctrl_unit 
+# Start time: 23:08:33 on Nov 11,2021
+# Loading work.ctrl_unit
+add wave -position insertpoint  \
+sim:/ctrl_unit/clk \
+sim:/ctrl_unit/counter \
+sim:/ctrl_unit/funct \
+sim:/ctrl_unit/reset \
+sim:/ctrl_unit/state
+force -freeze sim:/ctrl_unit/clk 1 0, 0 {50 ps} -r 100
+force -freeze sim:/ctrl_unit/funct 100000 0
+force -freeze sim:/ctrl_unit/reset 1 0
+run
+force -freeze sim:/ctrl_unit/clk 1 0, 0 {50 ps} -r 100
+force -freeze sim:/ctrl_unit/reset 0 0
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
 run
 run
 run
