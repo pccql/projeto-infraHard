@@ -92,14 +92,14 @@ always @(posedge clk) begin
 
     // Atualizando Counter
     counter = 3'b000;
-  
-    
+
   
   end
   else begin
         case (state)
           estado_reset: begin
             state = fetch;
+            counter = 3'b000;
           end
           fetch: begin
               if (counter == 3'b000 || counter == 3'b001 || counter == 3'b010) begin
@@ -271,7 +271,7 @@ always @(posedge clk) begin
               data_src = 3'b001; //
               alu_src_a = 1'b1; 
               alu_src_b = 2'b00; 
-              alu_op = 3'b001; alu_op = 3'b001; 
+              alu_op = 3'b001;
               reg_dst = 2'b00; 
               hi_w = 1'b0;
               lo_w = 1'b0;

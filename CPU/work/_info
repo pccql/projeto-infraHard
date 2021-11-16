@@ -54,69 +54,69 @@ R11
 R12
 R13
 vCPU
-Z14 !s110 1636594191
+!s110 1636760990
 !i10b 1
 !s100 Ti`hVa96HZChF3f^1iJeX0
-Z15 !s11b Dg1SIo80bB@j0V0VzS_@n1
+Z14 !s11b Dg1SIo80bB@j0V0VzS_@n1
 Iz<Q>YO[POAZOW>SKzWSRS3
-Z16 VDg1SIo80bB@j0V0VzS_@n1
+Z15 VDg1SIo80bB@j0V0VzS_@n1
 R4
 w1636593729
 8/home/ctxo/Documents/College/InfraHard/projeto-infraHard/CPU/CPU.v
 F/home/ctxo/Documents/College/InfraHard/projeto-infraHard/CPU/CPU.v
-!i122 98
+!i122 136
 L0 9 249
-Z17 OV;L;2020.1;71
+Z16 OV;L;2020.1;71
 r1
 !s85 0
 31
-Z18 !s108 1636594191.000000
+!s108 1636760990.000000
 !s107 /home/ctxo/Documents/College/InfraHard/projeto-infraHard/CPU/CPU.v|
 !s90 -reportprogress|300|-work|work|-stats=none|/home/ctxo/Documents/College/InfraHard/projeto-infraHard/CPU/CPU.v|
 !i113 1
-Z19 o-work work
-Z20 tCvgOpt 0
+Z17 o-work work
+Z18 tCvgOpt 0
 n@c@p@u
 vctrl_unit
-!s110 1636682903
+!s110 1637105671
 !i10b 1
-!s100 YonZYKEdbOgYJ]EHnV@H<2
+!s100 bkLo]KlgPJUf[iT3DBz543
+R14
+I[ocFV<mViCgWFUZgfEk0Z1
 R15
-IF>^RSKIO`m@dhNH;kZS0U3
-R16
 R4
-w1636682889
+w1637105665
 8/home/ctxo/Documents/College/InfraHard/projeto-infraHard/CPU/ctrl_unit.v
 F/home/ctxo/Documents/College/InfraHard/projeto-infraHard/CPU/ctrl_unit.v
-!i122 131
+!i122 138
 L0 1 315
-R17
+R16
 r1
 !s85 0
 31
-!s108 1636682903.000000
+!s108 1637105671.000000
 !s107 /home/ctxo/Documents/College/InfraHard/projeto-infraHard/CPU/ctrl_unit.v|
 !s90 -reportprogress|300|-work|work|-stats=none|/home/ctxo/Documents/College/InfraHard/projeto-infraHard/CPU/ctrl_unit.v|
 !i113 1
-R19
-R20
+R17
+R18
 Einstr_reg
-Z21 w1219103941
+Z19 w1219103941
 R2
 R3
 !i122 93
 R4
-Z22 8/home/ctxo/Documents/College/InfraHard/projeto-infraHard/CPU/Componentes do Projeto/Instr_Reg.vhd
-Z23 F/home/ctxo/Documents/College/InfraHard/projeto-infraHard/CPU/Componentes do Projeto/Instr_Reg.vhd
+Z20 8/home/ctxo/Documents/College/InfraHard/projeto-infraHard/CPU/Componentes do Projeto/Instr_Reg.vhd
+Z21 F/home/ctxo/Documents/College/InfraHard/projeto-infraHard/CPU/Componentes do Projeto/Instr_Reg.vhd
 l0
 L42 1
 VAfV1kYS402dnLRiFO;Z7_2
 !s100 _X]FAEHlMn?]L[?c6kUO?1
 R7
 32
-R14
+Z22 !s110 1636594191
 !i10b 1
-R18
+Z23 !s108 1636594191.000000
 Z24 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|/home/ctxo/Documents/College/InfraHard/projeto-infraHard/CPU/Componentes do Projeto/Instr_Reg.vhd|
 Z25 !s107 /home/ctxo/Documents/College/InfraHard/projeto-infraHard/CPU/Componentes do Projeto/Instr_Reg.vhd|
 !i113 1
@@ -133,9 +133,9 @@ VTD836jU:>9m^d?0ed1C0O3
 !s100 _AcjR?n;fJneQZzaIjJFa3
 R7
 32
-R14
+R22
 !i10b 1
-R18
+R23
 R24
 R25
 !i113 1
@@ -158,9 +158,9 @@ V<[RFRXeHV^PMOiiinkBoS0
 !s100 __XEo>II7SFLX6Xa7VZA63
 R7
 32
-R14
+R22
 !i10b 1
-R18
+R23
 Z31 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|/home/ctxo/Documents/College/InfraHard/projeto-infraHard/CPU/Componentes do Projeto/Memoria.vhd|
 Z32 !s107 /home/ctxo/Documents/College/InfraHard/projeto-infraHard/CPU/Componentes do Projeto/Memoria.vhd|
 !i113 1
@@ -180,28 +180,28 @@ VR9W83dOfA7lWR9j>i6THA2
 !s100 aLo:Seezh^aEQ@MaJf[__3
 R7
 32
-R14
+R22
 !i10b 1
-R18
+R23
 R31
 R32
 !i113 1
 R12
 R13
 vmux_alu_src_A
-R14
+R22
 !i10b 1
 !s100 <DU`8:D?6OZg;HfN27=DG2
-R15
+R14
 IZhQ]Ue`G_MB_YPmMRdYZ`0
-R16
+R15
 R4
 w1636419095
 8/home/ctxo/Documents/College/InfraHard/projeto-infraHard/CPU/ComponentesCPU/mux_alu_src_A.v
 F/home/ctxo/Documents/College/InfraHard/projeto-infraHard/CPU/ComponentesCPU/mux_alu_src_A.v
 !i122 86
 Z33 L0 1 10
-R17
+R16
 r1
 !s85 0
 31
@@ -209,56 +209,56 @@ r1
 !s107 /home/ctxo/Documents/College/InfraHard/projeto-infraHard/CPU/ComponentesCPU/mux_alu_src_A.v|
 !s90 -reportprogress|300|-work|work|-stats=none|/home/ctxo/Documents/College/InfraHard/projeto-infraHard/CPU/ComponentesCPU/mux_alu_src_A.v|
 !i113 1
-R19
-R20
+R17
+R18
 nmux_alu_src_@a
 vmux_alu_src_B
-R14
+R22
 !i10b 1
 !s100 OKO;7YkdkV3QPjdNmD0W22
-R15
+R14
 I`_]fCGUo466D;8GZJa7=A0
-R16
+R15
 R4
 w1636586267
 8/home/ctxo/Documents/College/InfraHard/projeto-infraHard/CPU/ComponentesCPU/mux_alu_src_B.v
 F/home/ctxo/Documents/College/InfraHard/projeto-infraHard/CPU/ComponentesCPU/mux_alu_src_B.v
 !i122 87
 L0 1 16
-R17
+R16
 r1
 !s85 0
 31
-R18
+R23
 !s107 /home/ctxo/Documents/College/InfraHard/projeto-infraHard/CPU/ComponentesCPU/mux_alu_src_B.v|
 !s90 -reportprogress|300|-work|work|-stats=none|/home/ctxo/Documents/College/InfraHard/projeto-infraHard/CPU/ComponentesCPU/mux_alu_src_B.v|
 !i113 1
-R19
-R20
+R17
+R18
 nmux_alu_src_@b
 vmux_shift_n
-R14
+R22
 !i10b 1
 !s100 8Z_=NAYZSRBIIKka=`]W10
-R15
+R14
 IHfE3aL6=aR;?P:3?cA[@W0
-R16
+R15
 R4
 w1636416027
 8/home/ctxo/Documents/College/InfraHard/projeto-infraHard/CPU/ComponentesCPU/mux_shift_n.v
 F/home/ctxo/Documents/College/InfraHard/projeto-infraHard/CPU/ComponentesCPU/mux_shift_n.v
 !i122 88
 L0 1 14
-R17
+R16
 r1
 !s85 0
 31
-R18
+R23
 !s107 /home/ctxo/Documents/College/InfraHard/projeto-infraHard/CPU/ComponentesCPU/mux_shift_n.v|
 !s90 -reportprogress|300|-work|work|-stats=none|/home/ctxo/Documents/College/InfraHard/projeto-infraHard/CPU/ComponentesCPU/mux_shift_n.v|
 !i113 1
-R19
-R20
+R17
+R18
 Pram_constants
 !i122 94
 R26
@@ -271,9 +271,9 @@ VBbIcggj=<H_W75Jb?WIoZ0
 !s100 5;`Z:D@MR5CT6j_[c9;6h3
 R7
 32
-R14
+R22
 !i10b 1
-R18
+R23
 R31
 R32
 !i113 1
@@ -294,9 +294,9 @@ V4GibeROOKf]^CUjTE67Bo0
 !s100 =0ZG0kkZKT?Zo?iX2R9=P1
 R7
 32
-R14
+R22
 !i10b 1
-R18
+R23
 Z37 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|/home/ctxo/Documents/College/InfraHard/projeto-infraHard/CPU/Componentes do Projeto/RegDesloc.vhd|
 Z38 !s107 /home/ctxo/Documents/College/InfraHard/projeto-infraHard/CPU/Componentes do Projeto/RegDesloc.vhd|
 !i113 1
@@ -314,9 +314,9 @@ VDFCTADkAb^4XhT09kD<k32
 !s100 3`2HClJO^bJLd6@PodWh?3
 R7
 32
-R14
+R22
 !i10b 1
-R18
+R23
 R37
 R38
 !i113 1
@@ -336,9 +336,9 @@ VD=`aG^VOPEDP69ifb8G;52
 !s100 ^e8=Z<CbNTLXR@XGZJMQo3
 R7
 32
-R14
+R22
 !i10b 1
-R18
+R23
 Z42 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|/home/ctxo/Documents/College/InfraHard/projeto-infraHard/CPU/Componentes do Projeto/Registrador.vhd|
 Z43 !s107 /home/ctxo/Documents/College/InfraHard/projeto-infraHard/CPU/Componentes do Projeto/Registrador.vhd|
 !i113 1
@@ -355,60 +355,60 @@ V<kVfXRZJUh40ja<<lN_3:3
 !s100 EXKKzlBL1ARAk5TCN4`Vg2
 R7
 32
-R14
+R22
 !i10b 1
-R18
+R23
 R42
 R43
 !i113 1
 R12
 R13
 vshift_left_2
-R14
+R22
 !i10b 1
 !s100 9FGbI_b6Ua:c582bIjAl60
-R15
+R14
 I6bCm5YlZeTTD9O0=B@E?N1
-R16
+R15
 R4
 w1636502278
 8/home/ctxo/Documents/College/InfraHard/projeto-infraHard/CPU/ComponentesCPU/shift_left_2_conc.v
 F/home/ctxo/Documents/College/InfraHard/projeto-infraHard/CPU/ComponentesCPU/shift_left_2_conc.v
 !i122 90
 R33
-R17
+R16
 r1
 !s85 0
 31
-R18
+R23
 !s107 /home/ctxo/Documents/College/InfraHard/projeto-infraHard/CPU/ComponentesCPU/shift_left_2_conc.v|
 !s90 -reportprogress|300|-work|work|-stats=none|/home/ctxo/Documents/College/InfraHard/projeto-infraHard/CPU/ComponentesCPU/shift_left_2_conc.v|
 !i113 1
-R19
-R20
+R17
+R18
 vsign_extend_16
-R14
+R22
 !i10b 1
 !s100 AEaz<R@VD?l?1`ag3f>Sd2
-R15
+R14
 ITJnm4kd6G9Acoz5OobCg81
-R16
+R15
 R4
 w1636501947
 8/home/ctxo/Documents/College/InfraHard/projeto-infraHard/CPU/ComponentesCPU/sign_extend_16.v
 F/home/ctxo/Documents/College/InfraHard/projeto-infraHard/CPU/ComponentesCPU/sign_extend_16.v
 !i122 91
 L0 1 8
-R17
+R16
 r1
 !s85 0
 31
-R18
+R23
 !s107 /home/ctxo/Documents/College/InfraHard/projeto-infraHard/CPU/ComponentesCPU/sign_extend_16.v|
 !s90 -reportprogress|300|-work|work|-stats=none|/home/ctxo/Documents/College/InfraHard/projeto-infraHard/CPU/ComponentesCPU/sign_extend_16.v|
 !i113 1
-R19
-R20
+R17
+R18
 Eula32
 Z44 w1636588249
 R1
@@ -424,9 +424,9 @@ VM1`EhBco;Cb9<:6CC>b?e2
 !s100 bGmbVJaTC>R`I<lBgn7@L3
 R7
 32
-R14
+R22
 !i10b 1
-R18
+R23
 Z47 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|/home/ctxo/Documents/College/InfraHard/projeto-infraHard/CPU/Componentes do Projeto/ula32.vhd|
 Z48 !s107 /home/ctxo/Documents/College/InfraHard/projeto-infraHard/CPU/Componentes do Projeto/ula32.vhd|
 !i113 1
@@ -444,9 +444,9 @@ VF94M;2UJ^55hCen3Z[Kfk0
 !s100 1E>E2KjDKb=5dkES8U2ha0
 R7
 32
-R14
+R22
 !i10b 1
-R18
+R23
 R47
 R48
 !i113 1
