@@ -12,6 +12,7 @@ module ctrl_unit (
 
         // instrução
         input wire [5:0] opcode,
+        input wire [5:0] funct,
 
         // Sinais de controle 1 bit
         output reg pc_w,
@@ -40,7 +41,6 @@ module ctrl_unit (
 
 
 reg [2:0] state;
-reg [5:0] funct;
 reg [2:0] counter;
 
 //Parametros

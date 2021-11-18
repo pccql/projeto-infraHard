@@ -155,6 +155,14 @@ module CPU (
         mux_a_out    
     );
 
+    mux_alu_src_B mux_b(
+        alu_src_b,
+        reg_b_out,
+        four,
+        extended_out,
+        shift_2_out,
+        mux_b_out
+    );
     Registrador B(
         clk,
         reset, 
@@ -164,8 +172,8 @@ module CPU (
     );
 
     ula32 ALU(
-        reg_a_out,
-        reg_b_out,
+        mux_a_out,
+        mux_b_out,
         alu_op,
         alu_result,
         Overflow,
@@ -187,6 +195,7 @@ module CPU (
         GT,
         LT,
         opcode,
+        offset[5:0],
         pc_w,
         mem_w,
         ir_w,
@@ -215,13 +224,7 @@ module CPU (
         shift_2_out
     );
 
-    mux_alu_src_B mux_b(
-        reg_b_out,
-        four,
-        extended_out,
-        shift_2_out,
-        mux_b_out
-    );
+    
 
     
 
