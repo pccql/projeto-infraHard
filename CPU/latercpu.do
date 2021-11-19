@@ -58,16 +58,16 @@ add wave -noupdate -group Ir /CPU/IR/Instr20_16
 add wave -noupdate -group Ir /CPU/IR/Instr25_21
 add wave -noupdate -group Ir /CPU/IR/Instr31_26
 add wave -noupdate -group Ir /CPU/IR/Load_ir
-add wave -noupdate -group Reg -radix unsigned /CPU/Regs/Cluster(10)
-add wave -noupdate -group Reg -radix unsigned /CPU/Regs/Cluster(11)
-add wave -noupdate -group Reg -radix unsigned /CPU/Regs/Cluster(12)
-add wave -noupdate -group Reg -radix unsigned /CPU/Regs/ReadData1
-add wave -noupdate -group Reg -radix unsigned /CPU/Regs/ReadData2
-add wave -noupdate -group Reg -radix unsigned /CPU/Regs/ReadReg1
-add wave -noupdate -group Reg -radix unsigned /CPU/Regs/ReadReg2
-add wave -noupdate -group Reg -radix unsigned /CPU/Regs/RegWrite
-add wave -noupdate -group Reg -radix unsigned /CPU/Regs/WriteData
-add wave -noupdate -group Reg -radix unsigned /CPU/Regs/WriteReg
+add wave -noupdate -expand -group Reg -radix decimal /CPU/Regs/Cluster(10)
+add wave -noupdate -expand -group Reg -radix decimal /CPU/Regs/Cluster(11)
+add wave -noupdate -expand -group Reg -radix decimal /CPU/Regs/Cluster(12)
+add wave -noupdate -expand -group Reg -radix unsigned /CPU/Regs/ReadData1
+add wave -noupdate -expand -group Reg -radix unsigned /CPU/Regs/ReadData2
+add wave -noupdate -expand -group Reg -radix unsigned /CPU/Regs/ReadReg1
+add wave -noupdate -expand -group Reg -radix unsigned /CPU/Regs/ReadReg2
+add wave -noupdate -expand -group Reg -radix unsigned /CPU/Regs/RegWrite
+add wave -noupdate -expand -group Reg -radix unsigned /CPU/Regs/WriteData
+add wave -noupdate -expand -group Reg -radix unsigned /CPU/Regs/WriteReg
 add wave -noupdate -group MuxAB /CPU/mux_a/a_out
 add wave -noupdate -group MuxAB /CPU/mux_a/selector
 add wave -noupdate -group MuxAB /CPU/mux_b/AluSrcB
@@ -86,7 +86,7 @@ add wave -noupdate -group ALUOUT /CPU/aluOut/Entrada
 add wave -noupdate -group ALUOUT /CPU/aluOut/Load
 add wave -noupdate -group ALUOUT /CPU/aluOut/Saida
 TreeUpdate [SetDefaultTree]
-WaveRestoreCursors {{Cursor 1} {1194 ps} 0}
+WaveRestoreCursors {{Cursor 1} {181 ps} 0}
 quietly wave cursor active 1
 configure wave -namecolwidth 221
 configure wave -valuecolwidth 50
@@ -102,4 +102,4 @@ configure wave -griddelta 40
 configure wave -timeline 0
 configure wave -timelineunits ps
 update
-WaveRestoreZoom {0 ps} {6745 ps}
+WaveRestoreZoom {0 ps} {1549 ps}

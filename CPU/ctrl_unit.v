@@ -151,7 +151,7 @@ always @(posedge clk) begin
                 if (counter == 3'b000) begin
                   state = decode;
 
-                  pc_w = 1'b1; 
+                  pc_w = 1'b0; 
                   mem_w = 1'b0; 
                   ir_w = 1'b1;  
                   reg_ab_w = 1'b1; //
@@ -172,7 +172,7 @@ always @(posedge clk) begin
 
 				        else if (counter == 3'b001) begin
                   state = decode;
-                  pc_w = 1'b1; 
+                  pc_w = 1'b0; 
                   mem_w = 1'b0; 
                   ir_w = 1'b1;  
                   reg_ab_w = 1'b0; // 
@@ -197,7 +197,7 @@ always @(posedge clk) begin
                       state = add_state;
                   end 
                   endcase
-                  pc_w = 1'b1; 
+                  pc_w = 1'b0; 
                   mem_w = 1'b0; 
                   ir_w = 1'b1;  
                   reg_ab_w = 1'b0; 
@@ -220,7 +220,7 @@ always @(posedge clk) begin
           add_state: begin
             if (counter == 3'b000) begin
               state = add_state;
-              pc_w = 1'b1; 
+              pc_w = 1'b0; 
               mem_w = 1'b0; 
               ir_w = 1'b1;  
               reg_ab_w = 1'b0; 
@@ -241,7 +241,7 @@ always @(posedge clk) begin
 
             else if (counter == 3'b001) begin
               state = add_state;
-              pc_w = 1'b1; 
+              pc_w = 1'b0; 
               mem_w = 1'b0; 
               ir_w = 1'b1;  
               reg_ab_w = 1'b0; 
@@ -262,7 +262,7 @@ always @(posedge clk) begin
 
             else if (counter == 3'b010) begin
               state = close_all_writes;
-              pc_w = 1'b1; 
+              pc_w = 1'b0; 
               mem_w = 1'b0; 
               ir_w = 1'b1;  
               reg_ab_w = 1'b0; 
