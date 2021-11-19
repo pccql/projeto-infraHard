@@ -153,7 +153,7 @@ always @(posedge clk) begin
 
                   pc_w = 1'b0; 
                   mem_w = 1'b0; 
-                  ir_w = 1'b1;  
+                  ir_w = 1'b0;  
                   reg_ab_w = 1'b1; //
                   aluOut_w = 1'b1; //
                   alu_src_a = 1'b0; //
@@ -174,7 +174,7 @@ always @(posedge clk) begin
                   state = decode;
                   pc_w = 1'b0; 
                   mem_w = 1'b0; 
-                  ir_w = 1'b1;  
+                  ir_w = 1'b0;  
                   reg_ab_w = 1'b0; // 
                   aluOut_w = 1'b0; //
                   alu_src_a = 1'b0; 
@@ -199,7 +199,7 @@ always @(posedge clk) begin
                   endcase
                   pc_w = 1'b0; 
                   mem_w = 1'b0; 
-                  ir_w = 1'b1;  
+                  ir_w = 1'b0;  
                   reg_ab_w = 1'b0; 
                   aluOut_w = 1'b0; 
                   alu_src_a = 1'b0; 
@@ -222,7 +222,7 @@ always @(posedge clk) begin
               state = add_state;
               pc_w = 1'b0; 
               mem_w = 1'b0; 
-              ir_w = 1'b1;  
+              ir_w = 1'b0;  
               reg_ab_w = 1'b0; 
               aluOut_w = 1'b1; // 
               alu_src_a = 1'b1; //
@@ -243,7 +243,7 @@ always @(posedge clk) begin
               state = add_state;
               pc_w = 1'b0; 
               mem_w = 1'b0; 
-              ir_w = 1'b1;  
+              ir_w = 1'b0;  
               reg_ab_w = 1'b0; 
               aluOut_w = 1'b0; // 
               alu_src_a = 1'b1; 
@@ -264,7 +264,7 @@ always @(posedge clk) begin
               state = close_all_writes;
               pc_w = 1'b0; 
               mem_w = 1'b0; 
-              ir_w = 1'b1;  
+              ir_w = 1'b0;  
               reg_ab_w = 1'b0; 
               aluOut_w = 1'b0;
               reg_w = 1'b1; //
