@@ -5,13 +5,6 @@ Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 
 Top level modules:
 	sign_extend_16
 
-} {} {}} /home/ctxo/Documents/College/InfraHard/projeto-infraHard/CPU/ComponentesCPU/mux_reg_dst.v {1 {vlog -work work -stats=none /home/ctxo/Documents/College/InfraHard/projeto-infraHard/CPU/ComponentesCPU/mux_reg_dst.v
-Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
--- Compiling module mux_reg_dst
-
-Top level modules:
-	mux_reg_dst
-
 } {} {}} {/home/ctxo/Documents/College/InfraHard/projeto-infraHard/CPU/Componentes do Projeto/ula32.vhd} {1 {vcom -work work -2002 -explicit -stats=none {/home/ctxo/Documents/College/InfraHard/projeto-infraHard/CPU/Componentes do Projeto/ula32.vhd}
 Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
 -- Loading package STANDARD
@@ -21,6 +14,13 @@ Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 
 -- Compiling entity Ula32
 -- Compiling architecture behavioral of Ula32
 
+} {} {}} /home/ctxo/Documents/College/InfraHard/projeto-infraHard/CPU/ComponentesCPU/mux_reg_dst.v {1 {vlog -work work -stats=none /home/ctxo/Documents/College/InfraHard/projeto-infraHard/CPU/ComponentesCPU/mux_reg_dst.v
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module mux_reg_dst
+
+Top level modules:
+	mux_reg_dst
+
 } {} {}} {/home/ctxo/Documents/College/InfraHard/CPU/Componentes do Projeto/Instr_Reg.vhd} {1 {vcom -work work -2002 -explicit -stats=none {/home/ctxo/Documents/College/InfraHard/CPU/Componentes do Projeto/Instr_Reg.vhd}
 Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
 -- Loading package STANDARD
@@ -28,13 +28,6 @@ Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 
 -- Loading package std_logic_1164
 -- Compiling entity Instr_Reg
 -- Compiling architecture behavioral_arch of Instr_Reg
-
-} {} {}} /home/ctxo/Documents/College/InfraHard/projeto-infraHard/CPU/ComponentesCPU/mux_data_src.v {1 {vlog -work work -stats=none /home/ctxo/Documents/College/InfraHard/projeto-infraHard/CPU/ComponentesCPU/mux_data_src.v
-Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
--- Compiling module mux_data_src
-
-Top level modules:
-	mux_data_src
 
 } {} {}} {/home/ctxo/Documents/College/InfraHard/projeto-infraHard/CPU/Componentes do Projeto/RegDesloc.vhd} {1 {vcom -work work -2002 -explicit -stats=none {/home/ctxo/Documents/College/InfraHard/projeto-infraHard/CPU/Componentes do Projeto/RegDesloc.vhd}
 Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
@@ -54,6 +47,13 @@ Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 
 -- Compiling entity Banco_reg
 -- Compiling architecture behavioral_arch of Banco_reg
 
+} {} {}} /home/ctxo/Documents/College/InfraHard/projeto-infraHard/CPU/ComponentesCPU/mux_data_src.v {1 {vlog -work work -stats=none /home/ctxo/Documents/College/InfraHard/projeto-infraHard/CPU/ComponentesCPU/mux_data_src.v
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module mux_data_src
+
+Top level modules:
+	mux_data_src
+
 } {} {}} {/home/ctxo/Documents/College/InfraHard/CPU/Componentes do Projeto/ula32.vhd} {1 {vcom -work work -2002 -explicit -stats=none {/home/ctxo/Documents/College/InfraHard/CPU/Componentes do Projeto/ula32.vhd}
 Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
 -- Loading package STANDARD
@@ -62,13 +62,6 @@ Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 
 -- Loading package std_logic_arith
 -- Compiling entity Ula32
 -- Compiling architecture behavioral of Ula32
-
-} {} {}} /home/ctxo/Documents/College/InfraHard/projeto-infraHard/CPU/ComponentesCPU/mux_shift_n.v {1 {vlog -work work -stats=none /home/ctxo/Documents/College/InfraHard/projeto-infraHard/CPU/ComponentesCPU/mux_shift_n.v
-Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
--- Compiling module mux_shift_n
-
-Top level modules:
-	mux_shift_n
 
 } {} {}} {/home/ctxo/Documents/College/InfraHard/projeto-infraHard/CPU/Componentes do Projeto/Memoria.vhd} {1 {vcom -work work -2002 -explicit -stats=none {/home/ctxo/Documents/College/InfraHard/projeto-infraHard/CPU/Componentes do Projeto/Memoria.vhd}
 Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
@@ -81,6 +74,13 @@ Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 
 -- Loading package ram_constants
 -- Compiling entity Memoria
 -- Compiling architecture behavioral_arch of Memoria
+
+} {} {}} /home/ctxo/Documents/College/InfraHard/projeto-infraHard/CPU/ComponentesCPU/mux_shift_n.v {1 {vlog -work work -stats=none /home/ctxo/Documents/College/InfraHard/projeto-infraHard/CPU/ComponentesCPU/mux_shift_n.v
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module mux_shift_n
+
+Top level modules:
+	mux_shift_n
 
 } {} {}} {/home/ctxo/Documents/College/InfraHard/CPU/Componentes do Projeto/Banco_reg.vhd} {1 {vcom -work work -2002 -explicit -stats=none {/home/ctxo/Documents/College/InfraHard/CPU/Componentes do Projeto/Banco_reg.vhd}
 Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
@@ -170,13 +170,6 @@ Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 
 -- Compiling entity Registrador
 -- Compiling architecture behavioral_arch of Registrador
 
-} {} {}} /home/ctxo/Documents/College/InfraHard/CPU/ComponentesCPU/shift_left_2.v {1 {vlog -work work -stats=none /home/ctxo/Documents/College/InfraHard/CPU/ComponentesCPU/shift_left_2.v
-Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
--- Compiling module shift_left_2
-
-Top level modules:
-	shift_left_2
-
 } {} {}} /home/ctxo/Documents/College/InfraHard/projeto-infraHard/CPU/ComponentesCPU/mux_alu_src_B.v {1 {vlog -work work -stats=none /home/ctxo/Documents/College/InfraHard/projeto-infraHard/CPU/ComponentesCPU/mux_alu_src_B.v
 Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
 -- Compiling module mux_alu_src_B
@@ -191,26 +184,12 @@ Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 
 Top level modules:
 	mux_pc_src
 
-} {} {}} /home/ctxo/Documents/College/InfraHard/CPU/ComponentesCPU/mux_alu_src_A.v {1 {vlog -work work -stats=none /home/ctxo/Documents/College/InfraHard/CPU/ComponentesCPU/mux_alu_src_A.v
+} {} {}} /home/ctxo/Documents/College/InfraHard/CPU/ComponentesCPU/shift_left_2.v {1 {vlog -work work -stats=none /home/ctxo/Documents/College/InfraHard/CPU/ComponentesCPU/shift_left_2.v
 Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
--- Compiling module mux_alu_src_A
+-- Compiling module shift_left_2
 
 Top level modules:
-	mux_alu_src_A
-
-} {} {}} /home/ctxo/Documents/College/InfraHard/CPU/ctrl_unit.v {1 {vlog -work work -stats=none /home/ctxo/Documents/College/InfraHard/CPU/ctrl_unit.v
-Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
--- Compiling module ctrl_unit
-
-Top level modules:
-	ctrl_unit
-
-} {} {}} /home/ctxo/Documents/College/InfraHard/projeto-infraHard/CPU/ComponentesCPU/sign_extend_32.v {1 {vlog -work work -stats=none /home/ctxo/Documents/College/InfraHard/projeto-infraHard/CPU/ComponentesCPU/sign_extend_32.v
-Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
--- Compiling module sign_extend_32
-
-Top level modules:
-	sign_extend_32
+	shift_left_2
 
 } {} {}} /home/ctxo/Documents/College/InfraHard/projeto-infraHard/CPU/ComponentesCPU/mux_alu_flag.v {1 {vlog -work work -stats=none /home/ctxo/Documents/College/InfraHard/projeto-infraHard/CPU/ComponentesCPU/mux_alu_flag.v
 Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
@@ -219,12 +198,40 @@ Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 
 Top level modules:
 	mux_alu_flag
 
+} {} {}} /home/ctxo/Documents/College/InfraHard/projeto-infraHard/CPU/ComponentesCPU/sign_extend_32.v {1 {vlog -work work -stats=none /home/ctxo/Documents/College/InfraHard/projeto-infraHard/CPU/ComponentesCPU/sign_extend_32.v
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module sign_extend_32
+
+Top level modules:
+	sign_extend_32
+
+} {} {}} /home/ctxo/Documents/College/InfraHard/CPU/ctrl_unit.v {1 {vlog -work work -stats=none /home/ctxo/Documents/College/InfraHard/CPU/ctrl_unit.v
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module ctrl_unit
+
+Top level modules:
+	ctrl_unit
+
+} {} {}} /home/ctxo/Documents/College/InfraHard/CPU/ComponentesCPU/mux_alu_src_A.v {1 {vlog -work work -stats=none /home/ctxo/Documents/College/InfraHard/CPU/ComponentesCPU/mux_alu_src_A.v
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module mux_alu_src_A
+
+Top level modules:
+	mux_alu_src_A
+
 } {} {}} /home/ctxo/Documents/College/InfraHard/CPU/ComponentesCPU/mux_alu_src_B.v {1 {vlog -work work -stats=none /home/ctxo/Documents/College/InfraHard/CPU/ComponentesCPU/mux_alu_src_B.v
 Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
 -- Compiling module mux_alu_src_B
 
 Top level modules:
 	mux_alu_src_B
+
+} {} {}} /home/ctxo/Documents/College/InfraHard/projeto-infraHard/CPU/CPU.v {1 {vlog -work work -stats=none /home/ctxo/Documents/College/InfraHard/projeto-infraHard/CPU/CPU.v
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module CPU
+
+Top level modules:
+	CPU
 
 } {} {}} /home/ctxo/Documents/College/InfraHard/projeto-infraHard/CPU/ComponentesCPU/sign_extend_16.v {1 {vlog -work work -stats=none /home/ctxo/Documents/College/InfraHard/projeto-infraHard/CPU/ComponentesCPU/sign_extend_16.v
 Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
@@ -239,13 +246,6 @@ Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 
 
 Top level modules:
 	mux_Ior_D
-
-} {} {}} /home/ctxo/Documents/College/InfraHard/projeto-infraHard/CPU/CPU.v {1 {vlog -work work -stats=none /home/ctxo/Documents/College/InfraHard/projeto-infraHard/CPU/CPU.v
-Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
--- Compiling module CPU
-
-Top level modules:
-	CPU
 
 } {} {}} {/home/ctxo/Documents/College/InfraHard/projeto-infraHard/CPU/Componentes do Projeto/Instr_Reg.vhd} {1 {vcom -work work -2002 -explicit -stats=none {/home/ctxo/Documents/College/InfraHard/projeto-infraHard/CPU/Componentes do Projeto/Instr_Reg.vhd}
 Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020

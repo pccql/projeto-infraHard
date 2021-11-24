@@ -32,10 +32,13 @@ module CPU (
     wire [1:0] shift_n_w;
     wire [1:0] reg_dst;
     wire [1:0] alu_src_b;
+    wire [1:0] ls_control;
+    wire [1:0] ss_control;
+
     
 
     //contol wires 3 bits
-    wire [2:0] IorD_Sel;
+    wire [2:0] i_or_d_sel;
     wire [2:0] pc_src;
     wire [2:0] shift_ctrl;
     wire [2:0] data_src;
@@ -52,6 +55,7 @@ module CPU (
     wire [31:0] MDR_out;
     wire [31:0] epc_out; 
     wire [31:0] ls_out;
+    wire [31:0] ss_out;
     wire [31:0] mux_pc_src_out;
 
     
@@ -63,7 +67,7 @@ module CPU (
 
     
     wire [31:0] mux_excecao_out;
-    wire [31:0] Ior_D_out;
+    wire [31:0] i_or_d_out;
 
     //wire [4:0] read_reg_1;
     //wire [4:0] read_reg_2;
@@ -139,11 +143,24 @@ module CPU (
         pc_out
     );
 
+    LS ls (
+        ls_control,
+        MDR_out,
+        ls_out
+    );
+
+    SS ss (
+        ss_control,
+        reg_b_out,
+        MDR_out,
+        ss_out
+    );
+    
     Memoria Mem(
-        pc_out,
+        i_or_d_out,
         clk,
         mem_w,
-        mem_in,
+        ss_out,
         mem_out
     );
     
@@ -219,11 +236,13 @@ module CPU (
     );
 
     mux_Ior_D IorD(
-        IorD_Sel,
-        pc_out, aluOut_out, 
-        reg_a_out, reg_b_out, 
+        i_or_d_Sel,
+        pc_out,
+        aluOut_out, 
+        reg_a_out, 
+        reg_b_out, 
         mux_excecao_out,
-        Ior_D_out
+        i_or_d_out
     );
 
     Banco_reg Regs(
@@ -327,6 +346,8 @@ module CPU (
         reg_dst,
         shift_in_w,
         shift_n_w,
+        ls_control,
+        ss_control,
         pc_src,
         data_src,
         alu_op,

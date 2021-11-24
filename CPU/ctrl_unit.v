@@ -33,12 +33,15 @@ module ctrl_unit (
 				output reg [1:0] reg_dst,
         output reg [1:0] shift_in_control,
         output reg [1:0] shift_n_control,
+        output reg [1:0] ls_control,
+        output reg [1:0] ss_control,
 
         // Sinais de controle 3 bits
         output reg [2:0] pc_src,
         output reg [2:0] data_src,
         output reg [2:0] alu_op,
         output reg [2:0] shift_control,
+        output reg [2:0] i_or_d,
         
 
         // Sinal síncrono
@@ -67,10 +70,14 @@ reg [2:0] counter;
         parameter sll_state = 6'd13;
         parameter sra_state = 6'd14;
         parameter srl_state = 6'd15;
+        parameter sw_state = 6'd16;
+        parameter lw_state = 6'd17;
 
         // Opcodes      
         parameter R = 6'h0;
         parameter addi = 6'h8;
+        parameter sw = 6'h2b;
+        parameter lw = 6'h23
     
         
 
@@ -110,6 +117,8 @@ always @(posedge clk) begin
     mem_w = 1'b0;
     ir_w = 1'b0;
     reg_ab_w = 1'b0;
+    data_src = 2'b01;
+    i_or_d = 3'b000;
     aluOut_w = 1'b0;
     alu_src_a = 1'b0;
     alu_src_b = 2'b00;
@@ -140,6 +149,7 @@ always @(posedge clk) begin
                   mem_w = 1'b0; // 
                   ir_w = 1'b0;
                   data_src = 3'b001; 
+                  i_or_d = 3'b000;
                   reg_ab_w = 1'b0;
                   aluOut_w = 1'b0;
                   alu_src_a = 1'b0;  // 
@@ -165,6 +175,7 @@ always @(posedge clk) begin
                     mem_w = 1'b0; 
                     ir_w = 1'b1;  //
                     data_src = 3'b001; 
+                    i_or_d = 3'b000;
                     reg_ab_w = 1'b0;
                     aluOut_w = 1'b0;
                     alu_src_a = 1'b0;  
@@ -189,6 +200,7 @@ always @(posedge clk) begin
                   pc_src = 3'b001;
                   mem_w = 1'b0; 
                   ir_w = 1'b0;
+                  i_or_d = 3'b000;
                   data_src = 3'b001;   
                   reg_ab_w = 1'b1; //
                   aluOut_w = 1'b1; //
@@ -212,6 +224,7 @@ always @(posedge clk) begin
                   mem_w = 1'b0; 
                   ir_w = 1'b0;
                   data_src = 3'b001;   
+                  i_or_d = 3'b000;
                   reg_ab_w = 1'b0; // 
                   aluOut_w = 1'b0; //
                   alu_src_a = 1'b0; 
@@ -267,11 +280,18 @@ always @(posedge clk) begin
                     addi: begin
                       state = addi_state;
                     end
+                    sw: begin
+                      state = sw_state;
+                    end
+                    lw: begin
+                      state = lw_state;
+                    end
                   endcase
                   pc_w = 1'b0; 
                   mem_w = 1'b0; 
                   ir_w = 1'b0;
-                  data_src = 3'b001;   
+                  data_src = 3'b001;
+                  i_or_d = 3'b000;   
                   reg_ab_w = 1'b0; 
                   aluOut_w = 1'b0; 
                   alu_src_a = 1'b0; 
@@ -295,7 +315,8 @@ always @(posedge clk) begin
               pc_w = 1'b0; 
               mem_w = 1'b0; 
               ir_w = 1'b0;
-              data_src = 3'b001;   
+              data_src = 3'b001;
+              i_or_d = 3'b000;   
               reg_ab_w = 1'b0; 
               aluOut_w = 1'b1; // 
               alu_src_a = 1'b1; //
@@ -317,7 +338,8 @@ always @(posedge clk) begin
               pc_w = 1'b0; 
               mem_w = 1'b0; 
               ir_w = 1'b0;  
-              data_src = 3'b001; 
+              data_src = 3'b001;
+              i_or_d = 3'b000; 
               reg_ab_w = 1'b0; 
               aluOut_w = 1'b0; // 
               alu_src_a = 1'b1; 
@@ -339,7 +361,8 @@ always @(posedge clk) begin
               pc_w = 1'b0; 
               mem_w = 1'b0; 
               ir_w = 1'b0;
-              data_src = 3'b001;  
+              data_src = 3'b001;
+              i_or_d = 3'b000;  
               reg_ab_w = 1'b0; 
               aluOut_w = 1'b0;
               reg_w = 1'b1; //
@@ -364,7 +387,8 @@ always @(posedge clk) begin
               pc_w = 1'b0; 
               mem_w = 1'b0; 
               ir_w = 1'b0;
-              data_src = 3'b001;  
+              data_src = 3'b001;
+              i_or_d = 3'b000;  
               reg_ab_w = 1'b0; 
               aluOut_w = 1'b1;  //
               alu_src_a = 1'b1;  //
@@ -385,7 +409,8 @@ always @(posedge clk) begin
               pc_w = 1'b0; 
               mem_w = 1'b0; 
               ir_w = 1'b0;
-              data_src = 3'b001;  
+              data_src = 3'b001;
+              i_or_d = 3'b000;  
               reg_ab_w = 1'b0; 
               aluOut_w = 1'b0; //  
               alu_src_a = 1'b1;  
@@ -406,7 +431,8 @@ always @(posedge clk) begin
               pc_w = 1'b0; 
               mem_w = 1'b0; 
               ir_w = 1'b0;
-              data_src = 3'b001;  
+              data_src = 3'b001;
+              i_or_d = 3'b000;  
               reg_ab_w = 1'b0; 
               aluOut_w = 1'b0;   
               alu_src_a = 1'b1;  
@@ -429,7 +455,8 @@ always @(posedge clk) begin
               pc_w = 1'b0; 
               mem_w = 1'b0; 
               ir_w = 1'b0;
-              data_src = 3'b001;  
+              data_src = 3'b001;
+              i_or_d = 3'b000;  
               reg_ab_w = 1'b0; 
               aluOut_w = 1'b1; // 
               alu_src_a = 1'b1; //
@@ -451,7 +478,8 @@ always @(posedge clk) begin
               pc_w = 1'b0; 
               mem_w = 1'b0; 
               ir_w = 1'b0;
-              data_src = 3'b001;  
+              data_src = 3'b001; 
+              i_or_d = 3'b000; 
               reg_ab_w = 1'b0; 
               aluOut_w = 1'b0; // 
               alu_src_a = 1'b1; 
@@ -473,7 +501,8 @@ always @(posedge clk) begin
               pc_w = 1'b0; 
               mem_w = 1'b0; 
               ir_w = 1'b0;
-              data_src = 3'b001;  
+              data_src = 3'b001; 
+              i_or_d = 3'b000; 
               reg_ab_w = 1'b0; 
               aluOut_w = 1'b0;
               reg_w = 1'b1; //
@@ -499,6 +528,7 @@ always @(posedge clk) begin
               mem_w = 1'b0; 
               ir_w = 1'b0;
               data_src = 3'b001;  
+              i_or_d = 3'b000;
               reg_ab_w = 1'b0; 
               aluOut_w = 1'b1; // 
               alu_src_a = 1'b1; //
@@ -521,6 +551,7 @@ always @(posedge clk) begin
               mem_w = 1'b0; 
               ir_w = 1'b0;
               data_src = 3'b001;  
+              i_or_d = 3'b000;
               reg_ab_w = 1'b0; 
               aluOut_w = 1'b0; // 
               alu_src_a = 1'b1; 
@@ -543,6 +574,7 @@ always @(posedge clk) begin
               mem_w = 1'b0; 
               ir_w = 1'b0;  
               data_src = 3'b001; //
+              i_or_d = 3'b000;
               reg_ab_w = 1'b0; 
               aluOut_w = 1'b0;
               reg_w = 1'b1; //
@@ -574,6 +606,7 @@ always @(posedge clk) begin
               alu_op = 3'b111; //
               alu_flag = 2'b00; //
               data_src = 3'b110; //
+              i_or_d = 3'b000;
               reg_dst = 2'b01; //
               hi_w = 1'b0;
               lo_w = 1'b0;
@@ -596,6 +629,7 @@ always @(posedge clk) begin
               alu_op = 3'b111; //
               alu_flag = 2'b00; //
               data_src = 3'b110; //
+              i_or_d = 3'b000;
               reg_dst = 2'b01; //
               hi_w = 1'b0;
               lo_w = 1'b0;
@@ -614,6 +648,7 @@ always @(posedge clk) begin
             mem_w = 1'b0; 
             ir_w = 1'b0; 
             data_src = 3'b001; 
+            i_or_d = 3'b000;
             reg_ab_w = 1'b0; 
             aluOut_w = 1'b0; 
             alu_src_a = 1'b1; 
@@ -639,6 +674,7 @@ always @(posedge clk) begin
               mem_w = 1'b0; 
               ir_w = 1'b0;  
               data_src = 3'b001; 
+              i_or_d = 3'b000;
               reg_ab_w = 1'b0; 
               aluOut_w = 1'b0; 
               alu_src_a = 1'b0; //
@@ -661,6 +697,7 @@ always @(posedge clk) begin
               mem_w = 1'b0; 
               ir_w = 1'b0;  
               data_src = 3'b001; 
+              i_or_d = 3'b000;
               reg_ab_w = 1'b0; 
               aluOut_w = 1'b0; 
               alu_src_a = 1'b0; //
@@ -688,6 +725,7 @@ always @(posedge clk) begin
             mem_w = 1'b0; 
             ir_w = 1'b0;  
             data_src = 3'b001; 
+            i_or_d = 3'b000;
             reg_ab_w = 1'b0; 
             aluOut_w = 1'b0; 
             alu_src_a = 1'b0; 
@@ -730,6 +768,7 @@ always @(posedge clk) begin
             alu_op = 3'b001; 
             reg_dst = 2'b01; //
             data_src = 3'b100; //
+            i_or_d = 3'b000;
             hi_w = 1'b0;
             lo_w = 1'b0;
             mdr_w = 1'b0;
@@ -757,6 +796,7 @@ always @(posedge clk) begin
               alu_op = 3'b001; 
               reg_dst = 2'b01; 
               data_src = 3'b100; 
+              i_or_d = 3'b000;
               hi_w = 1'b0;
               lo_w = 1'b0;
               mdr_w = 1'b0;
@@ -781,6 +821,7 @@ always @(posedge clk) begin
               alu_op = 3'b001; 
               reg_dst = 2'b01; 
               data_src = 3'b100; 
+              i_or_d = 3'b000;
               hi_w = 1'b0;
               lo_w = 1'b0;
               mdr_w = 1'b0;
@@ -808,6 +849,7 @@ always @(posedge clk) begin
               alu_op = 3'b001; 
               reg_dst = 2'b01; 
               data_src = 3'b100; 
+              i_or_d = 3'b000;
               hi_w = 1'b0;
               lo_w = 1'b0;
               mdr_w = 1'b0;
@@ -832,6 +874,7 @@ always @(posedge clk) begin
               alu_op = 3'b001; 
               reg_dst = 2'b01; 
               data_src = 3'b100; 
+              i_or_d = 3'b000;
               hi_w = 1'b0;
               lo_w = 1'b0;
               mdr_w = 1'b0;
@@ -859,6 +902,7 @@ always @(posedge clk) begin
               alu_op = 3'b001; 
               reg_dst = 2'b01; 
               data_src = 3'b100; 
+              i_or_d = 3'b000;
               hi_w = 1'b0;
               lo_w = 1'b0;
               mdr_w = 1'b0;
@@ -883,6 +927,7 @@ always @(posedge clk) begin
               alu_op = 3'b001; 
               reg_dst = 2'b01; 
               data_src = 3'b100; 
+              i_or_d = 3'b000;
               hi_w = 1'b0;
               lo_w = 1'b0;
               mdr_w = 1'b0;
@@ -893,7 +938,104 @@ always @(posedge clk) begin
             end
           end
             
-          
+          sw_state: begin
+            if (counter == 3'b000 || counter == 3'b001 || counter == 3'b010) begin
+              state = sw_state;
+              pc_w = 1'b0; 
+              mem_w = 1'b0; 
+              ir_w = 1'b0;
+              data_src = 3'b001;   
+              i_or_d = 3'b001;
+              reg_ab_w = 1'b0; 
+              aluOut_w = 1'b0; 
+              alu_src_a = 1'b1; //
+              alu_src_b = 2'b10; // 
+              alu_op = 3'b001; // 
+              reg_dst = 2'b00;
+              hi_w = 1'b0;
+              lo_w = 1'b0;
+              mdr_w = 1'b1; //
+              epc_w = 1'b0;
+              rst_out = 1'b0;
+              reg_w = 1'b0;
+              ss_control = 2'b00;
+
+              counter = counter + 1;
+                            
+            end
+            else if (counter == 3'b011) begin
+              state = close_all_writes;
+              pc_w = 1'b0; 
+              mem_w = 1'b1; 
+              ir_w = 1'b0;
+              data_src = 3'b001;   
+              i_or_d = 3'b001;
+              reg_ab_w = 1'b0; 
+              aluOut_w = 1'b0; 
+              alu_src_a = 1'b1; //
+              alu_src_b = 2'b10; // 
+              alu_op = 3'b001; // 
+              reg_dst = 2'b00;
+              hi_w = 1'b0;
+              lo_w = 1'b0;
+              mdr_w = 1'b1; //
+              epc_w = 1'b0;
+              rst_out = 1'b0;
+              reg_w = 1'b0;
+              ss_control = 2'b00;
+
+              counter = counter + 1;
+            end
+          end
+          lw_state: begin
+            if (counter == 3'b000 || counter == 3'b001 || counter == 3'b010) begin
+              state = sw_state;
+              pc_w = 1'b0; 
+              mem_w = 1'b0; 
+              ir_w = 1'b0;
+              data_src = 3'b001;   
+              i_or_d = 3'b001; //
+              reg_ab_w = 1'b0; 
+              aluOut_w = 1'b0; 
+              alu_src_a = 1'b1; //
+              alu_src_b = 2'b10; // 
+              alu_op = 3'b001; // 
+              reg_dst = 2'b00; //
+              hi_w = 1'b0;
+              lo_w = 1'b0;
+              mdr_w = 1'b1; //
+              epc_w = 1'b0;
+              rst_out = 1'b0;
+              reg_w = 1'b0;
+              ls_control = 2'b00;
+
+              counter = counter + 1;
+                            
+            end
+            else if (counter == 3'b011) begin
+              state = close_all_writes;
+              pc_w = 1'b0; 
+              mem_w = 1'b0; 
+              ir_w = 1'b0;
+              data_src = 3'b001;   
+              i_or_d = 3'b001;
+              reg_ab_w = 1'b0; 
+              aluOut_w = 1'b0; 
+              alu_src_a = 1'b1; //
+              alu_src_b = 2'b10; // 
+              alu_op = 3'b001; // 
+              reg_dst = 2'b00;
+              hi_w = 1'b0;
+              lo_w = 1'b0;
+              mdr_w = 1'b1; //
+              epc_w = 1'b0;
+              rst_out = 1'b0;
+              reg_w = 1'b1;
+              ls_control = 2'b00;
+
+              counter = counter + 1;
+            end
+          end
           close_all_writes: begin
   
              state = fetch;
@@ -904,6 +1046,8 @@ always @(posedge clk) begin
               mem_w = 1'b0; 
               ir_w = 1'b0;
               reg_ab_w = 1'b0;
+              data_src = 3'b001;
+              i_or_d = 3'b000;
               aluOut_w = 1'b0;
               alu_op = 3'b000;
               alu_src_a = 1'b0;
