@@ -9,6 +9,7 @@
 module CPU (
     input clk, reset    
 );
+    
     // control wires  
     wire pc_w;
     wire aluOut_w;
@@ -16,12 +17,12 @@ module CPU (
     wire ir_w;
     wire reg_w;
     wire alu_src_a;
-    wire [1:0] alu_src_b;
+   
     wire reg_ab_w;
     wire hi_w;
     wire lo_w;
-    wire [1:0]reg_dst;
-    wire mdr_w;
+    
+    wire MDR_w;
     wire epc_w;
     
 
@@ -29,26 +30,47 @@ module CPU (
     //control wires 2 bits
     wire [1:0] shift_in_w;
     wire [1:0] shift_n_w;
+    wire [1:0] reg_dst;
+    wire [1:0] alu_src_b;
     
 
     //contol wires 3 bits
+    wire [2:0] IorD_Sel;
+    wire [2:0] pc_src;
     wire [2:0] shift_ctrl;
     wire [2:0] data_src;
     wire [2:0] alu_op;
+    wire [1:0] alu_flag;
     
     //data wires
-    // wire [31:0] pc_in;
+    wire [31:0] pc_in;
     wire [31:0] pc_out;
     wire [31:0] alu_result;
     wire [31:0] aluOut_out;
     wire [31:0] mem_in;
     wire [31:0] mem_out;
+    wire [31:0] MDR_out;
+    wire [31:0] epc_out; 
+    wire [31:0] ls_out;
+    wire [31:0] mux_pc_src_out;
 
+    
+
+    wire [31:0] lo_out;
+    wire [31:0] hi_out;
+    wire [31:0] const_5;
+    wire [31:0] mux_data_src_out;
+
+    
+    wire [31:0] mux_excecao_out;
+    wire [31:0] Ior_D_out;
 
     //wire [4:0] read_reg_1;
     //wire [4:0] read_reg_2;
     //wire [4:0] write_reg;
     //wire [31:0] write_data;
+
+    wire [4:0] sixteen;
 
     wire [31:0] regs_out_1;
     wire [31:0] regs_out_2;
@@ -60,25 +82,46 @@ module CPU (
     wire [5:0] opcode;
     wire [4:0] rs;
     wire [4:0] rt;
-    wire [15:0] offset;
+    wire [15:0] immediate;
+    //
+    wire [25:0] offset;
+    assign offset = {rs, rt, immediate};
+   //
+    wire mux_alu_flag_out;
 
    // wire [31:0] reg_a_in;
     wire [31:0] reg_a_out;
     wire [31:0] mux_a_out;
 
-  //  wire [31:0] reg_b_in;
+    //  wire [31:0] reg_b_in;
     wire [31:0] reg_b_out;
+    
+    
     
     
     // Sign extend  
     wire [31:0] extended_out;
+    wire sign_extd_32_in;
+    wire [31:0] sign_extd_32_out;
 
+    
+    
     // Shift 2 sem conc
     wire [31:0] shift_2_out;
 
     wire [31:0] four;
     
     wire [31:0] mux_b_out;
+
+    wire [4:0] const_2;
+    wire [4:0] const_3;
+
+    wire [4:0] reg_dst_out;
+
+    //Shift 2 com conc
+    wire [31:0] shift_left_2_conc_out;
+
+    
 
     // flags alu
     wire LT;
@@ -92,7 +135,7 @@ module CPU (
         clk,
         reset,
         pc_w,
-        alu_result,
+        mux_pc_src_out,
         pc_out
     );
 
@@ -113,15 +156,74 @@ module CPU (
         aluOut_out
     );
 
+    Registrador MDR(
+        clk,
+        reset,
+        MDR_w,
+        mem_out,
+        MDR_out
+    );
+
+    Registrador EPC(
+        clk,
+        reset,
+        epc_w,
+        alu_result,
+        epc_out
+    );
+
+
+    mux_pc_src PCSrc(
+        pc_src,
+        aluOut_out, 
+        alu_result,
+        shift_left_2_conc_out,
+        epc_out,
+        ls_out,
+        mux_pc_src_out
+    );
+    
+    
     Instr_Reg IR(
         clk,
         reset,
         ir_w,
         mem_out,
-        opcode,
-        rs,
+        opcode, //31:26 
+        rs,   //25:21
+        rt,   //20:16
+        immediate // 15:0
+    );
+
+    
+
+    mux_data_src mux_data_src (
+        data_src, 
+        ls_out, 
+        aluOut_out, 
+        lo_out, 
+        hi_out, 
+        shift_out, 
+        const_5, 
+        sign_extd_32_out,
+        mux_data_src_out
+    );
+
+    mux_reg_dst Mreg (
+        reg_dst,
         rt,
-        offset
+        immediate[15:11], // rd
+        const_2,
+        const_3,
+        reg_dst_out
+    );
+
+    mux_Ior_D IorD(
+        IorD_Sel,
+        pc_out, aluOut_out, 
+        reg_a_out, reg_b_out, 
+        mux_excecao_out,
+        Ior_D_out
     );
 
     Banco_reg Regs(
@@ -130,8 +232,8 @@ module CPU (
         reg_w,
         rs, // Read reg 1
         rt, // Read reg 2
-        offset[15:11], // Write reg
-        aluOut_out, // Write data
+        reg_dst_out, // Write reg
+        mux_data_src_out, // Write data
         regs_out_1,
         regs_out_2
         
@@ -184,6 +286,19 @@ module CPU (
         LT
     );
 
+    mux_alu_flag mux_alu_flag (
+        alu_flag,
+        GT,
+        LT,
+        EQ,
+        mux_alu_flag_out
+    );
+
+    sign_extend_32 sign_extend_32 (
+        mux_alu_flag_out,
+        sign_extd_32_out 
+    );
+
 
     ctrl_unit unidade_de_controle(
         clk,
@@ -195,7 +310,7 @@ module CPU (
         GT,
         LT,
         opcode,
-        offset[5:0],
+        immediate[5:0],
         pc_w,
         mem_w,
         ir_w,
@@ -207,15 +322,20 @@ module CPU (
         lo_w,
         mdr_w,
         epc_w,
+        alu_flag,
         alu_src_b,
         reg_dst,
+        shift_in_w,
+        shift_n_w,
+        pc_src,
         data_src,
         alu_op,
+        shift_ctrl,
         rst_out
     );
 
     sign_extend_16 sign_extend_16(
-        offset,
+        immediate,
         extended_out
     );
 
@@ -224,35 +344,38 @@ module CPU (
         shift_2_out
     );
 
+     shift_left_2_conc shift_left_2_conc(
+        offset,
+        pc_in,
+        shift_left_2_conc_out
+    );
     
 
-    
+    // Reg desloc
+    mux_shift_in mux_shift(
+        shift_in_w,
+        reg_a_out,
+        reg_b_out,
+        extended_out,
+        shift_in
+    );
 
-    // // Reg desloc
-    // mux_shift_in mux_shift(
-    //     shift_in_w,
-    //     reg_a_out,
-    //     reg_b_out,
-    //     extended_out
-    //     shift_in
-    // );
-
-    // mux_shift_n mux_shiftn(
-    //     shift_n_w,
-    //     //fio com rt[4..0]
-    //     //fio com inst[16..10]
-    //     // fio com valor 16
-    //     //fio com mdr
-    //     shift_n
-    // );
-    // RegDesloc reg_desloc(
-    //     clk,
-    //     rst,
-    //     shift_ctrl,
-    //     shift_n,
-    //     shift_in,
-    //     shift_out     
-    // );
+    mux_shift_n mux_shiftn(
+        shift_n_w,
+        reg_b_out[4:0],
+        offset[10:6],
+        sixteen,
+        MDR_out[4:0],
+        shift_n
+    );
+    RegDesloc reg_desloc(
+        clk,
+        rst,
+        shift_ctrl,
+        shift_n,
+        shift_in,
+        shift_out     
+    );
 
 
   

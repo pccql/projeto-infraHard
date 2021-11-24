@@ -4,8 +4,8 @@ module mux_shift_in(
     output wire [31:0] shift_in
 );
     
-    assign shift_in = (shiftControl == 2'b00) ?  B_0:
-                      (shiftControl == 2'b01) ?  four_1:
+    assign shift_in = (shiftControl == 2'b00) ?  a_out:
+                      (shiftControl == 2'b01) ?  b_out:
                       (shiftControl == 2'b10) ?  sign_extend_2:
                       1'bX;
 
