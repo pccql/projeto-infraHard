@@ -78,23 +78,23 @@ Z17 o-work work
 Z18 tCvgOpt 0
 n@c@p@u
 vctrl_unit
-R8
+!s110 1637796923
 !i10b 1
-!s100 <ikCo@e;CcY9PnZzh5z6b1
+!s100 DoJn>7B3lOM4i]LaUc8::1
 R14
-IH?5aKQ`0Ph`7bRXfI;XoT2
+ILViHJo2;Fkm6b2bIbH45L1
 R15
 R4
-w1637741476
+w1637796919
 8/home/ctxo/Documents/College/InfraHard/projeto-infraHard/CPU/ctrl_unit.v
 F/home/ctxo/Documents/College/InfraHard/projeto-infraHard/CPU/ctrl_unit.v
-!i122 1694
-L0 1 1020
+!i122 1704
+L0 1 1074
 R16
 r1
 !s85 0
 31
-R9
+!s108 1637796923.000000
 !s107 /home/ctxo/Documents/College/InfraHard/projeto-infraHard/CPU/ctrl_unit.v|
 !s90 -reportprogress|300|-work|work|-stats=none|/home/ctxo/Documents/College/InfraHard/projeto-infraHard/CPU/ctrl_unit.v|
 !i113 1

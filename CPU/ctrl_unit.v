@@ -77,7 +77,7 @@ reg [2:0] counter;
         parameter R = 6'h0;
         parameter addi = 6'h8;
         parameter sw = 6'h2b;
-        parameter lw = 6'h23
+        parameter lw = 6'h23;
     
         
 

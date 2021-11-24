@@ -50,3 +50,6 @@
 # Compile of sign_extend_32.v was successful.
 # 22 compiles, 0 failed with no errors.
 # Load canceled
+# Compile of ctrl_unit.v failed with 2 errors.
+# Compile of ctrl_unit.v failed with 2 errors.
+# Compile of ctrl_unit.v was successful.
