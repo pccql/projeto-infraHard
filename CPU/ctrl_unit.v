@@ -73,6 +73,8 @@ reg [2:0] counter;
         parameter sw_state = 6'd16;
         parameter lw_state = 6'd17;
         parameter addiu_state = 6'd20;
+        parameter srav_state = 6'd21;
+        parameter sllv_state = 6'd22;
 
         // Opcodes      
         parameter R = 6'h0;
@@ -94,6 +96,8 @@ reg [2:0] counter;
         parameter sll_funct = 6'h0;
         parameter srl_funct = 6'h2;
         parameter sra_funct = 6'h3;
+        parameter srav_funct = 6'h7;
+        parameter sllv_state = 6'h4;
         
 
 
@@ -276,6 +280,12 @@ always @(posedge clk) begin
                         end
                         srl_funct: begin
                           state = shift_state;
+                        end
+                        srav_funct: begin
+                          state = srav_state;
+                        end
+                        sllv_funct: begin
+                          state = sllv_state;
                         end
                       endcase
                     end
@@ -523,6 +533,7 @@ always @(posedge clk) begin
               counter = 3'b000;
             end
           end
+
           sub_state: begin
             if (counter == 3'b000) begin
               state = sub_state;
@@ -595,6 +606,7 @@ always @(posedge clk) begin
             end
           
           end
+
           and_state: begin
             if (counter == 3'b000) begin
               state = and_state;
@@ -959,6 +971,115 @@ always @(posedge clk) begin
             end
           end
 
+          srav_state: begin
+            if (counter == 3'b000) begin
+              state = srav_state;
+
+              pc_w = 1'b0; 
+              shift_control = 3'b001; //
+              shift_in_control = 2'b00; // 
+              shift_n_control = 2'b00; //
+              mem_w = 1'b0; 
+              ir_w = 1'b0;  
+              reg_ab_w = 1'b0; 
+              aluOut_w = 1'b0;
+              alu_src_a = 1'b0; 
+              alu_src_b = 2'b11; 
+              alu_op = 3'b001; 
+              reg_dst = 2'b01; //
+              data_src = 3'b100; 
+              i_or_d = 3'b000;
+              hi_w = 1'b0;
+              lo_w = 1'b0;
+              mdr_w = 1'b0;
+              epc_w = 1'b0;
+              rst_out = 1'b0;
+              reg_w = 1'b0; 
+
+              counter = counter + 1;
+            end
+            else if (counter == 3'b001) begin
+              state = close_all_writes;
+              pc_w = 1'b0; 
+              shift_control = 3'b100; //
+              shift_in_control = 2'b00; 
+              shift_n_control = 2'b00;
+              mem_w = 1'b0; 
+              ir_w = 1'b0;  
+              reg_ab_w = 1'b0; 
+              aluOut_w = 1'b0; 
+              alu_src_a = 1'b0; 
+              alu_src_b = 2'b11; 
+              alu_op = 3'b001; 
+              reg_dst = 2'b01; 
+              data_src = 3'b100; //
+              i_or_d = 3'b000;
+              hi_w = 1'b0;
+              lo_w = 1'b0;
+              mdr_w = 1'b0;
+              epc_w = 1'b0;
+              rst_out = 1'b0;
+              reg_w = 1'b1; // 
+
+              counter = 3'b000;
+            end
+          end
+
+          sllv_state: begin
+            if (counter == 3'b000) begin
+              state = sllv_state;
+
+              pc_w = 1'b0; 
+              shift_control = 3'b001; //
+              shift_in_control = 2'b00; // 
+              shift_n_control = 2'b00; //
+              mem_w = 1'b0; 
+              ir_w = 1'b0;  
+              reg_ab_w = 1'b0; 
+              aluOut_w = 1'b0; 
+              alu_src_a = 1'b0; 
+              alu_src_b = 2'b11; 
+              alu_op = 3'b001; 
+              reg_dst = 2'b01; //
+              data_src = 3'b100; 
+              i_or_d = 3'b000;
+              hi_w = 1'b0;
+              lo_w = 1'b0;
+              mdr_w = 1'b0;
+              epc_w = 1'b0;
+              rst_out = 1'b0;
+              reg_w = 1'b0; 
+
+              counter = counter + 1;
+            end
+            else if (counter == 3'b001) begin
+              state = close_all_writes;
+
+              pc_w = 1'b0; 
+              shift_control = 3'b010; //
+              shift_in_control = 2'b00; 
+              shift_n_control = 2'b00;
+              mem_w = 1'b0; 
+              ir_w = 1'b0;  
+              reg_ab_w = 1'b0; 
+              aluOut_w = 1'b0; 
+              alu_src_a = 1'b0; 
+              alu_src_b = 2'b11; 
+              alu_op = 3'b001; 
+              reg_dst = 2'b01; 
+              data_src = 3'b100; //
+              i_or_d = 3'b000;
+              hi_w = 1'b0;
+              lo_w = 1'b0;
+              mdr_w = 1'b0;
+              epc_w = 1'b0;
+              rst_out = 1'b0;
+              reg_w = 1'b1; // 
+              
+              counter = 3'b000;
+            end
+          end
+
           srl_state: begin
             if (counter == 3'b000) begin
               state = srl_state;
@@ -1061,6 +1182,7 @@ always @(posedge clk) begin
               counter = counter + 1;
             end
           end
+
           lw_state: begin
             if (counter == 3'b000 || counter == 3'b001 || counter == 3'b010) begin
               state = sw_state;
@@ -1110,6 +1232,8 @@ always @(posedge clk) begin
               counter = counter + 1;
             end
           end
+
+
           close_all_writes: begin
   
              state = fetch;
