@@ -5,7 +5,7 @@ module mux_Ior_D(
 );
     
     
-    assign mux_reg_dst_out = (IorD_Sel == 3'b000) ?  PC_0:
+    assign Ior_D_out   = (IorD_Sel == 3'b000) ?  PC_0:
                              (IorD_Sel == 3'b001) ?  alu_out_1:
                              (IorD_Sel == 3'b010) ?  reg_A_out_2:
                              (IorD_Sel == 3'b011) ?  reg_B_out_3:

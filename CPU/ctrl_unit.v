@@ -72,12 +72,23 @@ reg [2:0] counter;
         parameter srl_state = 6'd15;
         parameter sw_state = 6'd16;
         parameter lw_state = 6'd17;
+        parameter lh_state = 6'd23;
+        parameter lb_state = 6'd24
+        parameter sh_state = 6'd25;
+        parameter sb_state = 6'd26;
+        parameter beq_state = 6'd18;
 
         // Opcodes      
         parameter R = 6'h0;
         parameter addi = 6'h8;
         parameter sw = 6'h2b;
         parameter lw = 6'h23;
+        parameter beq = 6'h4;
+        parameter lb = 6'h20;
+        parameter lh = 6'h21;
+        parameter sb = 6'h28;
+        parameter sh = 6'h29;
+
     
         
 
@@ -92,6 +103,8 @@ reg [2:0] counter;
         parameter sll_funct = 6'h0;
         parameter srl_funct = 6'h2;
         parameter sra_funct = 6'h3;
+        parameter  = ;
+      
         
 
 
@@ -275,6 +288,9 @@ always @(posedge clk) begin
                         srl_funct: begin
                           state = shift_state;
                         end
+                        beq: begin
+                          state = beq_state;
+                        end
                       endcase
                     end
                     addi: begin
@@ -286,6 +302,22 @@ always @(posedge clk) begin
                     lw: begin
                       state = lw_state;
                     end
+                    beq: begin
+                      state = beq_state;
+                    end
+                    lb: begin
+                      state = lb_state;
+                    end
+                    lh: begin
+                      state = lh_state;
+                    end
+                    sb: begin
+                      state = sb_state;
+                    end
+                    sh: begin
+                      state = sh_state;
+                    end
+                
                   endcase
                   pc_w = 1'b0; 
                   mem_w = 1'b0; 
@@ -947,7 +979,7 @@ always @(posedge clk) begin
               data_src = 3'b001;   
               i_or_d = 3'b001;
               reg_ab_w = 1'b0; 
-              aluOut_w = 1'b0; 
+              aluOut_w = 1'b1;  //
               alu_src_a = 1'b1; //
               alu_src_b = 2'b10; // 
               alu_op = 3'b001; // 
@@ -964,7 +996,7 @@ always @(posedge clk) begin
                             
             end
             else if (counter == 3'b011) begin
-              state = close_all_writes;
+              state = sw_state;
               pc_w = 1'b0; 
               mem_w = 1'b1; 
               ir_w = 1'b0;
@@ -986,33 +1018,7 @@ always @(posedge clk) begin
 
               counter = counter + 1;
             end
-          end
-          lw_state: begin
-            if (counter == 3'b000 || counter == 3'b001 || counter == 3'b010) begin
-              state = sw_state;
-              pc_w = 1'b0; 
-              mem_w = 1'b0; 
-              ir_w = 1'b0;
-              data_src = 3'b001;   
-              i_or_d = 3'b001; //
-              reg_ab_w = 1'b0; 
-              aluOut_w = 1'b0; 
-              alu_src_a = 1'b1; //
-              alu_src_b = 2'b10; // 
-              alu_op = 3'b001; // 
-              reg_dst = 2'b00; //
-              hi_w = 1'b0;
-              lo_w = 1'b0;
-              mdr_w = 1'b1; //
-              epc_w = 1'b0;
-              rst_out = 1'b0;
-              reg_w = 1'b0;
-              ls_control = 2'b00;
-
-              counter = counter + 1;
-                            
-            end
-            else if (counter == 3'b011) begin
+            else if (counter == 3'b100) begin
               state = close_all_writes;
               pc_w = 1'b0; 
               mem_w = 1'b0; 
@@ -1030,11 +1036,429 @@ always @(posedge clk) begin
               mdr_w = 1'b1; //
               epc_w = 1'b0;
               rst_out = 1'b0;
+              reg_w = 1'b0;
+              ss_control = 2'b00;
+
+              counter = 3'b000;
+              
+            end
+          end
+          sb_state: begin
+            if (counter == 3'b000 || counter == 3'b001 || counter == 3'b010) begin
+              state = sb_state;
+              pc_w = 1'b0; 
+              mem_w = 1'b0; 
+              ir_w = 1'b0;
+              data_src = 3'b001;   
+              i_or_d = 3'b001;
+              reg_ab_w = 1'b0; 
+              aluOut_w = 1'b1;  //
+              alu_src_a = 1'b1; //
+              alu_src_b = 2'b10; // 
+              alu_op = 3'b001; // 
+              reg_dst = 2'b00;
+              hi_w = 1'b0;
+              lo_w = 1'b0;
+              mdr_w = 1'b1; //
+              epc_w = 1'b0;
+              rst_out = 1'b0;
+              reg_w = 1'b0;
+              ss_control = 2'b10;
+
+              counter = counter + 1;
+                            
+            end
+            else if (counter == 3'b011) begin
+              state = sb_state;
+              pc_w = 1'b0; 
+              mem_w = 1'b1; 
+              ir_w = 1'b0;
+              data_src = 3'b001;   
+              i_or_d = 3'b001;
+              reg_ab_w = 1'b0; 
+              aluOut_w = 1'b0; 
+              alu_src_a = 1'b1; //
+              alu_src_b = 2'b10; // 
+              alu_op = 3'b001; // 
+              reg_dst = 2'b00;
+              hi_w = 1'b0;
+              lo_w = 1'b0;
+              mdr_w = 1'b1; //
+              epc_w = 1'b0;
+              rst_out = 1'b0;
+              reg_w = 1'b0;
+              ss_control = 2'b10;
+
+              counter = counter + 1;
+            end
+            else if (counter == 3'b100) begin
+              state = close_all_writes;
+              pc_w = 1'b0; 
+              mem_w = 1'b0; 
+              ir_w = 1'b0;
+              data_src = 3'b001;   
+              i_or_d = 3'b001;
+              reg_ab_w = 1'b0; 
+              aluOut_w = 1'b0; 
+              alu_src_a = 1'b1; //
+              alu_src_b = 2'b10; // 
+              alu_op = 3'b001; // 
+              reg_dst = 2'b00;
+              hi_w = 1'b0;
+              lo_w = 1'b0;
+              mdr_w = 1'b1; //
+              epc_w = 1'b0;
+              rst_out = 1'b0;
+              reg_w = 1'b0;
+              ss_control = 2'b10;
+
+              counter = 3'b000;
+              
+            end
+            
+          end
+          sh_state begin
+            if (counter == 3'b000 || counter == 3'b001 || counter == 3'b010) begin
+              state = sb_state;
+              pc_w = 1'b0; 
+              mem_w = 1'b0; 
+              ir_w = 1'b0;
+              data_src = 3'b001;   
+              i_or_d = 3'b001;
+              reg_ab_w = 1'b0; 
+              aluOut_w = 1'b1;  //
+              alu_src_a = 1'b1; //
+              alu_src_b = 2'b10; // 
+              alu_op = 3'b001; // 
+              reg_dst = 2'b00;
+              hi_w = 1'b0;
+              lo_w = 1'b0;
+              mdr_w = 1'b1; //
+              epc_w = 1'b0;
+              rst_out = 1'b0;
+              reg_w = 1'b0;
+              ss_control = 2'b01;
+
+              counter = counter + 1;
+                            
+            end
+            else if (counter == 3'b011) begin
+              state = sb_state;
+              pc_w = 1'b0; 
+              mem_w = 1'b1; 
+              ir_w = 1'b0;
+              data_src = 3'b001;   
+              i_or_d = 3'b001;
+              reg_ab_w = 1'b0; 
+              aluOut_w = 1'b0; 
+              alu_src_a = 1'b1; //
+              alu_src_b = 2'b10; // 
+              alu_op = 3'b001; // 
+              reg_dst = 2'b00;
+              hi_w = 1'b0;
+              lo_w = 1'b0;
+              mdr_w = 1'b1; //
+              epc_w = 1'b0;
+              rst_out = 1'b0;
+              reg_w = 1'b0;
+              ss_control = 2'b01;
+
+              counter = counter + 1;
+            end
+            else if (counter == 3'b100) begin
+              state = close_all_writes;
+              pc_w = 1'b0; 
+              mem_w = 1'b0; 
+              ir_w = 1'b0;
+              data_src = 3'b001;   
+              i_or_d = 3'b001;
+              reg_ab_w = 1'b0; 
+              aluOut_w = 1'b0; 
+              alu_src_a = 1'b1; //
+              alu_src_b = 2'b10; // 
+              alu_op = 3'b001; // 
+              reg_dst = 2'b00;
+              hi_w = 1'b0;
+              lo_w = 1'b0;
+              mdr_w = 1'b1; //
+              epc_w = 1'b0;
+              rst_out = 1'b0;
+              reg_w = 1'b0;
+              ss_control = 2'b01;
+
+              counter = 3'b000;
+              
+            end
+          end
+          lw_state: begin
+            if (counter == 3'b000 || counter == 3'b001 || counter == 3'b010) begin
+              state = lw_state;
+              pc_w = 1'b0; 
+              mem_w = 1'b0; 
+              ir_w = 1'b0;
+              data_src = 3'b001;   
+              i_or_d = 3'b001; //
+              reg_ab_w = 1'b0; 
+              aluOut_w = 1'b1; 
+              alu_src_a = 1'b1; //
+              alu_src_b = 2'b10; // 
+              alu_op = 3'b001; // 
+              reg_dst = 2'b00; //
+              hi_w = 1'b0;
+              lo_w = 1'b0;
+              mdr_w = 1'b1; //
+              epc_w = 1'b0;
+              rst_out = 1'b0;
+              reg_w = 1'b0;
+              ls_control = 2'b00;
+
+              counter = counter + 1;
+                            
+            end
+            else if (counter == 3'b011) begin
+              state = lw_state;
+              pc_w = 1'b0; 
+              mem_w = 1'b0; 
+              ir_w = 1'b0;
+              data_src = 3'b000;   
+              i_or_d = 3'b001;
+              reg_ab_w = 1'b0; 
+              aluOut_w = 1'b0; 
+              alu_src_a = 1'b1; //
+              alu_src_b = 2'b10; // 
+              alu_op = 3'b001; // 
+              reg_dst = 2'b00;
+              hi_w = 1'b0;
+              lo_w = 1'b0;
+              mdr_w = 1'b1; //
+              epc_w = 1'b0;
+              rst_out = 1'b0;
               reg_w = 1'b1;
               ls_control = 2'b00;
 
               counter = counter + 1;
             end
+            else if (counter == 3'b100) begin
+              state = close_all_writes;
+              pc_w = 1'b0; 
+              mem_w = 1'b0; 
+              ir_w = 1'b0;
+              data_src = 3'b000;   
+              i_or_d = 3'b001;
+              reg_ab_w = 1'b0; 
+              aluOut_w = 1'b0; 
+              alu_src_a = 1'b1; //
+              alu_src_b = 2'b10; // 
+              alu_op = 3'b001; // 
+              reg_dst = 2'b00;
+              hi_w = 1'b0;
+              lo_w = 1'b0;
+              mdr_w = 1'b1; //
+              epc_w = 1'b0;
+              rst_out = 1'b0;
+              reg_w = 1'b1;
+              ls_control = 2'b00;
+
+              counter = 3'b000;
+            end
+          end
+        
+          lb_state: begin
+            if (counter == 3'b000 || counter == 3'b001 || counter == 3'b010) begin
+              state = lb_state;
+              pc_w = 1'b0; 
+              mem_w = 1'b0; 
+              ir_w = 1'b0;
+              data_src = 3'b001;   
+              i_or_d = 3'b001; //
+              reg_ab_w = 1'b0; 
+              aluOut_w = 1'b1; 
+              alu_src_a = 1'b1; //
+              alu_src_b = 2'b10; // 
+              alu_op = 3'b001; // 
+              reg_dst = 2'b00; //
+              hi_w = 1'b0;
+              lo_w = 1'b0;
+              mdr_w = 1'b1; //
+              epc_w = 1'b0;
+              rst_out = 1'b0;
+              reg_w = 1'b0;
+              ls_control = 2'b10;
+
+              counter = counter + 1;
+                            
+            end
+            else if (counter == 3'b011) begin
+              state = lb_state;
+              pc_w = 1'b0; 
+              mem_w = 1'b0; 
+              ir_w = 1'b0;
+              data_src = 3'b000;   
+              i_or_d = 3'b001;
+              reg_ab_w = 1'b0; 
+              aluOut_w = 1'b0; 
+              alu_src_a = 1'b1; //
+              alu_src_b = 2'b10; // 
+              alu_op = 3'b001; // 
+              reg_dst = 2'b00;
+              hi_w = 1'b0;
+              lo_w = 1'b0;
+              mdr_w = 1'b1; //
+              epc_w = 1'b0;
+              rst_out = 1'b0;
+              reg_w = 1'b1;
+              ls_control = 2'b10;
+
+              counter = counter + 1;
+            end
+            else if (counter == 3'b100) begin
+              state = close_all_writes;
+              pc_w = 1'b0; 
+              mem_w = 1'b0; 
+              ir_w = 1'b0;
+              data_src = 3'b000;   
+              i_or_d = 3'b001;
+              reg_ab_w = 1'b0; 
+              aluOut_w = 1'b0; 
+              alu_src_a = 1'b1; //
+              alu_src_b = 2'b10; // 
+              alu_op = 3'b001; // 
+              reg_dst = 2'b00;
+              hi_w = 1'b0;
+              lo_w = 1'b0;
+              mdr_w = 1'b1; //
+              epc_w = 1'b0;
+              rst_out = 1'b0;
+              reg_w = 1'b1;
+              ls_control = 2'b10;
+
+              counter = 3'b000;
+            end
+          end
+          lh_state: begin
+            if (counter == 3'b000 || counter == 3'b001 || counter == 3'b010) begin
+              state = lh_state;
+              pc_w = 1'b0; 
+              mem_w = 1'b0; 
+              ir_w = 1'b0;
+              data_src = 3'b001;   
+              i_or_d = 3'b001; //
+              reg_ab_w = 1'b0; 
+              aluOut_w = 1'b1; 
+              alu_src_a = 1'b1; //
+              alu_src_b = 2'b10; // 
+              alu_op = 3'b001; // 
+              reg_dst = 2'b00; //
+              hi_w = 1'b0;
+              lo_w = 1'b0;
+              mdr_w = 1'b1; //
+              epc_w = 1'b0;
+              rst_out = 1'b0;
+              reg_w = 1'b0;
+              ls_control = 2'b01;
+
+              counter = counter + 1;
+                            
+            end
+            else if (counter == 3'b011) begin
+              state = lh_state;
+              pc_w = 1'b0; 
+              mem_w = 1'b0; 
+              ir_w = 1'b0;
+              data_src = 3'b000;   
+              i_or_d = 3'b001;
+              reg_ab_w = 1'b0; 
+              aluOut_w = 1'b0; 
+              alu_src_a = 1'b1; //
+              alu_src_b = 2'b10; // 
+              alu_op = 3'b001; // 
+              reg_dst = 2'b00;
+              hi_w = 1'b0;
+              lo_w = 1'b0;
+              mdr_w = 1'b1; //
+              epc_w = 1'b0;
+              rst_out = 1'b0;
+              reg_w = 1'b1;
+              ls_control = 2'b01;
+
+              counter = counter + 1;
+            end
+            else if (counter == 3'b100) begin
+              state = close_all_writes;
+              pc_w = 1'b0; 
+              mem_w = 1'b0; 
+              ir_w = 1'b0;
+              data_src = 3'b000;   
+              i_or_d = 3'b001;
+              reg_ab_w = 1'b0; 
+              aluOut_w = 1'b0; 
+              alu_src_a = 1'b1; //
+              alu_src_b = 2'b10; // 
+              alu_op = 3'b001; // 
+              reg_dst = 2'b00;
+              hi_w = 1'b0;
+              lo_w = 1'b0;
+              mdr_w = 1'b1; //
+              epc_w = 1'b0;
+              rst_out = 1'b0;
+              reg_w = 1'b1;
+              ls_control = 2'b01;
+
+              counter = 3'b000;
+            end
+          
+          end
+          beq_state: begin
+            if (counter == 3'b000) begin
+              state = beq_state;
+              pc_w = 1'b0; 
+              mem_w = 1'b0; 
+              ir_w = 1'b0;
+              data_src = 3'b001;
+              i_or_d = 3'b000;   
+              reg_ab_w = 1'b0; 
+              aluOut_w = 1'b0; 
+              alu_src_a = 1'b1; 
+              alu_src_b = 2'b10; 
+              alu_op = 3'b111; 
+              reg_dst = 2'b00;
+              hi_w = 1'b0;
+              lo_w = 1'b0;
+              mdr_w = 1'b0;
+              epc_w = 1'b0;
+              rst_out = 1'b0;
+              reg_w = 1'b0;
+
+              counter = counter + 1;
+            end
+            else if (counter == 3'b001) begin
+              state = close_all_writes;
+              mem_w = 1'b0; 
+              ir_w = 1'b0;
+              data_src = 3'b001;
+              i_or_d = 3'b000;   
+              reg_ab_w = 1'b0; 
+              aluOut_w = 1'b0; 
+              alu_src_a = 1'b1; 
+              alu_src_b = 2'b10; 
+              alu_op = 3'b111; 
+              reg_dst = 2'b00;
+              hi_w = 1'b0;
+              lo_w = 1'b0;
+              mdr_w = 1'b0;
+              epc_w = 1'b0;
+              rst_out = 1'b0;
+              reg_w = 1'b0;
+              if (EQ == 1'b1) begin
+                pc_w = 1'b1;
+              end
+              else begin
+                pc_w = 1'b0;
+              end
+
+              counter = 3'b000;
+            end
+            
           end
           close_all_writes: begin
   
