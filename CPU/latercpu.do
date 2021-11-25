@@ -53,9 +53,9 @@ add wave -noupdate -expand -group Memory -radix decimal /CPU/Mem/Address
 add wave -noupdate -expand -group Memory -radix decimal /CPU/Mem/Datain
 add wave -noupdate -expand -group Memory -radix decimal /CPU/Mem/Dataout
 add wave -noupdate -expand -group Memory /CPU/Mem/Wr
-add wave -noupdate -expand -group MDR -radix decimal /CPU/MDR/Saida
-add wave -noupdate -expand -group MDR /CPU/MDR/Load
-add wave -noupdate -expand -group MDR -radix decimal /CPU/MDR/Entrada
+add wave -noupdate -group MDR -radix decimal /CPU/MDR/Saida
+add wave -noupdate -group MDR /CPU/MDR/Load
+add wave -noupdate -group MDR -radix decimal /CPU/MDR/Entrada
 add wave -noupdate -group Ir /CPU/IR/Entrada
 add wave -noupdate -group Ir /CPU/IR/Instr15_0
 add wave -noupdate -group Ir /CPU/IR/Instr20_16
@@ -68,28 +68,28 @@ add wave -noupdate -group Ir /CPU/IR/Instr20_16
 add wave -noupdate -group Ir /CPU/IR/Instr25_21
 add wave -noupdate -group Ir /CPU/IR/Instr31_26
 add wave -noupdate -group Ir /CPU/IR/Load_ir
-add wave -noupdate -expand -group Data_src_muux /CPU/mux_data_src/Data_Src
-add wave -noupdate -expand -group Data_src_muux /CPU/mux_data_src/ls_0
-add wave -noupdate -expand -group Data_src_muux /CPU/mux_data_src/alu_out_1
-add wave -noupdate -expand -group Data_src_muux /CPU/mux_data_src/lo_2
-add wave -noupdate -expand -group Data_src_muux /CPU/mux_data_src/hi_3
-add wave -noupdate -expand -group Data_src_muux /CPU/mux_data_src/shift_register_4
-add wave -noupdate -expand -group Data_src_muux /CPU/mux_data_src/const_5
-add wave -noupdate -expand -group Data_src_muux /CPU/mux_data_src/sign_extd_6
-add wave -noupdate -expand -group Data_src_muux /CPU/mux_data_src/mux_data_src_out
+add wave -noupdate -group Data_src_muux /CPU/mux_data_src/Data_Src
+add wave -noupdate -group Data_src_muux /CPU/mux_data_src/ls_0
+add wave -noupdate -group Data_src_muux /CPU/mux_data_src/alu_out_1
+add wave -noupdate -group Data_src_muux /CPU/mux_data_src/lo_2
+add wave -noupdate -group Data_src_muux /CPU/mux_data_src/hi_3
+add wave -noupdate -group Data_src_muux /CPU/mux_data_src/shift_register_4
+add wave -noupdate -group Data_src_muux /CPU/mux_data_src/const_5
+add wave -noupdate -group Data_src_muux /CPU/mux_data_src/sign_extd_6
+add wave -noupdate -group Data_src_muux /CPU/mux_data_src/mux_data_src_out
 add wave -noupdate -group Reg_Dst -radix unsigned /CPU/Mreg/mux_reg_dst_out
 add wave -noupdate -group Reg_Dst /CPU/Mreg/Reg_Dst
-add wave -noupdate -group Reg -radix decimal /CPU/Regs/Cluster(10)
-add wave -noupdate -group Reg -radix decimal /CPU/Regs/Cluster(11)
-add wave -noupdate -group Reg -radix decimal /CPU/Regs/Cluster(12)
-add wave -noupdate -group Reg -radix decimal /CPU/Regs/Cluster(13)
-add wave -noupdate -group Reg -radix decimal /CPU/Regs/ReadData1
-add wave -noupdate -group Reg -radix decimal /CPU/Regs/ReadData2
-add wave -noupdate -group Reg -radix unsigned /CPU/Regs/ReadReg1
-add wave -noupdate -group Reg -radix unsigned /CPU/Regs/ReadReg2
-add wave -noupdate -group Reg -radix unsigned /CPU/Regs/RegWrite
-add wave -noupdate -group Reg -radix decimal /CPU/Regs/WriteData
-add wave -noupdate -group Reg -radix unsigned /CPU/Regs/WriteReg
+add wave -noupdate -expand -group Reg -radix decimal /CPU/Regs/Cluster(10)
+add wave -noupdate -expand -group Reg -radix decimal /CPU/Regs/Cluster(11)
+add wave -noupdate -expand -group Reg -radix decimal /CPU/Regs/Cluster(12)
+add wave -noupdate -expand -group Reg -radix decimal /CPU/Regs/Cluster(13)
+add wave -noupdate -expand -group Reg -radix decimal /CPU/Regs/ReadData1
+add wave -noupdate -expand -group Reg -radix decimal /CPU/Regs/ReadData2
+add wave -noupdate -expand -group Reg -radix unsigned /CPU/Regs/ReadReg1
+add wave -noupdate -expand -group Reg -radix unsigned /CPU/Regs/ReadReg2
+add wave -noupdate -expand -group Reg -radix unsigned /CPU/Regs/RegWrite
+add wave -noupdate -expand -group Reg -radix decimal /CPU/Regs/WriteData
+add wave -noupdate -expand -group Reg -radix unsigned /CPU/Regs/WriteReg
 add wave -noupdate -group MuxAB /CPU/mux_a/a_out
 add wave -noupdate -group MuxAB /CPU/mux_a/selector
 add wave -noupdate -group MuxAB /CPU/mux_b/AluSrcB
@@ -126,6 +126,13 @@ add wave -noupdate -group mux_shift_enntrada /CPU/mux_shift/shiftControl
 add wave -noupdate -group mux_shift_enntrada -radix decimal /CPU/mux_shift/shift_in
 add wave -noupdate -group mux_shift_enntrada /CPU/mux_shift/b_out
 add wave -noupdate -group mux_shift_enntrada /CPU/mux_shift/a_out
+add wave -noupdate -expand -group LS/SS /CPU/ls/regData
+add wave -noupdate -expand -group LS/SS /CPU/ls/lsout
+add wave -noupdate -expand -group LS/SS /CPU/ls/lscontrol
+add wave -noupdate -expand -group LS/SS /CPU/ss/ssout
+add wave -noupdate -expand -group LS/SS /CPU/ss/sscontrol
+add wave -noupdate -expand -group LS/SS /CPU/ss/regData
+add wave -noupdate -expand -group LS/SS /CPU/ss/memData
 TreeUpdate [SetDefaultTree]
 WaveRestoreCursors {{Cursor 1} {4492 ps} 0}
 quietly wave cursor active 1

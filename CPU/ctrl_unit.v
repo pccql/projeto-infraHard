@@ -1051,7 +1051,7 @@ always @(posedge clk) begin
             end
           end
           sb_state: begin
-            if (counter == 3'b000 || counter == 3'b001 || counter == 3'b010) begin
+            if (counter == 3'b000 ) begin
               state = sb_state;
               pc_w = 1'b0; 
               mem_w = 1'b0; 
@@ -1066,7 +1066,7 @@ always @(posedge clk) begin
               reg_dst = 2'b00;
               hi_w = 1'b0;
               lo_w = 1'b0;
-              mdr_w = 1'b1; //
+              mdr_w = 1'b0; 
               epc_w = 1'b0;
               rst_out = 1'b0;
               reg_w = 1'b0;
@@ -1075,10 +1075,10 @@ always @(posedge clk) begin
               counter = counter + 1;
                             
             end
-            else if (counter == 3'b011) begin
+            else if (counter == 3'b011 || counter == 3'b001 || counter == 3'b010) begin
               state = sb_state;
               pc_w = 1'b0; 
-              mem_w = 1'b1; 
+              mem_w = 1'b0; 
               ir_w = 1'b0;
               data_src = 3'b001;   
               i_or_d = 3'b001;
@@ -1101,7 +1101,7 @@ always @(posedge clk) begin
             else if (counter == 3'b100) begin
               state = close_all_writes;
               pc_w = 1'b0; 
-              mem_w = 1'b0; 
+              mem_w = 1'b1; 
               ir_w = 1'b0;
               data_src = 3'b001;   
               i_or_d = 3'b001;
@@ -1125,8 +1125,8 @@ always @(posedge clk) begin
             
           end
           sh_state: begin
-            if (counter == 3'b000 || counter == 3'b001 || counter == 3'b010) begin
-              state = sb_state;
+            if (counter == 3'b000) begin
+              state = sh_state;
               pc_w = 1'b0; 
               mem_w = 1'b0; 
               ir_w = 1'b0;
@@ -1140,7 +1140,7 @@ always @(posedge clk) begin
               reg_dst = 2'b00;
               hi_w = 1'b0;
               lo_w = 1'b0;
-              mdr_w = 1'b1; //
+              mdr_w = 1'b0; //
               epc_w = 1'b0;
               rst_out = 1'b0;
               reg_w = 1'b0;
@@ -1149,10 +1149,10 @@ always @(posedge clk) begin
               counter = counter + 1;
                             
             end
-            else if (counter == 3'b011) begin
-              state = sb_state;
+            else if (counter == 3'b001 || counter == 3'b010 || counter == 3'b011) begin
+              state = sh_state;
               pc_w = 1'b0; 
-              mem_w = 1'b1; 
+              mem_w = 1'b0; 
               ir_w = 1'b0;
               data_src = 3'b001;   
               i_or_d = 3'b001;
@@ -1175,7 +1175,7 @@ always @(posedge clk) begin
             else if (counter == 3'b100) begin
               state = close_all_writes;
               pc_w = 1'b0; 
-              mem_w = 1'b0; 
+              mem_w = 1'b1; 
               ir_w = 1'b0;
               data_src = 3'b001;   
               i_or_d = 3'b001;
@@ -1467,79 +1467,7 @@ always @(posedge clk) begin
             end
             
           end
-          sh_state: begin
-            if (counter == 3'b000 || counter == 3'b001 || counter == 3'b010) begin
-              state = sb_state;
-              pc_w = 1'b0; 
-              mem_w = 1'b0; 
-              ir_w = 1'b0;
-              data_src = 3'b001;   
-              i_or_d = 3'b001;
-              reg_ab_w = 1'b0; 
-              aluOut_w = 1'b1;  //
-              alu_src_a = 1'b1; //
-              alu_src_b = 2'b10; // 
-              alu_op = 3'b001; // 
-              reg_dst = 2'b00;
-              hi_w = 1'b0;
-              lo_w = 1'b0;
-              mdr_w = 1'b1; //
-              epc_w = 1'b0;
-              rst_out = 1'b0;
-              reg_w = 1'b0;
-              ss_control = 2'b01;
-
-              counter = counter + 1;
-                            
-            end
-            else if (counter == 3'b011) begin
-              state = sb_state;
-              pc_w = 1'b0; 
-              mem_w = 1'b1; 
-              ir_w = 1'b0;
-              data_src = 3'b001;   
-              i_or_d = 3'b001;
-              reg_ab_w = 1'b0; 
-              aluOut_w = 1'b0; 
-              alu_src_a = 1'b1; //
-              alu_src_b = 2'b10; // 
-              alu_op = 3'b001; // 
-              reg_dst = 2'b00;
-              hi_w = 1'b0;
-              lo_w = 1'b0;
-              mdr_w = 1'b1; //
-              epc_w = 1'b0;
-              rst_out = 1'b0;
-              reg_w = 1'b0;
-              ss_control = 2'b01;
-
-              counter = counter + 1;
-            end
-            else if (counter == 3'b100) begin
-              state = close_all_writes;
-              pc_w = 1'b0; 
-              mem_w = 1'b0; 
-              ir_w = 1'b0;
-              data_src = 3'b001;   
-              i_or_d = 3'b001;
-              reg_ab_w = 1'b0; 
-              aluOut_w = 1'b0; 
-              alu_src_a = 1'b1; //
-              alu_src_b = 2'b10; // 
-              alu_op = 3'b001; // 
-              reg_dst = 2'b00;
-              hi_w = 1'b0;
-              lo_w = 1'b0;
-              mdr_w = 1'b1; //
-              epc_w = 1'b0;
-              rst_out = 1'b0;
-              reg_w = 1'b0;
-              ss_control = 2'b01;
-
-              counter = 3'b000;
-              
-            end
-          end
+         
           lw_state: begin
             if (counter == 3'b000 || counter == 3'b001 || counter == 3'b010) begin
               state = lw_state;
