@@ -15,7 +15,7 @@ Z0 w1636677630
 Z1 DPx4 ieee 11 numeric_std 0 22 aU^R8eGcicLcUFIaBQSL>3
 Z2 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
 Z3 DPx4 ieee 14 std_logic_1164 0 22 cVAk:aDinOX8^VGI1ekP<3
-!i122 1776
+!i122 1821
 Z4 d/home/pedro/projeto-infraHard/CPU
 Z5 8/home/pedro/projeto-infraHard/CPU/Componentes do Projeto/Banco_reg.vhd
 Z6 F/home/pedro/projeto-infraHard/CPU/Componentes do Projeto/Banco_reg.vhd
@@ -25,9 +25,9 @@ V:adHbk0Ym0TAKYW83J5Y[3
 !s100 hZ46CT_BzQl8j]02_Vf=o2
 Z7 OV;C;2020.1;71
 32
-Z8 !s110 1637800227
+Z8 !s110 1637803483
 !i10b 1
-Z9 !s108 1637800227.000000
+Z9 !s108 1637803483.000000
 Z10 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|/home/pedro/projeto-infraHard/CPU/Componentes do Projeto/Banco_reg.vhd|
 Z11 !s107 /home/pedro/projeto-infraHard/CPU/Componentes do Projeto/Banco_reg.vhd|
 !i113 1
@@ -38,7 +38,7 @@ R1
 R2
 R3
 DEx4 work 9 banco_reg 0 22 :adHbk0Ym0TAKYW83J5Y[3
-!i122 1776
+!i122 1821
 l93
 L85 34
 VY7l=BkTbhRVIWWGL4mMo60
@@ -64,7 +64,7 @@ R4
 Z16 w1637796920
 8/home/pedro/projeto-infraHard/CPU/CPU.v
 F/home/pedro/projeto-infraHard/CPU/CPU.v
-!i122 1774
+!i122 1819
 L0 9 396
 Z17 OV;L;2020.1;71
 r1
@@ -80,16 +80,16 @@ n@c@p@u
 vctrl_unit
 R8
 !i10b 1
-!s100 M_cXFc1aQ4Een;JUC:l5<3
+!s100 D6fS^m;PbV3e>>=gzHO4:2
 R14
-IEQ07oNoCO=65oaK76KoCZ1
+I1;]MHALQ<8m_UN=o_dP;00
 R15
 R4
-w1637799841
+w1637803478
 8/home/pedro/projeto-infraHard/CPU/ctrl_unit.v
 F/home/pedro/projeto-infraHard/CPU/ctrl_unit.v
-!i122 1775
-L0 1 1148
+!i122 1820
+L0 1 1272
 R17
 r1
 !s85 0
@@ -104,7 +104,7 @@ Einstr_reg
 Z20 w1636423380
 R2
 R3
-!i122 1777
+!i122 1822
 R4
 Z21 8/home/pedro/projeto-infraHard/CPU/Componentes do Projeto/Instr_Reg.vhd
 Z22 F/home/pedro/projeto-infraHard/CPU/Componentes do Projeto/Instr_Reg.vhd
@@ -126,7 +126,7 @@ Abehavioral_arch
 R2
 R3
 DEx4 work 9 instr_reg 0 22 AfV1kYS402dnLRiFO;Z7_2
-!i122 1777
+!i122 1822
 l59
 L56 32
 VTD836jU:>9m^d?0ed1C0O3
@@ -152,7 +152,7 @@ R4
 R16
 8/home/pedro/projeto-infraHard/CPU/ComponentesCPU/LS.v
 F/home/pedro/projeto-infraHard/CPU/ComponentesCPU/LS.v
-!i122 1782
+!i122 1827
 Z25 L0 1 21
 R17
 r1
@@ -172,7 +172,7 @@ Z27 DPx3 lpm 14 lpm_components 0 22 jlWe>e^2@cAI7EQaRX2E;1
 R1
 R2
 R3
-!i122 1778
+!i122 1823
 R4
 Z28 8/home/pedro/projeto-infraHard/CPU/Componentes do Projeto/Memoria.vhd
 Z29 F/home/pedro/projeto-infraHard/CPU/Componentes do Projeto/Memoria.vhd
@@ -197,7 +197,7 @@ R1
 R2
 R3
 DEx4 work 7 memoria 0 22 <[RFRXeHV^PMOiiinkBoS0
-!i122 1778
+!i122 1823
 l103
 L79 78
 VR9W83dOfA7lWR9j>i6THA2
@@ -247,7 +247,7 @@ R4
 R16
 8/home/pedro/projeto-infraHard/CPU/ComponentesCPU/mux_alu_flag.v
 F/home/pedro/projeto-infraHard/CPU/ComponentesCPU/mux_alu_flag.v
-!i122 1783
+!i122 1828
 Z32 L0 1 13
 R17
 r1
@@ -270,7 +270,7 @@ R4
 R0
 8/home/pedro/projeto-infraHard/CPU/ComponentesCPU/mux_alu_src_A.v
 F/home/pedro/projeto-infraHard/CPU/ComponentesCPU/mux_alu_src_A.v
-!i122 1784
+!i122 1829
 Z33 L0 1 10
 R17
 r1
@@ -284,7 +284,7 @@ R18
 R19
 nmux_alu_src_@a
 vmux_alu_src_B
-Z34 !s110 1637800228
+R8
 !i10b 1
 !s100 OKO;7YkdkV3QPjdNmD0W22
 R14
@@ -294,8 +294,8 @@ R4
 R0
 8/home/pedro/projeto-infraHard/CPU/ComponentesCPU/mux_alu_src_B.v
 F/home/pedro/projeto-infraHard/CPU/ComponentesCPU/mux_alu_src_B.v
-!i122 1785
-Z35 L0 1 16
+!i122 1830
+Z34 L0 1 16
 R17
 r1
 !s85 0
@@ -308,7 +308,7 @@ R18
 R19
 nmux_alu_src_@b
 vmux_data_src
-R34
+R8
 !i10b 1
 !s100 aHoI>B6W>FO8N:Vk:M]SJ2
 R14
@@ -318,20 +318,20 @@ R4
 R16
 8/home/pedro/projeto-infraHard/CPU/ComponentesCPU/mux_data_src.v
 F/home/pedro/projeto-infraHard/CPU/ComponentesCPU/mux_data_src.v
-!i122 1786
+!i122 1831
 L0 1 19
 R17
 r1
 !s85 0
 31
-Z36 !s108 1637800228.000000
+R9
 !s107 /home/pedro/projeto-infraHard/CPU/ComponentesCPU/mux_data_src.v|
 !s90 -reportprogress|300|-work|work|-stats=none|/home/pedro/projeto-infraHard/CPU/ComponentesCPU/mux_data_src.v|
 !i113 1
 R18
 R19
 vmux_Ior_D
-R34
+R8
 !i10b 1
 !s100 D9B?JD=Odi79i06d>2ZL01
 R14
@@ -341,13 +341,13 @@ R4
 R16
 8/home/pedro/projeto-infraHard/CPU/ComponentesCPU/mux_Ior_D.v
 F/home/pedro/projeto-infraHard/CPU/ComponentesCPU/mux_Ior_D.v
-!i122 1787
-R35
+!i122 1832
+R34
 R17
 r1
 !s85 0
 31
-R36
+R9
 !s107 /home/pedro/projeto-infraHard/CPU/ComponentesCPU/mux_Ior_D.v|
 !s90 -reportprogress|300|-work|work|-stats=none|/home/pedro/projeto-infraHard/CPU/ComponentesCPU/mux_Ior_D.v|
 !i113 1
@@ -355,7 +355,7 @@ R18
 R19
 nmux_@ior_@d
 vmux_pc_src
-R34
+R8
 !i10b 1
 !s100 FNK23n5o8W_bhW>aEAdFU2
 R14
@@ -365,20 +365,20 @@ R4
 R16
 8/home/pedro/projeto-infraHard/CPU/ComponentesCPU/mux_pc_src.v
 F/home/pedro/projeto-infraHard/CPU/ComponentesCPU/mux_pc_src.v
-!i122 1788
-R35
+!i122 1833
+R34
 R17
 r1
 !s85 0
 31
-R36
+R9
 !s107 /home/pedro/projeto-infraHard/CPU/ComponentesCPU/mux_pc_src.v|
 !s90 -reportprogress|300|-work|work|-stats=none|/home/pedro/projeto-infraHard/CPU/ComponentesCPU/mux_pc_src.v|
 !i113 1
 R18
 R19
 vmux_reg_dst
-R34
+R8
 !i10b 1
 !s100 Zen1[_Djf?gLl3bSXGian0
 R14
@@ -388,20 +388,20 @@ R4
 R16
 8/home/pedro/projeto-infraHard/CPU/ComponentesCPU/mux_reg_dst.v
 F/home/pedro/projeto-infraHard/CPU/ComponentesCPU/mux_reg_dst.v
-!i122 1789
+!i122 1834
 L0 1 17
 R17
 r1
 !s85 0
 31
-R36
+R9
 !s107 /home/pedro/projeto-infraHard/CPU/ComponentesCPU/mux_reg_dst.v|
 !s90 -reportprogress|300|-work|work|-stats=none|/home/pedro/projeto-infraHard/CPU/ComponentesCPU/mux_reg_dst.v|
 !i113 1
 R18
 R19
 vmux_shift_in
-R34
+R8
 !i10b 1
 !s100 ZUP_>6Qkz<XgUC9SWY1O[1
 R14
@@ -411,20 +411,20 @@ R4
 R16
 8/home/pedro/projeto-infraHard/CPU/ComponentesCPU/mux_shift_in.v
 F/home/pedro/projeto-infraHard/CPU/ComponentesCPU/mux_shift_in.v
-!i122 1790
+!i122 1835
 R32
 R17
 r1
 !s85 0
 31
-R36
+R9
 !s107 /home/pedro/projeto-infraHard/CPU/ComponentesCPU/mux_shift_in.v|
 !s90 -reportprogress|300|-work|work|-stats=none|/home/pedro/projeto-infraHard/CPU/ComponentesCPU/mux_shift_in.v|
 !i113 1
 R18
 R19
 vmux_shift_n
-R34
+R8
 !i10b 1
 !s100 AB7h^Ikn[^iLh0hU2[YNm2
 R14
@@ -434,20 +434,20 @@ R4
 R16
 8/home/pedro/projeto-infraHard/CPU/ComponentesCPU/mux_shift_n.v
 F/home/pedro/projeto-infraHard/CPU/ComponentesCPU/mux_shift_n.v
-!i122 1791
+!i122 1836
 L0 1 14
 R17
 r1
 !s85 0
 31
-R36
+R9
 !s107 /home/pedro/projeto-infraHard/CPU/ComponentesCPU/mux_shift_n.v|
 !s90 -reportprogress|300|-work|work|-stats=none|/home/pedro/projeto-infraHard/CPU/ComponentesCPU/mux_shift_n.v|
 !i113 1
 R18
 R19
 Pram_constants
-!i122 1778
+!i122 1823
 R0
 R4
 R28
@@ -471,10 +471,10 @@ R0
 R1
 R2
 R3
-!i122 1779
+!i122 1824
 R4
-Z37 8/home/pedro/projeto-infraHard/CPU/Componentes do Projeto/RegDesloc.vhd
-Z38 F/home/pedro/projeto-infraHard/CPU/Componentes do Projeto/RegDesloc.vhd
+Z35 8/home/pedro/projeto-infraHard/CPU/Componentes do Projeto/RegDesloc.vhd
+Z36 F/home/pedro/projeto-infraHard/CPU/Componentes do Projeto/RegDesloc.vhd
 l0
 L80 1
 V4GibeROOKf]^CUjTE67Bo0
@@ -484,8 +484,8 @@ R7
 R8
 !i10b 1
 R9
-Z39 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|/home/pedro/projeto-infraHard/CPU/Componentes do Projeto/RegDesloc.vhd|
-Z40 !s107 /home/pedro/projeto-infraHard/CPU/Componentes do Projeto/RegDesloc.vhd|
+Z37 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|/home/pedro/projeto-infraHard/CPU/Componentes do Projeto/RegDesloc.vhd|
+Z38 !s107 /home/pedro/projeto-infraHard/CPU/Componentes do Projeto/RegDesloc.vhd|
 !i113 1
 R12
 R13
@@ -494,7 +494,7 @@ R1
 R2
 R3
 DEx4 work 9 regdesloc 0 22 4GibeROOKf]^CUjTE67Bo0
-!i122 1779
+!i122 1824
 l98
 L93 38
 VDFCTADkAb^4XhT09kD<k32
@@ -504,8 +504,8 @@ R7
 R8
 !i10b 1
 R9
-R39
-R40
+R37
+R38
 !i113 1
 R12
 R13
@@ -513,10 +513,10 @@ Eregistrador
 R20
 R2
 R3
-!i122 1780
+!i122 1825
 R4
-Z41 8/home/pedro/projeto-infraHard/CPU/Componentes do Projeto/Registrador.vhd
-Z42 F/home/pedro/projeto-infraHard/CPU/Componentes do Projeto/Registrador.vhd
+Z39 8/home/pedro/projeto-infraHard/CPU/Componentes do Projeto/Registrador.vhd
+Z40 F/home/pedro/projeto-infraHard/CPU/Componentes do Projeto/Registrador.vhd
 l0
 L53 1
 VD=`aG^VOPEDP69ifb8G;52
@@ -526,8 +526,8 @@ R7
 R8
 !i10b 1
 R9
-Z43 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|/home/pedro/projeto-infraHard/CPU/Componentes do Projeto/Registrador.vhd|
-Z44 !s107 /home/pedro/projeto-infraHard/CPU/Componentes do Projeto/Registrador.vhd|
+Z41 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|/home/pedro/projeto-infraHard/CPU/Componentes do Projeto/Registrador.vhd|
+Z42 !s107 /home/pedro/projeto-infraHard/CPU/Componentes do Projeto/Registrador.vhd|
 !i113 1
 R12
 R13
@@ -535,7 +535,7 @@ Abehavioral_arch
 R2
 R3
 DEx4 work 11 registrador 0 22 D=`aG^VOPEDP69ifb8G;52
-!i122 1780
+!i122 1825
 l66
 L65 19
 V<kVfXRZJUh40ja<<lN_3:3
@@ -545,13 +545,13 @@ R7
 R8
 !i10b 1
 R9
-R43
-R44
+R41
+R42
 !i113 1
 R12
 R13
 vshift_left_2
-R34
+Z43 !s110 1637803484
 !i10b 1
 !s100 am:c54ia80@HN64:]1MIB0
 R14
@@ -561,20 +561,20 @@ R4
 R0
 8/home/pedro/projeto-infraHard/CPU/ComponentesCPU/shift_left_2.v
 F/home/pedro/projeto-infraHard/CPU/ComponentesCPU/shift_left_2.v
-!i122 1792
-Z45 L0 1 8
+!i122 1837
+Z44 L0 1 8
 R17
 r1
 !s85 0
 31
-R36
+R9
 !s107 /home/pedro/projeto-infraHard/CPU/ComponentesCPU/shift_left_2.v|
 !s90 -reportprogress|300|-work|work|-stats=none|/home/pedro/projeto-infraHard/CPU/ComponentesCPU/shift_left_2.v|
 !i113 1
 R18
 R19
 vshift_left_2_conc
-R34
+R43
 !i10b 1
 !s100 NWihGGj1FZzQK1CK49oRF0
 R14
@@ -584,20 +584,20 @@ R4
 R16
 8/home/pedro/projeto-infraHard/CPU/ComponentesCPU/shift_left_2_conc.v
 F/home/pedro/projeto-infraHard/CPU/ComponentesCPU/shift_left_2_conc.v
-!i122 1793
+!i122 1838
 R33
 R17
 r1
 !s85 0
 31
-R36
+Z45 !s108 1637803484.000000
 !s107 /home/pedro/projeto-infraHard/CPU/ComponentesCPU/shift_left_2_conc.v|
 !s90 -reportprogress|300|-work|work|-stats=none|/home/pedro/projeto-infraHard/CPU/ComponentesCPU/shift_left_2_conc.v|
 !i113 1
 R18
 R19
 vsign_extend_16
-R34
+R43
 !i10b 1
 !s100 ze:9@?>c=_]BPWLj@c4[X2
 R14
@@ -607,20 +607,20 @@ R4
 R16
 8/home/pedro/projeto-infraHard/CPU/ComponentesCPU/sign_extend_16.v
 F/home/pedro/projeto-infraHard/CPU/ComponentesCPU/sign_extend_16.v
-!i122 1794
-R45
+!i122 1839
+R44
 R17
 r1
 !s85 0
 31
-R36
+R45
 !s107 /home/pedro/projeto-infraHard/CPU/ComponentesCPU/sign_extend_16.v|
 !s90 -reportprogress|300|-work|work|-stats=none|/home/pedro/projeto-infraHard/CPU/ComponentesCPU/sign_extend_16.v|
 !i113 1
 R18
 R19
 vsign_extend_32
-R34
+R43
 !i10b 1
 !s100 ]Y[8Z>Uic[T:m9g`=m]d:1
 R14
@@ -630,20 +630,20 @@ R4
 R16
 8/home/pedro/projeto-infraHard/CPU/ComponentesCPU/sign_extend_32.v
 F/home/pedro/projeto-infraHard/CPU/ComponentesCPU/sign_extend_32.v
-!i122 1795
-R45
+!i122 1840
+R44
 R17
 r1
 !s85 0
 31
-R36
+R45
 !s107 /home/pedro/projeto-infraHard/CPU/ComponentesCPU/sign_extend_32.v|
 !s90 -reportprogress|300|-work|work|-stats=none|/home/pedro/projeto-infraHard/CPU/ComponentesCPU/sign_extend_32.v|
 !i113 1
 R18
 R19
 vSS
-R34
+R43
 !i10b 1
 !s100 33kTI:lINWoAcCX:^YdIh0
 R14
@@ -653,13 +653,13 @@ R4
 R16
 8/home/pedro/projeto-infraHard/CPU/ComponentesCPU/SS.v
 F/home/pedro/projeto-infraHard/CPU/ComponentesCPU/SS.v
-!i122 1796
+!i122 1841
 L0 1 24
 R17
 r1
 !s85 0
 31
-R36
+R45
 !s107 /home/pedro/projeto-infraHard/CPU/ComponentesCPU/SS.v|
 !s90 -reportprogress|300|-work|work|-stats=none|/home/pedro/projeto-infraHard/CPU/ComponentesCPU/SS.v|
 !i113 1
@@ -671,7 +671,7 @@ R0
 R1
 R2
 R3
-!i122 1781
+!i122 1826
 R4
 Z46 8/home/pedro/projeto-infraHard/CPU/Componentes do Projeto/ula32.vhd
 Z47 F/home/pedro/projeto-infraHard/CPU/Componentes do Projeto/ula32.vhd
@@ -694,7 +694,7 @@ R1
 R2
 R3
 DEx4 work 5 ula32 0 22 M1`EhBco;Cb9<:6CC>b?e2
-!i122 1781
+!i122 1826
 l89
 L79 138
 VF94M;2UJ^55hCen3Z[Kfk0

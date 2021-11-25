@@ -97,7 +97,7 @@ reg [2:0] counter;
         parameter srl_funct = 6'h2;
         parameter sra_funct = 6'h3;
         parameter srav_funct = 6'h7;
-        parameter sllv_state = 6'h4;
+        parameter sllv_funct = 6'h4;
         
 
 
