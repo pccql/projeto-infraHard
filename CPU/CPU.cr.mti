@@ -155,6 +155,13 @@ Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 
 Top level modules:
 	shift_left_2
 
+} {} {}} /home/ctxo/Documents/College/InfraHard/projeto-infraHard/CPU/ctrl_unit.v {1 {vlog -work work -stats=none /home/ctxo/Documents/College/InfraHard/projeto-infraHard/CPU/ctrl_unit.v
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module ctrl_unit
+
+Top level modules:
+	ctrl_unit
+
 } {} {}} /home/ctxo/Documents/College/InfraHard/projeto-infraHard/CPU/ComponentesCPU/mux_alu_src_A.v {1 {vlog -work work -stats=none /home/ctxo/Documents/College/InfraHard/projeto-infraHard/CPU/ComponentesCPU/mux_alu_src_A.v
 Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
 -- Compiling module mux_alu_src_A
@@ -247,11 +254,12 @@ Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 
 Top level modules:
 	sign_extend_16
 
-} {} {}} {/home/ctxo/Documents/College/InfraHard/projeto-infraHard/CPU/Componentes do Projeto/Instr_Reg.vhd} {1 {vlog -work work -stats=none /home/ctxo/Documents/College/InfraHard/projeto-infraHard/CPU/ComponentesCPU/sign_extend_32.v
-Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
--- Compiling module sign_extend_32
-
-Top level modules:
-	sign_extend_32
+} {} {}} {/home/ctxo/Documents/College/InfraHard/projeto-infraHard/CPU/Componentes do Projeto/Instr_Reg.vhd} {1 {vcom -work work -2002 -explicit -stats=none {/home/ctxo/Documents/College/InfraHard/projeto-infraHard/CPU/Componentes do Projeto/Instr_Reg.vhd}
+Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling entity Instr_Reg
+-- Compiling architecture behavioral_arch of Instr_Reg
 
 } {} {}}
