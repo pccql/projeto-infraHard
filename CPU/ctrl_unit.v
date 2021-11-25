@@ -72,10 +72,12 @@ reg [2:0] counter;
         parameter srl_state = 6'd15;
         parameter sw_state = 6'd16;
         parameter lw_state = 6'd17;
+        parameter addiu_state = 6'd20;
 
         // Opcodes      
         parameter R = 6'h0;
         parameter addi = 6'h8;
+        parameter addiu = 6'h9;
         parameter sw = 6'h2b;
         parameter lw = 6'h23;
     
@@ -280,6 +282,9 @@ always @(posedge clk) begin
                     addi: begin
                       state = addi_state;
                     end
+                    addiu: begin
+                      state = addiu_state;
+                    end
                     sw: begin
                       state = sw_state;
                     end
@@ -406,6 +411,75 @@ always @(posedge clk) begin
             end
             else if (counter == 3'b001) begin
               state = addi_state;
+              pc_w = 1'b0; 
+              mem_w = 1'b0; 
+              ir_w = 1'b0;
+              data_src = 3'b001;
+              i_or_d = 3'b000;  
+              reg_ab_w = 1'b0; 
+              aluOut_w = 1'b0; //  
+              alu_src_a = 1'b1;  
+              alu_src_b = 2'b10; 
+              alu_op = 3'b001; 
+              reg_dst = 2'b00; 
+              hi_w = 1'b0;
+              lo_w = 1'b0;
+              mdr_w = 1'b0;
+              epc_w = 1'b0;
+              rst_out = 1'b0;
+              reg_w = 1'b0;
+
+              counter = counter + 1;
+            end
+            else if (counter == 3'b010) begin
+              state = close_all_writes;
+              pc_w = 1'b0; 
+              mem_w = 1'b0; 
+              ir_w = 1'b0;
+              data_src = 3'b001;
+              i_or_d = 3'b000;  
+              reg_ab_w = 1'b0; 
+              aluOut_w = 1'b0;   
+              alu_src_a = 1'b1;  
+              alu_src_b = 2'b10; 
+              alu_op = 3'b001; 
+              reg_dst = 2'b00; 
+              hi_w = 1'b0;
+              lo_w = 1'b0;
+              mdr_w = 1'b0;
+              epc_w = 1'b0;
+              rst_out = 1'b0;
+              reg_w = 1'b1; //
+              
+              counter = 3'b000;
+            end
+          end
+
+          addiu_state: begin
+            if (counter == 3'b000) begin
+              state = addiu_state;
+              pc_w = 1'b0; 
+              mem_w = 1'b0; 
+              ir_w = 1'b0;
+              data_src = 3'b001;
+              i_or_d = 3'b000;  
+              reg_ab_w = 1'b0; 
+              aluOut_w = 1'b1;  //
+              alu_src_a = 1'b1;  //
+              alu_src_b = 2'b10; //
+              alu_op = 3'b001; //
+              reg_dst = 2'b00; //
+              hi_w = 1'b0;
+              lo_w = 1'b0;
+              mdr_w = 1'b0;
+              epc_w = 1'b0;
+              rst_out = 1'b0;
+              reg_w = 1'b0;
+
+              counter = counter + 1;
+            end
+            else if (counter == 3'b001) begin
+              state = addiu_state;
               pc_w = 1'b0; 
               mem_w = 1'b0; 
               ir_w = 1'b0;
