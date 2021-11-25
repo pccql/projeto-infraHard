@@ -236,7 +236,7 @@ module CPU (
     );
 
     mux_Ior_D IorD(
-        i_or_d_Sel,
+        i_or_d_sel,
         pc_out,
         aluOut_out, 
         reg_a_out, 
@@ -352,6 +352,7 @@ module CPU (
         data_src,
         alu_op,
         shift_ctrl,
+        i_or_d_sel,
         rst_out
     );
 
