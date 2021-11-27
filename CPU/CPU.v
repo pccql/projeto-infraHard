@@ -24,8 +24,15 @@ module CPU (
     
     wire MDR_w;
     wire epc_w;
-    
 
+    wire div_control;
+    wire HiLo_w;
+    wire HiLo_control;
+    wire div_0;
+    wire start;
+    wire finished;
+
+    
     
     //control wires 2 bits
     wire [1:0] shift_in_w;
@@ -34,10 +41,11 @@ module CPU (
     wire [1:0] alu_src_b;
     wire [1:0] ls_control;
     wire [1:0] ss_control;
+    wire [1:0] exception_control;
 
     
 
-    //contol wires 3 bits
+    //control wires 3 bits
     wire [2:0] i_or_d_sel;
     wire [2:0] pc_src;
     wire [2:0] shift_ctrl;
@@ -62,7 +70,6 @@ module CPU (
 
     wire [31:0] lo_out;
     wire [31:0] hi_out;
-    wire [31:0] const_5;
     wire [31:0] mux_data_src_out;
 
     
@@ -99,6 +106,22 @@ module CPU (
 
     //  wire [31:0] reg_b_in;
     wire [31:0] reg_b_out;
+
+    wire [31:0] reg_hi_out;
+    wire [31:0] reg_lo_out;
+
+    wire[31:0] quocient;
+    wire[31:0] remainder;
+
+    wire[31:0] msb_mult;
+    wire[31:0] lsb_mult;
+
+    wire[31:0] mux_div_control_a_out;
+    wire[31:0] mux_div_control_b_out;
+
+    wire[31:0] mux_hi_out;
+    wire [31:0] mux_lo_out;
+
     
     
     
@@ -117,9 +140,7 @@ module CPU (
     
     wire [31:0] mux_b_out;
 
-    wire [4:0] const_2;
-    wire [4:0] const_3;
-
+   
     wire [4:0] reg_dst_out;
 
     //Shift 2 com conc
@@ -134,6 +155,16 @@ module CPU (
     wire Overflow;
     wire Zero;
     wire Negativo;
+
+    //Constantes
+    wire [4:0] const_2;
+    wire [4:0] const_3;
+    wire [31:0] const_5;
+    wire [31:0] const_253;
+    wire [31:0] const_254;
+    wire [31:0] const_255;
+
+
     
     Registrador PC(
         clk,
@@ -197,7 +228,7 @@ module CPU (
         shift_left_2_conc_out,
         epc_out,
         ls_out,
-        mux_pc_src_out
+        mux_pc_src_out 
     );
     
     
@@ -213,6 +244,13 @@ module CPU (
     );
 
     
+    mux_controle_excessao mux_exception(
+        exception_control,
+        const_253,
+        const_254,
+        const_255,
+        mux_excecao_out
+    );
 
     mux_data_src mux_data_src (
         data_src, 
@@ -245,6 +283,8 @@ module CPU (
         i_or_d_out
     );
 
+    
+    
     Banco_reg Regs(
         clk,
         reset,
@@ -257,8 +297,6 @@ module CPU (
         regs_out_2
         
     );
-
-    
 
     Registrador A(
         clk,
@@ -322,12 +360,14 @@ module CPU (
     ctrl_unit unidade_de_controle(
         clk,
         reset,  
+        div_0,
         Overflow,
         Negativo,
         Zero,
         EQ,
         GT,
         LT,
+        finished,
         opcode,
         immediate[5:0],
         pc_w,
@@ -337,10 +377,12 @@ module CPU (
         reg_ab_w,
         aluOut_w,
         alu_src_a,
-        hi_w,
-        lo_w,
         MDR_w,
         epc_w,
+        div_control,
+        HiLo_control,
+        HiLo_w,
+        start,
         alu_flag,
         alu_src_b,
         reg_dst,
@@ -348,6 +390,7 @@ module CPU (
         shift_n_w,
         ls_control,
         ss_control,
+        exception_control,
         pc_src,
         data_src,
         alu_op,
@@ -399,6 +442,61 @@ module CPU (
         shift_out     
     );
 
+    mux_div_control_a mux_div_control_a(
+        div_control,
+        reg_a_out,
+        MDR_out,
+        mux_div_control_a_out
+    );
+
+    mux_div_control_b mux_div_control_b(
+        div_control,
+        reg_b_out,
+        mem_out,
+        mux_div_control_b_out
+    );
+
+    div div(
+        clk,
+        reset,
+        start,
+        mux_div_control_a_out,
+        mux_div_control_b_out,
+        quocient,
+        remainder,
+        div_0,
+        finished
+    );
+
+    mux_LO mux_lo (
+        HiLo_control,
+        msb_mult,
+        quocient,
+        mux_lo_out
+    );
+
+    mux_HI mux_hi (
+        HiLo_control,
+        lsb_mult,
+        remainder,
+        mux_hi_out
+    );
+
+    Registrador HI(
+        clk,
+        rst,
+        HiLo_w,
+        mux_hi_out,
+        hi_out
+    );
+
+    Registrador LO(
+        clk,
+        rst,
+        HiLo_w,
+        mux_lo_out,
+        lo_out
+    );
 
   
     

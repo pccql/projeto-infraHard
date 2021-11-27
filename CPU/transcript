@@ -1,4 +1,5 @@
 # Loading project CPU
+# Compile of ctrl_unit.v was successful.
 # Compile of mux_alu_src_A.v was successful.
 # Compile of mux_alu_src_B.v was successful.
 # Compile of mux_shift_n.v was successful.
@@ -22,13 +23,15 @@
 # Compile of mux_alu_flag.v was successful.
 # Compile of sign_extend_32.v was successful.
 # 22 compiles, 0 failed with no errors.
+# Compile of mux_controle_excessao.v was successful.
 vsim work.CPU
 # vsim work.CPU 
-# Start time: 08:38:48 on Nov 25,2021
+# Start time: 17:18:14 on Nov 26,2021
 # Loading work.CPU
 # Loading work.LS
 # Loading work.SS
 # Loading work.mux_pc_src
+# Loading work.mux_controle_excessao
 # Loading work.mux_data_src
 # Loading work.mux_reg_dst
 # Loading work.mux_Ior_D
@@ -62,599 +65,7 @@ vsim work.CPU
 do latercpu.do
 force -freeze sim:/CPU/clk 1 0, 0 {50 ps} -r 100
 force -freeze sim:/CPU/reset 1 0 -cancel 100
-run
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ps  Iteration: 0  Instance: /CPU/Regs
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ps  Iteration: 0  Instance: /CPU/Regs
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 0 ps  Iteration: 0  Instance: /CPU/Mem/MEM_plus_Three
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 0 ps  Iteration: 0  Instance: /CPU/Mem/MEM_plus_Three
-# ** Error: Unknown intended_device_family UNUSED
-#    Time: 0 ps  Iteration: 0  Instance: /CPU/Mem/MEM_plus_Three
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 0 ps  Iteration: 0  Instance: /CPU/Mem/MEM_plus_Two
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 0 ps  Iteration: 0  Instance: /CPU/Mem/MEM_plus_Two
-# ** Error: Unknown intended_device_family UNUSED
-#    Time: 0 ps  Iteration: 0  Instance: /CPU/Mem/MEM_plus_Two
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 0 ps  Iteration: 0  Instance: /CPU/Mem/MEM_plus_One
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 0 ps  Iteration: 0  Instance: /CPU/Mem/MEM_plus_One
-# ** Error: Unknown intended_device_family UNUSED
-#    Time: 0 ps  Iteration: 0  Instance: /CPU/Mem/MEM_plus_One
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 0 ps  Iteration: 0  Instance: /CPU/Mem/MEM
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 0 ps  Iteration: 0  Instance: /CPU/Mem/MEM
-# ** Error: Unknown intended_device_family UNUSED
-#    Time: 0 ps  Iteration: 0  Instance: /CPU/Mem/MEM
-# ** Error: (vsim-86) Argument value -2147483648 is not in bounds of subtype NATURAL.
-#    Time: 0 ps  Iteration: 0  Instance: /CPU/Mem
-# ** Error: (vsim-86) Argument value -2147483648 is not in bounds of subtype NATURAL.
-#    Time: 0 ps  Iteration: 0  Instance: /CPU/Mem
-# ** Error: (vsim-86) Argument value -2147483648 is not in bounds of subtype NATURAL.
-#    Time: 0 ps  Iteration: 0  Instance: /CPU/Mem
-# ** Error: (vsim-86) Argument value -2147483648 is not in bounds of subtype NATURAL.
-#    Time: 0 ps  Iteration: 0  Instance: /CPU/Mem
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ps  Iteration: 0  Instance: /CPU/Mem
-# ** Error: (vsim-86) Argument value -2147483645 is not in bounds of subtype NATURAL.
-#    Time: 0 ps  Iteration: 1  Instance: /CPU/Mem
-# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
-#    Time: 0 ps  Iteration: 1  Instance: /CPU/Mem
-# ** Error: (vsim-86) Argument value -2147483646 is not in bounds of subtype NATURAL.
-#    Time: 0 ps  Iteration: 1  Instance: /CPU/Mem
-# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
-#    Time: 0 ps  Iteration: 1  Instance: /CPU/Mem
-# ** Error: (vsim-86) Argument value -2147483647 is not in bounds of subtype NATURAL.
-#    Time: 0 ps  Iteration: 1  Instance: /CPU/Mem
-# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
-#    Time: 0 ps  Iteration: 1  Instance: /CPU/Mem
-run
-run
-quit -sim
-# End time: 08:43:30 on Nov 25,2021, Elapsed time: 0:04:42
-# Errors: 11, Warnings: 16
-# Compile of mux_alu_src_A.v was successful.
-# Compile of mux_alu_src_B.v was successful.
-# Compile of mux_shift_n.v was successful.
-# Compile of shift_left_2.v was successful.
-# Compile of sign_extend_16.v was successful.
-# Compile of Banco_reg.vhd was successful.
-# Compile of Instr_Reg.vhd was successful.
-# Compile of Memoria.vhd was successful.
-# Compile of RegDesloc.vhd was successful.
-# Compile of Registrador.vhd was successful.
-# Compile of ula32.vhd was successful.
-# Compile of CPU.v was successful.
-# Compile of ctrl_unit.v was successful.
-# Compile of mux_reg_dst.v was successful.
-# Compile of SS.v was successful.
-# Compile of LS.v was successful.
-# Compile of mux_shift_in.v was successful.
-# Compile of mux_data_src.v was successful.
-# Compile of mux_Ior_D.v was successful.
-# Compile of mux_pc_src.v was successful.
-# Compile of mux_alu_flag.v was successful.
-# Compile of sign_extend_32.v was successful.
-# 22 compiles, 0 failed with no errors.
-vsim work.CVPU
-# vsim work.CVPU 
-# Start time: 08:43:58 on Nov 25,2021
-# ** Error: (vsim-3170) Could not find 'CVPU'.
-#         Searched libraries:
-#             /home/ctxo/Documents/College/InfraHard/projeto-infraHard/CPU/work
-# Error loading design
-# End time: 08:43:58 on Nov 25,2021, Elapsed time: 0:00:00
-# Errors: 1, Warnings: 2
-vsim work.CPU
-# vsim work.CPU 
-# Start time: 08:43:59 on Nov 25,2021
-# Loading work.CPU
-# Loading work.LS
-# Loading work.SS
-# Loading work.mux_pc_src
-# Loading work.mux_data_src
-# Loading work.mux_reg_dst
-# Loading work.mux_Ior_D
-# Loading work.mux_alu_src_A
-# Loading work.mux_alu_src_B
-# Loading work.mux_alu_flag
-# Loading work.sign_extend_32
-# Loading work.ctrl_unit
-# Loading work.sign_extend_16
-# Loading work.shift_left_2
-# Loading work.shift_left_2_conc
-# Loading work.mux_shift_in
-# Loading work.mux_shift_n
-# Loading std.standard
-# Loading std.textio(body)
-# Loading ieee.std_logic_1164(body)
-# Loading work.registrador(behavioral_arch)
-# Loading ieee.numeric_std(body)
-# Loading lpm.lpm_components
-# Loading work.ram_constants
-# Loading work.memoria(behavioral_arch)
-# Loading ieee.std_logic_arith(body)
-# Loading ieee.std_logic_unsigned(body)
-# Loading lpm.lpm_common_conversion(body)
-# Loading lpm.lpm_device_families(body)
-# Loading lpm.lpm_ram_dq(lpm_syn)
-# Loading work.instr_reg(behavioral_arch)
-# Loading work.banco_reg(behavioral_arch)
-# Loading work.ula32(behavioral)
-# Loading work.regdesloc(behavioral_arch)
-do latercpu.do
-force -freeze sim:/CPU/clk 1 0, 0 {50 ps} -r 100
-force -freeze sim:/CPU/reset 1 0 -cancel 100
-# Compile of mux_alu_src_A.v was successful.
-# Compile of mux_alu_src_B.v was successful.
-# Compile of mux_shift_n.v was successful.
-# Compile of shift_left_2.v was successful.
-# Compile of sign_extend_16.v was successful.
-# Compile of Banco_reg.vhd was successful.
-# Compile of Instr_Reg.vhd was successful.
-# Compile of Memoria.vhd was successful.
-# Compile of RegDesloc.vhd was successful.
-# Compile of Registrador.vhd was successful.
-# Compile of ula32.vhd was successful.
-# Compile of CPU.v was successful.
-# Compile of ctrl_unit.v was successful.
-# Compile of mux_reg_dst.v was successful.
-# Compile of SS.v was successful.
-# Compile of LS.v was successful.
-# Compile of mux_shift_in.v was successful.
-# Compile of mux_data_src.v was successful.
-# Compile of mux_Ior_D.v was successful.
-# Compile of mux_pc_src.v was successful.
-# Compile of mux_alu_flag.v was successful.
-# Compile of sign_extend_32.v was successful.
-# 22 compiles, 0 failed with no errors.
-run
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ps  Iteration: 0  Instance: /CPU/Regs
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ps  Iteration: 0  Instance: /CPU/Regs
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 0 ps  Iteration: 0  Instance: /CPU/Mem/MEM_plus_Three
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 0 ps  Iteration: 0  Instance: /CPU/Mem/MEM_plus_Three
-# ** Error: Unknown intended_device_family UNUSED
-#    Time: 0 ps  Iteration: 0  Instance: /CPU/Mem/MEM_plus_Three
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 0 ps  Iteration: 0  Instance: /CPU/Mem/MEM_plus_Two
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 0 ps  Iteration: 0  Instance: /CPU/Mem/MEM_plus_Two
-# ** Error: Unknown intended_device_family UNUSED
-#    Time: 0 ps  Iteration: 0  Instance: /CPU/Mem/MEM_plus_Two
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 0 ps  Iteration: 0  Instance: /CPU/Mem/MEM_plus_One
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 0 ps  Iteration: 0  Instance: /CPU/Mem/MEM_plus_One
-# ** Error: Unknown intended_device_family UNUSED
-#    Time: 0 ps  Iteration: 0  Instance: /CPU/Mem/MEM_plus_One
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 0 ps  Iteration: 0  Instance: /CPU/Mem/MEM
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 0 ps  Iteration: 0  Instance: /CPU/Mem/MEM
-# ** Error: Unknown intended_device_family UNUSED
-#    Time: 0 ps  Iteration: 0  Instance: /CPU/Mem/MEM
-# ** Error: (vsim-86) Argument value -2147483648 is not in bounds of subtype NATURAL.
-#    Time: 0 ps  Iteration: 0  Instance: /CPU/Mem
-# ** Error: (vsim-86) Argument value -2147483648 is not in bounds of subtype NATURAL.
-#    Time: 0 ps  Iteration: 0  Instance: /CPU/Mem
-# ** Error: (vsim-86) Argument value -2147483648 is not in bounds of subtype NATURAL.
-#    Time: 0 ps  Iteration: 0  Instance: /CPU/Mem
-# ** Error: (vsim-86) Argument value -2147483648 is not in bounds of subtype NATURAL.
-#    Time: 0 ps  Iteration: 0  Instance: /CPU/Mem
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ps  Iteration: 0  Instance: /CPU/Mem
-# ** Error: (vsim-86) Argument value -2147483645 is not in bounds of subtype NATURAL.
-#    Time: 0 ps  Iteration: 1  Instance: /CPU/Mem
-# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
-#    Time: 0 ps  Iteration: 1  Instance: /CPU/Mem
-# ** Error: (vsim-86) Argument value -2147483646 is not in bounds of subtype NATURAL.
-#    Time: 0 ps  Iteration: 1  Instance: /CPU/Mem
-# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
-#    Time: 0 ps  Iteration: 1  Instance: /CPU/Mem
-# ** Error: (vsim-86) Argument value -2147483647 is not in bounds of subtype NATURAL.
-#    Time: 0 ps  Iteration: 1  Instance: /CPU/Mem
-# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
-#    Time: 0 ps  Iteration: 1  Instance: /CPU/Mem
-run
-quit -sim
-# End time: 08:48:11 on Nov 25,2021, Elapsed time: 0:04:12
-# Errors: 11, Warnings: 16
-# Compile of mux_alu_src_A.v was successful.
-# Compile of mux_alu_src_B.v was successful.
-# Compile of mux_shift_n.v was successful.
-# Compile of shift_left_2.v was successful.
-# Compile of sign_extend_16.v was successful.
-# Compile of Banco_reg.vhd was successful.
-# Compile of Instr_Reg.vhd was successful.
-# Compile of Memoria.vhd was successful.
-# Compile of RegDesloc.vhd was successful.
-# Compile of Registrador.vhd was successful.
-# Compile of ula32.vhd was successful.
-# Compile of CPU.v was successful.
-# Compile of ctrl_unit.v was successful.
-# Compile of mux_reg_dst.v was successful.
-# Compile of SS.v was successful.
-# Compile of LS.v was successful.
-# Compile of mux_shift_in.v was successful.
-# Compile of mux_data_src.v was successful.
-# Compile of mux_Ior_D.v was successful.
-# Compile of mux_pc_src.v was successful.
-# Compile of mux_alu_flag.v was successful.
-# Compile of sign_extend_32.v was successful.
-# 22 compiles, 0 failed with no errors.
-vsim work.CPU
-# vsim work.CPU 
-# Start time: 08:48:22 on Nov 25,2021
-# Loading work.CPU
-# Loading work.LS
-# Loading work.SS
-# Loading work.mux_pc_src
-# Loading work.mux_data_src
-# Loading work.mux_reg_dst
-# Loading work.mux_Ior_D
-# Loading work.mux_alu_src_A
-# Loading work.mux_alu_src_B
-# Loading work.mux_alu_flag
-# Loading work.sign_extend_32
-# Loading work.ctrl_unit
-# Loading work.sign_extend_16
-# Loading work.shift_left_2
-# Loading work.shift_left_2_conc
-# Loading work.mux_shift_in
-# Loading work.mux_shift_n
-# Loading std.standard
-# Loading std.textio(body)
-# Loading ieee.std_logic_1164(body)
-# Loading work.registrador(behavioral_arch)
-# Loading ieee.numeric_std(body)
-# Loading lpm.lpm_components
-# Loading work.ram_constants
-# Loading work.memoria(behavioral_arch)
-# Loading ieee.std_logic_arith(body)
-# Loading ieee.std_logic_unsigned(body)
-# Loading lpm.lpm_common_conversion(body)
-# Loading lpm.lpm_device_families(body)
-# Loading lpm.lpm_ram_dq(lpm_syn)
-# Loading work.instr_reg(behavioral_arch)
-# Loading work.banco_reg(behavioral_arch)
-# Loading work.ula32(behavioral)
-# Loading work.regdesloc(behavioral_arch)
-do latercpu.do
-force -freeze sim:/CPU/clk 1 0, 0 {50 ps} -r 100
-force -freeze sim:/CPU/reset 1 0 -cancel 100
-run
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ps  Iteration: 0  Instance: /CPU/Regs
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ps  Iteration: 0  Instance: /CPU/Regs
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 0 ps  Iteration: 0  Instance: /CPU/Mem/MEM_plus_Three
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 0 ps  Iteration: 0  Instance: /CPU/Mem/MEM_plus_Three
-# ** Error: Unknown intended_device_family UNUSED
-#    Time: 0 ps  Iteration: 0  Instance: /CPU/Mem/MEM_plus_Three
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 0 ps  Iteration: 0  Instance: /CPU/Mem/MEM_plus_Two
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 0 ps  Iteration: 0  Instance: /CPU/Mem/MEM_plus_Two
-# ** Error: Unknown intended_device_family UNUSED
-#    Time: 0 ps  Iteration: 0  Instance: /CPU/Mem/MEM_plus_Two
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 0 ps  Iteration: 0  Instance: /CPU/Mem/MEM_plus_One
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 0 ps  Iteration: 0  Instance: /CPU/Mem/MEM_plus_One
-# ** Error: Unknown intended_device_family UNUSED
-#    Time: 0 ps  Iteration: 0  Instance: /CPU/Mem/MEM_plus_One
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 0 ps  Iteration: 0  Instance: /CPU/Mem/MEM
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 0 ps  Iteration: 0  Instance: /CPU/Mem/MEM
-# ** Error: Unknown intended_device_family UNUSED
-#    Time: 0 ps  Iteration: 0  Instance: /CPU/Mem/MEM
-# ** Error: (vsim-86) Argument value -2147483648 is not in bounds of subtype NATURAL.
-#    Time: 0 ps  Iteration: 0  Instance: /CPU/Mem
-# ** Error: (vsim-86) Argument value -2147483648 is not in bounds of subtype NATURAL.
-#    Time: 0 ps  Iteration: 0  Instance: /CPU/Mem
-# ** Error: (vsim-86) Argument value -2147483648 is not in bounds of subtype NATURAL.
-#    Time: 0 ps  Iteration: 0  Instance: /CPU/Mem
-# ** Error: (vsim-86) Argument value -2147483648 is not in bounds of subtype NATURAL.
-#    Time: 0 ps  Iteration: 0  Instance: /CPU/Mem
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ps  Iteration: 0  Instance: /CPU/Mem
-# ** Error: (vsim-86) Argument value -2147483645 is not in bounds of subtype NATURAL.
-#    Time: 0 ps  Iteration: 1  Instance: /CPU/Mem
-# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
-#    Time: 0 ps  Iteration: 1  Instance: /CPU/Mem
-# ** Error: (vsim-86) Argument value -2147483646 is not in bounds of subtype NATURAL.
-#    Time: 0 ps  Iteration: 1  Instance: /CPU/Mem
-# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
-#    Time: 0 ps  Iteration: 1  Instance: /CPU/Mem
-# ** Error: (vsim-86) Argument value -2147483647 is not in bounds of subtype NATURAL.
-#    Time: 0 ps  Iteration: 1  Instance: /CPU/Mem
-# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
-#    Time: 0 ps  Iteration: 1  Instance: /CPU/Mem
-run
-run
-quit -sim
-# End time: 08:49:07 on Nov 25,2021, Elapsed time: 0:00:45
-# Errors: 11, Warnings: 16
-# Compile of mux_alu_src_A.v was successful.
-# Compile of mux_alu_src_B.v was successful.
-# Compile of mux_shift_n.v was successful.
-# Compile of shift_left_2.v was successful.
-# Compile of sign_extend_16.v was successful.
-# Compile of Banco_reg.vhd was successful.
-# Compile of Instr_Reg.vhd was successful.
-# Compile of Memoria.vhd was successful.
-# Compile of RegDesloc.vhd was successful.
-# Compile of Registrador.vhd was successful.
-# Compile of ula32.vhd was successful.
-# Compile of CPU.v was successful.
-# Compile of ctrl_unit.v was successful.
-# Compile of mux_reg_dst.v was successful.
-# Compile of SS.v was successful.
-# Compile of LS.v was successful.
-# Compile of mux_shift_in.v was successful.
-# Compile of mux_data_src.v was successful.
-# Compile of mux_Ior_D.v was successful.
-# Compile of mux_pc_src.v was successful.
-# Compile of mux_alu_flag.v was successful.
-# Compile of sign_extend_32.v was successful.
-# 22 compiles, 0 failed with no errors.
-do latercpu.do
-vsim work.CPU
-# vsim work.CPU 
-# Start time: 08:49:24 on Nov 25,2021
-# Loading work.CPU
-# Loading work.LS
-# Loading work.SS
-# Loading work.mux_pc_src
-# Loading work.mux_data_src
-# Loading work.mux_reg_dst
-# Loading work.mux_Ior_D
-# Loading work.mux_alu_src_A
-# Loading work.mux_alu_src_B
-# Loading work.mux_alu_flag
-# Loading work.sign_extend_32
-# Loading work.ctrl_unit
-# Loading work.sign_extend_16
-# Loading work.shift_left_2
-# Loading work.shift_left_2_conc
-# Loading work.mux_shift_in
-# Loading work.mux_shift_n
-# Loading std.standard
-# Loading std.textio(body)
-# Loading ieee.std_logic_1164(body)
-# Loading work.registrador(behavioral_arch)
-# Loading ieee.numeric_std(body)
-# Loading lpm.lpm_components
-# Loading work.ram_constants
-# Loading work.memoria(behavioral_arch)
-# Loading ieee.std_logic_arith(body)
-# Loading ieee.std_logic_unsigned(body)
-# Loading lpm.lpm_common_conversion(body)
-# Loading lpm.lpm_device_families(body)
-# Loading lpm.lpm_ram_dq(lpm_syn)
-# Loading work.instr_reg(behavioral_arch)
-# Loading work.banco_reg(behavioral_arch)
-# Loading work.ula32(behavioral)
-# Loading work.regdesloc(behavioral_arch)
-do latercpu.do
-force -freeze sim:/CPU/clk 1 0, 0 {50 ps} -r 100
-force -freeze sim:/CPU/reset 1 0 -cancel 100
-run
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ps  Iteration: 0  Instance: /CPU/Regs
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ps  Iteration: 0  Instance: /CPU/Regs
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 0 ps  Iteration: 0  Instance: /CPU/Mem/MEM_plus_Three
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 0 ps  Iteration: 0  Instance: /CPU/Mem/MEM_plus_Three
-# ** Error: Unknown intended_device_family UNUSED
-#    Time: 0 ps  Iteration: 0  Instance: /CPU/Mem/MEM_plus_Three
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 0 ps  Iteration: 0  Instance: /CPU/Mem/MEM_plus_Two
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 0 ps  Iteration: 0  Instance: /CPU/Mem/MEM_plus_Two
-# ** Error: Unknown intended_device_family UNUSED
-#    Time: 0 ps  Iteration: 0  Instance: /CPU/Mem/MEM_plus_Two
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 0 ps  Iteration: 0  Instance: /CPU/Mem/MEM_plus_One
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 0 ps  Iteration: 0  Instance: /CPU/Mem/MEM_plus_One
-# ** Error: Unknown intended_device_family UNUSED
-#    Time: 0 ps  Iteration: 0  Instance: /CPU/Mem/MEM_plus_One
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 0 ps  Iteration: 0  Instance: /CPU/Mem/MEM
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 0 ps  Iteration: 0  Instance: /CPU/Mem/MEM
-# ** Error: Unknown intended_device_family UNUSED
-#    Time: 0 ps  Iteration: 0  Instance: /CPU/Mem/MEM
-# ** Error: (vsim-86) Argument value -2147483648 is not in bounds of subtype NATURAL.
-#    Time: 0 ps  Iteration: 0  Instance: /CPU/Mem
-# ** Error: (vsim-86) Argument value -2147483648 is not in bounds of subtype NATURAL.
-#    Time: 0 ps  Iteration: 0  Instance: /CPU/Mem
-# ** Error: (vsim-86) Argument value -2147483648 is not in bounds of subtype NATURAL.
-#    Time: 0 ps  Iteration: 0  Instance: /CPU/Mem
-# ** Error: (vsim-86) Argument value -2147483648 is not in bounds of subtype NATURAL.
-#    Time: 0 ps  Iteration: 0  Instance: /CPU/Mem
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ps  Iteration: 0  Instance: /CPU/Mem
-# ** Error: (vsim-86) Argument value -2147483645 is not in bounds of subtype NATURAL.
-#    Time: 0 ps  Iteration: 1  Instance: /CPU/Mem
-# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
-#    Time: 0 ps  Iteration: 1  Instance: /CPU/Mem
-# ** Error: (vsim-86) Argument value -2147483646 is not in bounds of subtype NATURAL.
-#    Time: 0 ps  Iteration: 1  Instance: /CPU/Mem
-# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
-#    Time: 0 ps  Iteration: 1  Instance: /CPU/Mem
-# ** Error: (vsim-86) Argument value -2147483647 is not in bounds of subtype NATURAL.
-#    Time: 0 ps  Iteration: 1  Instance: /CPU/Mem
-# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
-#    Time: 0 ps  Iteration: 1  Instance: /CPU/Mem
-run
-run
-add wave -position 16  -format Default -height 18 -label ls -max 0 -min 0
-# Missing signal name or pattern.
-add wave -position 16  -format Default -height 18 -label ls -max 0 -min 0
-# Missing signal name or pattern.
-add wave -position end  sim:/CPU/ls/regData
-add wave -position end  sim:/CPU/ls/lsout
-add wave -position end  sim:/CPU/ls/lscontrol
-add wave -position end  sim:/CPU/ls/regData
-add wave -position end  sim:/CPU/ls/lsout
-add wave -position end  sim:/CPU/ls/lscontrol
-add wave -position 17  sim:/CPU/ls/regData
-add wave -position 17  sim:/CPU/ls/lsout
-add wave -position 17  sim:/CPU/ls/lscontrol
-add wave -position 17  sim:/CPU/ss/ssout
-add wave -position 17  sim:/CPU/ss/sscontrol
-add wave -position 17  sim:/CPU/ss/regData
-add wave -position 17  sim:/CPU/ss/memData
-restart
-# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
-force -freeze sim:/CPU/clk 1 0, 0 {50 ps} -r 100
-force -freeze sim:/CPU/reset 1 0 -cancel 100
-run
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ps  Iteration: 0  Instance: /CPU/Regs
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ps  Iteration: 0  Instance: /CPU/Regs
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 0 ps  Iteration: 0  Instance: /CPU/Mem/MEM_plus_Three
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 0 ps  Iteration: 0  Instance: /CPU/Mem/MEM_plus_Three
-# ** Error: Unknown intended_device_family UNUSED
-#    Time: 0 ps  Iteration: 0  Instance: /CPU/Mem/MEM_plus_Three
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 0 ps  Iteration: 0  Instance: /CPU/Mem/MEM_plus_Two
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 0 ps  Iteration: 0  Instance: /CPU/Mem/MEM_plus_Two
-# ** Error: Unknown intended_device_family UNUSED
-#    Time: 0 ps  Iteration: 0  Instance: /CPU/Mem/MEM_plus_Two
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 0 ps  Iteration: 0  Instance: /CPU/Mem/MEM_plus_One
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 0 ps  Iteration: 0  Instance: /CPU/Mem/MEM_plus_One
-# ** Error: Unknown intended_device_family UNUSED
-#    Time: 0 ps  Iteration: 0  Instance: /CPU/Mem/MEM_plus_One
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 0 ps  Iteration: 0  Instance: /CPU/Mem/MEM
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 0 ps  Iteration: 0  Instance: /CPU/Mem/MEM
-# ** Error: Unknown intended_device_family UNUSED
-#    Time: 0 ps  Iteration: 0  Instance: /CPU/Mem/MEM
-# ** Error: (vsim-86) Argument value -2147483648 is not in bounds of subtype NATURAL.
-#    Time: 0 ps  Iteration: 0  Instance: /CPU/Mem
-# ** Error: (vsim-86) Argument value -2147483648 is not in bounds of subtype NATURAL.
-#    Time: 0 ps  Iteration: 0  Instance: /CPU/Mem
-# ** Error: (vsim-86) Argument value -2147483648 is not in bounds of subtype NATURAL.
-#    Time: 0 ps  Iteration: 0  Instance: /CPU/Mem
-# ** Error: (vsim-86) Argument value -2147483648 is not in bounds of subtype NATURAL.
-#    Time: 0 ps  Iteration: 0  Instance: /CPU/Mem
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ps  Iteration: 0  Instance: /CPU/Mem
-# ** Error: (vsim-86) Argument value -2147483645 is not in bounds of subtype NATURAL.
-#    Time: 0 ps  Iteration: 1  Instance: /CPU/Mem
-# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
-#    Time: 0 ps  Iteration: 1  Instance: /CPU/Mem
-# ** Error: (vsim-86) Argument value -2147483646 is not in bounds of subtype NATURAL.
-#    Time: 0 ps  Iteration: 1  Instance: /CPU/Mem
-# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
-#    Time: 0 ps  Iteration: 1  Instance: /CPU/Mem
-# ** Error: (vsim-86) Argument value -2147483647 is not in bounds of subtype NATURAL.
-#    Time: 0 ps  Iteration: 1  Instance: /CPU/Mem
-# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
-#    Time: 0 ps  Iteration: 1  Instance: /CPU/Mem
-run
-add wave -position 18  -autoscale 1 -format Literal -height 19 -radix binary
-# Missing signal name or pattern.
-quit -sim
-# End time: 09:06:55 on Nov 25,2021, Elapsed time: 0:17:31
-# Errors: 11, Warnings: 15
-# Compile of mux_alu_src_A.v was successful.
-# Compile of mux_alu_src_B.v was successful.
-# Compile of mux_shift_n.v was successful.
-# Compile of shift_left_2.v was successful.
-# Compile of sign_extend_16.v was successful.
-# Compile of Banco_reg.vhd was successful.
-# Compile of Instr_Reg.vhd was successful.
-# Compile of Memoria.vhd was successful.
-# Compile of RegDesloc.vhd was successful.
-# Compile of Registrador.vhd was successful.
-# Compile of ula32.vhd was successful.
-# Compile of CPU.v was successful.
-# Compile of ctrl_unit.v was successful.
-# Compile of mux_reg_dst.v was successful.
-# Compile of SS.v was successful.
-# Compile of LS.v was successful.
-# Compile of mux_shift_in.v was successful.
-# Compile of mux_data_src.v was successful.
-# Compile of mux_Ior_D.v was successful.
-# Compile of mux_pc_src.v was successful.
-# Compile of mux_alu_flag.v was successful.
-# Compile of sign_extend_32.v was successful.
-# 22 compiles, 0 failed with no errors.
-vsim work.CPU
-# vsim work.CPU 
-# Start time: 09:07:04 on Nov 25,2021
-# Loading work.CPU
-# Loading work.LS
-# Loading work.SS
-# Loading work.mux_pc_src
-# Loading work.mux_data_src
-# Loading work.mux_reg_dst
-# Loading work.mux_Ior_D
-# Loading work.mux_alu_src_A
-# Loading work.mux_alu_src_B
-# Loading work.mux_alu_flag
-# Loading work.sign_extend_32
-# Loading work.ctrl_unit
-# Loading work.sign_extend_16
-# Loading work.shift_left_2
-# Loading work.shift_left_2_conc
-# Loading work.mux_shift_in
-# Loading work.mux_shift_n
-# Loading std.standard
-# Loading std.textio(body)
-# Loading ieee.std_logic_1164(body)
-# Loading work.registrador(behavioral_arch)
-# Loading ieee.numeric_std(body)
-# Loading lpm.lpm_components
-# Loading work.ram_constants
-# Loading work.memoria(behavioral_arch)
-# Loading ieee.std_logic_arith(body)
-# Loading ieee.std_logic_unsigned(body)
-# Loading lpm.lpm_common_conversion(body)
-# Loading lpm.lpm_device_families(body)
-# Loading lpm.lpm_ram_dq(lpm_syn)
-# Loading work.instr_reg(behavioral_arch)
-# Loading work.banco_reg(behavioral_arch)
-# Loading work.ula32(behavioral)
-# Loading work.regdesloc(behavioral_arch)
-do latercpu.do
-force -freeze sim:/CPU/clk 1 0, 0 {50 ps} -r 100
-force -freeze sim:/CPU/reset 1 0 -cancel 100
-add wave -position end  sim:/CPU/ls/regData
-add wave -position end  sim:/CPU/ls/lsout
-add wave -position end  sim:/CPU/ls/lscontrol
-add wave -position 17  sim:/CPU/ls/regData
-add wave -position 17  sim:/CPU/ls/lsout
-add wave -position 17  sim:/CPU/ls/lscontrol
-add wave -position 17  sim:/CPU/ss/ssout
-add wave -position 17  sim:/CPU/ss/sscontrol
-add wave -position 17  sim:/CPU/ss/regData
-add wave -position 17  sim:/CPU/ss/memData
+add wave -position 82  sim:/CPU/ALU/Overflow
 write format wave -window .main_pane.wave.interior.cs.body.pw.wf /home/ctxo/Documents/College/InfraHard/projeto-infraHard/CPU/latercpu.do
 run
 # ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
@@ -707,240 +118,216 @@ run
 #    Time: 0 ps  Iteration: 1  Instance: /CPU/Mem
 # ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
 #    Time: 0 ps  Iteration: 1  Instance: /CPU/Mem
-run
-run
-noforce sim:/CPU/ss/regData
-add wave -position 18 -format Logic -height 19 -group PC -autoscale 1 -format Literal -height 19 -group PC
-add wave -position 18  -autoscale 1 -format Literal -height 19 -radix unsigned -group PC
-# WARNING: No extended dataflow license exists
-# dfAddDataflowFromWave: ** UI-Msg: (vish-4014) No objects found matching 'IorD'.
-restart
-# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
-run
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ps  Iteration: 0  Instance: /CPU/Regs
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ps  Iteration: 0  Instance: /CPU/Regs
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 0 ps  Iteration: 0  Instance: /CPU/Mem/MEM_plus_Three
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 0 ps  Iteration: 0  Instance: /CPU/Mem/MEM_plus_Three
-# ** Error: Unknown intended_device_family UNUSED
-#    Time: 0 ps  Iteration: 0  Instance: /CPU/Mem/MEM_plus_Three
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 0 ps  Iteration: 0  Instance: /CPU/Mem/MEM_plus_Two
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 0 ps  Iteration: 0  Instance: /CPU/Mem/MEM_plus_Two
-# ** Error: Unknown intended_device_family UNUSED
-#    Time: 0 ps  Iteration: 0  Instance: /CPU/Mem/MEM_plus_Two
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 0 ps  Iteration: 0  Instance: /CPU/Mem/MEM_plus_One
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 0 ps  Iteration: 0  Instance: /CPU/Mem/MEM_plus_One
-# ** Error: Unknown intended_device_family UNUSED
-#    Time: 0 ps  Iteration: 0  Instance: /CPU/Mem/MEM_plus_One
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 0 ps  Iteration: 0  Instance: /CPU/Mem/MEM
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 0 ps  Iteration: 0  Instance: /CPU/Mem/MEM
-# ** Error: Unknown intended_device_family UNUSED
-#    Time: 0 ps  Iteration: 0  Instance: /CPU/Mem/MEM
-# ** Error: (vsim-86) Argument value -2147483648 is not in bounds of subtype NATURAL.
-#    Time: 0 ps  Iteration: 0  Instance: /CPU/Mem
-# ** Error: (vsim-86) Argument value -2147483648 is not in bounds of subtype NATURAL.
-#    Time: 0 ps  Iteration: 0  Instance: /CPU/Mem
-# ** Error: (vsim-86) Argument value -2147483648 is not in bounds of subtype NATURAL.
-#    Time: 0 ps  Iteration: 0  Instance: /CPU/Mem
-# ** Error: (vsim-86) Argument value -2147483648 is not in bounds of subtype NATURAL.
-#    Time: 0 ps  Iteration: 0  Instance: /CPU/Mem
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ps  Iteration: 0  Instance: /CPU/Mem
-# ** Error: (vsim-86) Argument value -2147483645 is not in bounds of subtype NATURAL.
-#    Time: 0 ps  Iteration: 1  Instance: /CPU/Mem
-# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
-#    Time: 0 ps  Iteration: 1  Instance: /CPU/Mem
-# ** Error: (vsim-86) Argument value -2147483646 is not in bounds of subtype NATURAL.
-#    Time: 0 ps  Iteration: 1  Instance: /CPU/Mem
-# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
-#    Time: 0 ps  Iteration: 1  Instance: /CPU/Mem
-# ** Error: (vsim-86) Argument value -2147483647 is not in bounds of subtype NATURAL.
-#    Time: 0 ps  Iteration: 1  Instance: /CPU/Mem
-# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
-#    Time: 0 ps  Iteration: 1  Instance: /CPU/Mem
-run -all
-restart
-# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
-force -freeze sim:/CPU/clk 1 0, 0 {50 ps} -r 100
-force -freeze sim:/CPU/reset 1 0 -cancel 100
-run -all
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ps  Iteration: 0  Instance: /CPU/Regs
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ps  Iteration: 0  Instance: /CPU/Regs
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 0 ps  Iteration: 0  Instance: /CPU/Mem/MEM_plus_Three
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 0 ps  Iteration: 0  Instance: /CPU/Mem/MEM_plus_Three
-# ** Error: Unknown intended_device_family UNUSED
-#    Time: 0 ps  Iteration: 0  Instance: /CPU/Mem/MEM_plus_Three
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 0 ps  Iteration: 0  Instance: /CPU/Mem/MEM_plus_Two
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 0 ps  Iteration: 0  Instance: /CPU/Mem/MEM_plus_Two
-# ** Error: Unknown intended_device_family UNUSED
-#    Time: 0 ps  Iteration: 0  Instance: /CPU/Mem/MEM_plus_Two
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 0 ps  Iteration: 0  Instance: /CPU/Mem/MEM_plus_One
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 0 ps  Iteration: 0  Instance: /CPU/Mem/MEM_plus_One
-# ** Error: Unknown intended_device_family UNUSED
-#    Time: 0 ps  Iteration: 0  Instance: /CPU/Mem/MEM_plus_One
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 0 ps  Iteration: 0  Instance: /CPU/Mem/MEM
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 0 ps  Iteration: 0  Instance: /CPU/Mem/MEM
-# ** Error: Unknown intended_device_family UNUSED
-#    Time: 0 ps  Iteration: 0  Instance: /CPU/Mem/MEM
-# ** Error: (vsim-86) Argument value -2147483648 is not in bounds of subtype NATURAL.
-#    Time: 0 ps  Iteration: 0  Instance: /CPU/Mem
-# ** Error: (vsim-86) Argument value -2147483648 is not in bounds of subtype NATURAL.
-#    Time: 0 ps  Iteration: 0  Instance: /CPU/Mem
-# ** Error: (vsim-86) Argument value -2147483648 is not in bounds of subtype NATURAL.
-#    Time: 0 ps  Iteration: 0  Instance: /CPU/Mem
-# ** Error: (vsim-86) Argument value -2147483648 is not in bounds of subtype NATURAL.
-#    Time: 0 ps  Iteration: 0  Instance: /CPU/Mem
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ps  Iteration: 0  Instance: /CPU/Mem
-# ** Error: (vsim-86) Argument value -2147483645 is not in bounds of subtype NATURAL.
-#    Time: 0 ps  Iteration: 1  Instance: /CPU/Mem
-# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
-#    Time: 0 ps  Iteration: 1  Instance: /CPU/Mem
-# ** Error: (vsim-86) Argument value -2147483646 is not in bounds of subtype NATURAL.
-#    Time: 0 ps  Iteration: 1  Instance: /CPU/Mem
-# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
-#    Time: 0 ps  Iteration: 1  Instance: /CPU/Mem
-# ** Error: (vsim-86) Argument value -2147483647 is not in bounds of subtype NATURAL.
-#    Time: 0 ps  Iteration: 1  Instance: /CPU/Mem
-# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
-#    Time: 0 ps  Iteration: 1  Instance: /CPU/Mem
-# Break key hit
-# Simulation stop requested.
-restart
-# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
-force -freeze sim:/CPU/clk 1 0, 0 {50 ps} -r 100
-force -freeze sim:/CPU/reset 1 0 -cancel 100
-run
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ps  Iteration: 0  Instance: /CPU/Regs
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ps  Iteration: 0  Instance: /CPU/Regs
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 0 ps  Iteration: 0  Instance: /CPU/Mem/MEM_plus_Three
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 0 ps  Iteration: 0  Instance: /CPU/Mem/MEM_plus_Three
-# ** Error: Unknown intended_device_family UNUSED
-#    Time: 0 ps  Iteration: 0  Instance: /CPU/Mem/MEM_plus_Three
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 0 ps  Iteration: 0  Instance: /CPU/Mem/MEM_plus_Two
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 0 ps  Iteration: 0  Instance: /CPU/Mem/MEM_plus_Two
-# ** Error: Unknown intended_device_family UNUSED
-#    Time: 0 ps  Iteration: 0  Instance: /CPU/Mem/MEM_plus_Two
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 0 ps  Iteration: 0  Instance: /CPU/Mem/MEM_plus_One
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 0 ps  Iteration: 0  Instance: /CPU/Mem/MEM_plus_One
-# ** Error: Unknown intended_device_family UNUSED
-#    Time: 0 ps  Iteration: 0  Instance: /CPU/Mem/MEM_plus_One
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 0 ps  Iteration: 0  Instance: /CPU/Mem/MEM
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 0 ps  Iteration: 0  Instance: /CPU/Mem/MEM
-# ** Error: Unknown intended_device_family UNUSED
-#    Time: 0 ps  Iteration: 0  Instance: /CPU/Mem/MEM
-# ** Error: (vsim-86) Argument value -2147483648 is not in bounds of subtype NATURAL.
-#    Time: 0 ps  Iteration: 0  Instance: /CPU/Mem
-# ** Error: (vsim-86) Argument value -2147483648 is not in bounds of subtype NATURAL.
-#    Time: 0 ps  Iteration: 0  Instance: /CPU/Mem
-# ** Error: (vsim-86) Argument value -2147483648 is not in bounds of subtype NATURAL.
-#    Time: 0 ps  Iteration: 0  Instance: /CPU/Mem
-# ** Error: (vsim-86) Argument value -2147483648 is not in bounds of subtype NATURAL.
-#    Time: 0 ps  Iteration: 0  Instance: /CPU/Mem
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ps  Iteration: 0  Instance: /CPU/Mem
-# ** Error: (vsim-86) Argument value -2147483645 is not in bounds of subtype NATURAL.
-#    Time: 0 ps  Iteration: 1  Instance: /CPU/Mem
-# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
-#    Time: 0 ps  Iteration: 1  Instance: /CPU/Mem
-# ** Error: (vsim-86) Argument value -2147483646 is not in bounds of subtype NATURAL.
-#    Time: 0 ps  Iteration: 1  Instance: /CPU/Mem
-# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
-#    Time: 0 ps  Iteration: 1  Instance: /CPU/Mem
-# ** Error: (vsim-86) Argument value -2147483647 is not in bounds of subtype NATURAL.
-#    Time: 0 ps  Iteration: 1  Instance: /CPU/Mem
-# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
-#    Time: 0 ps  Iteration: 1  Instance: /CPU/Mem
-run
-run
-restart
-# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
-run
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ps  Iteration: 0  Instance: /CPU/Regs
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ps  Iteration: 0  Instance: /CPU/Regs
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 0 ps  Iteration: 0  Instance: /CPU/Mem/MEM_plus_Three
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 0 ps  Iteration: 0  Instance: /CPU/Mem/MEM_plus_Three
-# ** Error: Unknown intended_device_family UNUSED
-#    Time: 0 ps  Iteration: 0  Instance: /CPU/Mem/MEM_plus_Three
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 0 ps  Iteration: 0  Instance: /CPU/Mem/MEM_plus_Two
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 0 ps  Iteration: 0  Instance: /CPU/Mem/MEM_plus_Two
-# ** Error: Unknown intended_device_family UNUSED
-#    Time: 0 ps  Iteration: 0  Instance: /CPU/Mem/MEM_plus_Two
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 0 ps  Iteration: 0  Instance: /CPU/Mem/MEM_plus_One
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 0 ps  Iteration: 0  Instance: /CPU/Mem/MEM_plus_One
-# ** Error: Unknown intended_device_family UNUSED
-#    Time: 0 ps  Iteration: 0  Instance: /CPU/Mem/MEM_plus_One
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 0 ps  Iteration: 0  Instance: /CPU/Mem/MEM
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 0 ps  Iteration: 0  Instance: /CPU/Mem/MEM
-# ** Error: Unknown intended_device_family UNUSED
-#    Time: 0 ps  Iteration: 0  Instance: /CPU/Mem/MEM
-# ** Error: (vsim-86) Argument value -2147483648 is not in bounds of subtype NATURAL.
-#    Time: 0 ps  Iteration: 0  Instance: /CPU/Mem
-# ** Error: (vsim-86) Argument value -2147483648 is not in bounds of subtype NATURAL.
-#    Time: 0 ps  Iteration: 0  Instance: /CPU/Mem
-# ** Error: (vsim-86) Argument value -2147483648 is not in bounds of subtype NATURAL.
-#    Time: 0 ps  Iteration: 0  Instance: /CPU/Mem
-# ** Error: (vsim-86) Argument value -2147483648 is not in bounds of subtype NATURAL.
-#    Time: 0 ps  Iteration: 0  Instance: /CPU/Mem
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ps  Iteration: 0  Instance: /CPU/Mem
-# ** Error: (vsim-86) Argument value -2147483645 is not in bounds of subtype NATURAL.
-#    Time: 0 ps  Iteration: 1  Instance: /CPU/Mem
-# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
-#    Time: 0 ps  Iteration: 1  Instance: /CPU/Mem
-# ** Error: (vsim-86) Argument value -2147483646 is not in bounds of subtype NATURAL.
-#    Time: 0 ps  Iteration: 1  Instance: /CPU/Mem
-# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
-#    Time: 0 ps  Iteration: 1  Instance: /CPU/Mem
-# ** Error: (vsim-86) Argument value -2147483647 is not in bounds of subtype NATURAL.
-#    Time: 0 ps  Iteration: 1  Instance: /CPU/Mem
-# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
-#    Time: 0 ps  Iteration: 1  Instance: /CPU/Mem
-# Break key hit
+force -freeze sim:/CPU/Regs/Cluster(10) 01111111111111111111111111111101 0
+force -freeze sim:/CPU/Regs/Cluster(11) 00000000000000000000000000011110 0
 run
 run
 run
-restart
-# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+quit -sim
+# End time: 17:30:31 on Nov 26,2021, Elapsed time: 0:12:17
+# Errors: 11, Warnings: 19
+# Compile of mux_alu_src_A.v was successful.
+# Compile of mux_alu_src_B.v was successful.
+# Compile of mux_shift_n.v was successful.
+# Compile of shift_left_2.v was successful.
+# Compile of sign_extend_16.v was successful.
+# Compile of Banco_reg.vhd was successful.
+# Compile of Instr_Reg.vhd was successful.
+# Compile of Memoria.vhd was successful.
+# Compile of RegDesloc.vhd was successful.
+# Compile of Registrador.vhd was successful.
+# Compile of ula32.vhd was successful.
+# Compile of CPU.v was successful.
+# Compile of ctrl_unit.v failed with 1 errors.
+# Compile of mux_reg_dst.v was successful.
+# Compile of SS.v was successful.
+# Compile of LS.v was successful.
+# Compile of mux_shift_in.v was successful.
+# Compile of mux_data_src.v was successful.
+# Compile of mux_Ior_D.v was successful.
+# Compile of mux_pc_src.v was successful.
+# Compile of mux_alu_flag.v was successful.
+# Compile of sign_extend_32.v was successful.
+# Compile of mux_controle_excessao.v was successful.
+# 23 compiles, 1 failed with 1 error.
+# Compile of ctrl_unit.v was successful.
+# Compile of mux_alu_src_A.v was successful.
+# Compile of mux_alu_src_B.v was successful.
+# Compile of mux_shift_n.v was successful.
+# Compile of shift_left_2.v was successful.
+# Compile of sign_extend_16.v was successful.
+# Compile of Banco_reg.vhd was successful.
+# Compile of Instr_Reg.vhd was successful.
+# Compile of Memoria.vhd was successful.
+# Compile of RegDesloc.vhd was successful.
+# Compile of Registrador.vhd was successful.
+# Compile of ula32.vhd was successful.
+# Compile of CPU.v was successful.
+# Compile of ctrl_unit.v was successful.
+# Compile of mux_reg_dst.v was successful.
+# Compile of SS.v was successful.
+# Compile of LS.v was successful.
+# Compile of mux_shift_in.v was successful.
+# Compile of mux_data_src.v was successful.
+# Compile of mux_Ior_D.v was successful.
+# Compile of mux_pc_src.v was successful.
+# Compile of mux_alu_flag.v was successful.
+# Compile of sign_extend_32.v was successful.
+# Compile of mux_controle_excessao.v was successful.
+# 23 compiles, 0 failed with no errors.
+vsim work.CPU
+# vsim work.CPU 
+# Start time: 17:31:25 on Nov 26,2021
+# Loading work.CPU
+# Loading work.LS
+# Loading work.SS
+# Loading work.mux_pc_src
+# Loading work.mux_controle_excessao
+# Loading work.mux_data_src
+# Loading work.mux_reg_dst
+# Loading work.mux_Ior_D
+# Loading work.mux_alu_src_A
+# Loading work.mux_alu_src_B
+# Loading work.mux_alu_flag
+# Loading work.sign_extend_32
+# Loading work.ctrl_unit
+# Loading work.sign_extend_16
+# Loading work.shift_left_2
+# Loading work.shift_left_2_conc
+# Loading work.mux_shift_in
+# Loading work.mux_shift_n
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading work.registrador(behavioral_arch)
+# Loading ieee.numeric_std(body)
+# Loading lpm.lpm_components
+# Loading work.ram_constants
+# Loading work.memoria(behavioral_arch)
+# Loading ieee.std_logic_arith(body)
+# Loading ieee.std_logic_unsigned(body)
+# Loading lpm.lpm_common_conversion(body)
+# Loading lpm.lpm_device_families(body)
+# Loading lpm.lpm_ram_dq(lpm_syn)
+# Loading work.instr_reg(behavioral_arch)
+# Loading work.banco_reg(behavioral_arch)
+# Loading work.ula32(behavioral)
+# Loading work.regdesloc(behavioral_arch)
+do latercpu.do
+do latercpu.do
+quit -sim
+# End time: 17:31:55 on Nov 26,2021, Elapsed time: 0:00:30
+# Errors: 0, Warnings: 4
+vsim work.CPU
+# vsim work.CPU 
+# Start time: 17:33:36 on Nov 26,2021
+# Loading work.CPU
+# Loading work.LS
+# Loading work.SS
+# Loading work.mux_pc_src
+# Loading work.mux_controle_excessao
+# Loading work.mux_data_src
+# Loading work.mux_reg_dst
+# Loading work.mux_Ior_D
+# Loading work.mux_alu_src_A
+# Loading work.mux_alu_src_B
+# Loading work.mux_alu_flag
+# Loading work.sign_extend_32
+# Loading work.ctrl_unit
+# Loading work.sign_extend_16
+# Loading work.shift_left_2
+# Loading work.shift_left_2_conc
+# Loading work.mux_shift_in
+# Loading work.mux_shift_n
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading work.registrador(behavioral_arch)
+# Loading ieee.numeric_std(body)
+# Loading lpm.lpm_components
+# Loading work.ram_constants
+# Loading work.memoria(behavioral_arch)
+# Loading ieee.std_logic_arith(body)
+# Loading ieee.std_logic_unsigned(body)
+# Loading lpm.lpm_common_conversion(body)
+# Loading lpm.lpm_device_families(body)
+# Loading lpm.lpm_ram_dq(lpm_syn)
+# Loading work.instr_reg(behavioral_arch)
+# Loading work.banco_reg(behavioral_arch)
+# Loading work.ula32(behavioral)
+# Loading work.regdesloc(behavioral_arch)
+do latercpu.do
+quit -sim
+# End time: 17:33:53 on Nov 26,2021, Elapsed time: 0:00:17
+# Errors: 0, Warnings: 1
+do latercpu.do
+vsim work.cpu
+# vsim work.cpu 
+# Start time: 17:34:10 on Nov 26,2021
+# ** Error: (vsim-3170) Could not find 'cpu'.
+#         Searched libraries:
+#             /home/ctxo/Documents/College/InfraHard/projeto-infraHard/CPU/work
+# Error loading design
+# End time: 17:34:10 on Nov 26,2021, Elapsed time: 0:00:00
+# Errors: 1, Warnings: 1
+vsim work.CPU
+# vsim work.CPU 
+# Start time: 17:34:16 on Nov 26,2021
+# Loading work.CPU
+# Loading work.LS
+# Loading work.SS
+# Loading work.mux_pc_src
+# Loading work.mux_controle_excessao
+# Loading work.mux_data_src
+# Loading work.mux_reg_dst
+# Loading work.mux_Ior_D
+# Loading work.mux_alu_src_A
+# Loading work.mux_alu_src_B
+# Loading work.mux_alu_flag
+# Loading work.sign_extend_32
+# Loading work.ctrl_unit
+# Loading work.sign_extend_16
+# Loading work.shift_left_2
+# Loading work.shift_left_2_conc
+# Loading work.mux_shift_in
+# Loading work.mux_shift_n
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading work.registrador(behavioral_arch)
+# Loading ieee.numeric_std(body)
+# Loading lpm.lpm_components
+# Loading work.ram_constants
+# Loading work.memoria(behavioral_arch)
+# Loading ieee.std_logic_arith(body)
+# Loading ieee.std_logic_unsigned(body)
+# Loading lpm.lpm_common_conversion(body)
+# Loading lpm.lpm_device_families(body)
+# Loading lpm.lpm_ram_dq(lpm_syn)
+# Loading work.instr_reg(behavioral_arch)
+# Loading work.banco_reg(behavioral_arch)
+# Loading work.ula32(behavioral)
+# Loading work.regdesloc(behavioral_arch)
+do latercpu.do
 force -freeze sim:/CPU/clk 1 0, 0 {50 ps} -r 100
 force -freeze sim:/CPU/reset 1 0 -cancel 100
 run
@@ -996,5 +383,25 @@ run
 #    Time: 0 ps  Iteration: 1  Instance: /CPU/Mem
 run
 run
-add wave -position 29  -autoscale 1 -format Literal -height 19 -radix binary
-# Missing signal name or pattern.
+run
+force -freeze sim:/CPU/Regs/Cluster(10) 01111111111111111111111111111101 0
+force -freeze sim:/CPU/Regs/Cluster(11) 0000000000000000000000000000000000000000000000000000000000011110 0
+# Value length (64) does not equal array index length (32).
+# ** UI-Msg: (vsim-4011) Invalid force value: 0000000000000000000000000000000000000000000000000000000000011110 0.
+# 
+force -freeze sim:/CPU/Regs/Cluster(11) 00000000000000000000000000011110 0
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
