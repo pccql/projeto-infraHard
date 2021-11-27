@@ -61,16 +61,6 @@ module div (
                 
                
             end 
-            // else begin // Caso Start seja 0 e HDControl seja 1, inicializa as variáveis para divisão
-                
-            //     if (finished == 0) begin
-                    
-            //     end 
-            //     else begin
-            //         finished = 0;
-            //     end
-                
-            // end
         end
     end
 

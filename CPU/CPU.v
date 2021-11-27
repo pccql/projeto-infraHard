@@ -32,6 +32,8 @@ module CPU (
     wire start;
     wire finished;
 
+    wire mult_start;
+
     
     
     //control wires 2 bits
@@ -54,6 +56,7 @@ module CPU (
     wire [1:0] alu_flag;
     
     //data wires
+    wire mult_calculando;
     wire [31:0] pc_in;
     wire [31:0] pc_out;
     wire [31:0] alu_result;
@@ -66,7 +69,7 @@ module CPU (
     wire [31:0] ss_out;
     wire [31:0] mux_pc_src_out;
 
-    
+    wire [63:0] mult_produto;
 
     wire [31:0] lo_out;
     wire [31:0] hi_out;
@@ -368,6 +371,7 @@ module CPU (
         GT,
         LT,
         finished,
+        mult_calculando,
         opcode,
         immediate[5:0],
         pc_w,
@@ -383,6 +387,7 @@ module CPU (
         HiLo_control,
         HiLo_w,
         start,
+        mult_start,
         alu_flag,
         alu_src_b,
         reg_dst,
@@ -411,7 +416,7 @@ module CPU (
 
      shift_left_2_conc shift_left_2_conc(
         offset,
-        pc_in,
+        pc_out,
         shift_left_2_conc_out
     );
     
@@ -462,22 +467,22 @@ module CPU (
         start,
         mux_div_control_a_out,
         mux_div_control_b_out,
-        quocient,
         remainder,
+        quocient,
         div_0,
         finished
     );
 
     mux_LO mux_lo (
         HiLo_control,
-        msb_mult,
+        lsb_mult,
         quocient,
         mux_lo_out
     );
 
     mux_HI mux_hi (
         HiLo_control,
-        lsb_mult,
+        msb_mult,
         remainder,
         mux_hi_out
     );
@@ -497,6 +502,16 @@ module CPU (
         mux_lo_out,
         lo_out
     );
+
+    multiplier multiplicador(msb_mult,
+    lsb_mult, 
+    mult_calculando, 
+    reg_a_out, 
+    reg_b_out, 
+    clk, 
+    mult_start
+    );
+
 
   
     
